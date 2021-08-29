@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-08-29T23:44:06Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-CA">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MaDIR Représentation de nombres</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Évaluer (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_green_plum.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Sauter au contenu</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}        
+\newcommand{\Z}{\mathbb{Z}}                
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Prob}[1]{\mathbb{P}\left(#1\right)}
+\newcommand{\Probc}[2]{\mathbb{P}\left(#1~\left|\right .~#2\right)}
+\newcommand{\E}[1]{\mathbb{E}\left(#1\right)}
+\newcommand{\Ec}[2]{\mathbb{E}\left(#1~\left|\right .~#2\right)}
+\newcommand{\indicator}[1]{1{\hskip -2.5 pt}\hbox{I}_{\left\{ {#1} \right\} }}
+\newcommand{\pfrac}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\RH}{\overset{\text{\scalebox{0.8}{ R.H.}}}{=}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\vecl}[1]{\overrightarrow{#1}}
+\newcommand{\vecd}[2]{\begin{pmatrix}#1 \\ #2\end{pmatrix}}
+\newcommand{\vecddd}[3]{\begin{pmatrix}#1 \\ #2 \\ #3\end{pmatrix}}
+\newcommand{\pscal}[2]{\vecl{#1}\cdot \vecl{#2}}
+\newcommand{\matcold}[4]{\begin{pmatrix}#1 &amp; #3 \\ #2 &amp; #4\end{pmatrix}}
+\newcommand{\matcolt}[9]{\begin{pmatrix}#1 &amp; #4 &amp; #7 \\ #2 &amp; #5 &amp; #8 \\ #3 &amp; #6 &amp; #9\end{pmatrix}}
+\newcommand{\matsimile}[2]{\overset{\scriptsize L_{#1}\leftrightarrow L_{#2}}{\sim}}
+\newcommand{\matsimils}[2]{\overset{\scriptsize #2L_{#1}\rightarrow L_{#1}}{\sim}}
+\newcommand{\matsimilc}[3]{\overset{\scriptsize #2L_{#1}+L_{#3}\rightarrow L_{#3}}{\sim}}
+\newcommand{\matII}{\begin{pmatrix} 1&amp; 0 \\  0 &amp; 1\end{pmatrix}}
+\newcommand{\matIII}{\begin{pmatrix} 1&amp; 0 &amp; 0\\  0 &amp; 1 &amp; 0 \\ 0&amp; 0&amp; 1\end{pmatrix}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\Det}{det}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\CQFD}{\begin{flushright}   
+$\blacksquare$
+\end{flushright}}
+\newcommand{\cqfd}{\begin{flushright}
+$\Box$
+\end{flushright}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="madir.html"><span class="title">Mathématiques discrètes:</span> <span class="subtitle">Version préliminaire</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Table des matières</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="chap-reptheonombres.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><span id="nextbutton" class="next-button button toolbar-item disabled">Suivant</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Table des matières</button><a class="previous-button toolbar-item button" href="chap-reptheonombres.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><span class="next-button button toolbar-item disabled">Suivant</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap-ensfct.html" data-scroll="chap-ensfct"><span class="codenumber">1</span> <span class="title">Ensembles et fonctions</span></a><ul>
+<li><a href="sec-ens.html" data-scroll="sec-ens">Les ensembles</a></li>
+<li><a href="sec-opens.html" data-scroll="sec-opens">Opérations sur les ensembles</a></li>
+<li><a href="sec-fonctions.html" data-scroll="sec-fonctions">Les fonctions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-logique.html" data-scroll="chap-logique"><span class="codenumber">2</span> <span class="title">Logique mathématique</span></a><ul>
+<li><a href="sec-logprop.html" data-scroll="sec-logprop">La logique propositionnelle</a></li>
+<li><a href="sec-eqlogfnc.html" data-scroll="sec-eqlogfnc">Équivalence logique et formes normales</a></li>
+<li><a href="sec-propquant.html" data-scroll="sec-propquant">Les propositions quantifiées</a></li>
+<li><a href="sec-circuits.html" data-scroll="sec-circuits">Circuits logiques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-reptheonombres.html" data-scroll="chap-reptheonombres"><span class="codenumber">3</span> <span class="title">Représentation des nombres et arithmétique modulaire</span></a><ul><li><a href="sec-representation.html" data-scroll="sec-representation" class="active">Représentation de nombres</a></li></ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-representation"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Représentation de nombres</span>
+</h2>
+<section class="introduction" id="intro-representation"><p id="p-1088">À l'école primaire, on apprend à interpréter un nombre comme \(1234\) en le décomposant selon ses unités, dizaines, centaines et milliers. En termes plus mathématiques, on peut écrire</p>
+<div class="displaymath">
+\begin{equation*}
+1234=1\times 1000+2\times 100+3\times 10+4\times 1\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Pourquoi une telle décomposition? D'où vient le choix de \(1,10,100\) et \(1000\text{?}\) L'hypothèse la plus plausible est que les systèmes de numération qui se développèrent au fil du temps ont en quelque sorte converger vers l'utilisation des chiffres \(0,1,2,\ldots,9\text{;}\) dix symboles, autant de doigts qu'un humain possède.</p>
+<p id="p-1089">L'importance du nombre dix se fait d'autant plus remarquer quand on réécrit</p>
+<div class="displaymath">
+\begin{equation}
+1234=1\times 10^3+2\times 10^2+3\times 10^1+4\times 1^0\text{.}\label{eq-basedix}\tag{3.1}
+\end{equation}
+</div>
+<p class="continuation">Cela n'a toutefois pas toujours été ainsi. Différents système de représentation des nombres ont été élaborés dans l'histoire. Encore aujourd'hui, d'autres systèmes sont utilisés dans certains contexte. En informatique, la représentation binaire est prédominante.</p>
+<p id="p-1090">Dans cette section, on rappelle la notion d'écriture en base dix, on définit la représentation en base deux (binaire) et seize (hexadécimale). On effectue aussi des opérations élémentaires sur les nombres écrits en base deux et on voit comment convertir un nombre d'une base à une autre.</p></section><section class="subsection" id="subsection-21"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.1.1</span> <span class="title">Systèmes positionnels</span>
+</h3>
+<p id="p-1091">La représentation d'un nombre peut se faire de plusieurs manières. Une manière brute et assez inefficace consiste par exemple à faire un trait pour chaque unité. Ce système devient vite encombrant et il est difficile de rapidement lire un nombre. D'autres systèmes un peu mieux ont été inventés par différentes civilisation au cours de l'histoire.  Un système dans lequel nombre peut s'écrire sous une forme ressemblant à l'équation <a class="xref" data-knowl="./knowl/eq-basedix.html" title="Équation 3.1">(3.1)</a> de introduction est appelé un système positionnel. Ces systèmes sont normalement construits selon une base entière \(b&gt;1\text{,}\) dans le cas de l'introduction, c'est dix, et d'un ensemble de symboles en nombre égal à la base. On peut utiliser une base différente, par exemple quatre avec les symboles \(0,1,2,3\text{,}\) pour représenter n'importe quel nombre.</p>
+<p id="p-1092">Chaque position correspond à une puissance de la base, puissance croissante lorsqu'on lit le nombre de droite à gauche. Ainsi le nombre à droite correspond aux unités, le deuxième nombre correspond à un multiple de \(b\text{,}\) le troisième aux multiples de \(b^2\) et ainsi de suite. Afin de distinguer du cas usuel, lorsque la base sera différente de dix, on l'indiquera en indice. Cet indice sera toujours sous-entendu comme étant écrit en base dix.</p>
+<article class="example example-like" id="example-34"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-34"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Des exemples en base quatre.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-1093">On considère les nombres suivants, écrits en base quatre:</p>
+<ol class="decimal">
+<li id="li-259"><p id="p-1094">\(123_4\text{;}\)</p></li>
+<li id="li-260"><p id="p-1095">\(102030_4\text{;}\)</p></li>
+<li id="li-261"><p id="p-1096">\(3223_4\text{.}\)</p></li>
+</ol>
+<p class="continuation">On cherche leur valeur en base dix.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-37" id="solution-37"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-37"><div class="solution solution-like">
+<p id="p-1097"><p id="p-1098">L'idée est de reprendre le principe de la décomposition sous une forme des puissances de \(4\text{.}\)</p></p>
+<ol class="decimal">
+<li id="li-262">
+<p id="p-1099">On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+123_4=1\times 4^2+2\times 4^1 2+3\times 4^0=16+8+3=27\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-263">
+<p id="p-1100">De plus,</p>
+<div class="displaymath">
+\begin{equation*}
+102030_4=1\times 4^6 + 0\times 4^5 + 2\times 4^4 + 0\times 4^3 + 3\times 4^2 + 0\times 4^1=4656 \text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-264">
+<p id="p-1101">Finalement,</p>
+<div class="displaymath">
+\begin{equation*}
+3223_4=3\times4^3+2\times 4^2+2\times 4^1+3\times 4^0=235\text{.}
+\end{equation*}
+</div>
+</li>
+</ol>
+</div></div>
+</div></article></div>
+<p id="p-1102">La figure interactive <a class="xref" data-knowl="./knowl/fig-repbase.html" title="Figure 3.1.2">3.1.2</a> permet de visualiser les nombres de \(0\) à \(30\) dans chacune des bases deux,trois, quatre et cinq. Il est intéressant de voir comment la représentation d'un nombre évolue au fur et à mesure que celui-ci grandit.</p>
+<figure class="figure figure-like" id="fig-repbase"><div style="width:840px;"><p id="p-1103">Le curseur \(b\) représente la base utilisée et le curseur \(n\) représente le nombre en base dix. On peut choisir de voir comment un nombre change selon la base ou voir comment les nombres changent pour une base donnée.</p></div>
+<iframe id="geog-repbase" width="840" height="840" src="geog-repbase-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>Les nombres de \(0\) à \(30\) dans différentes bases</figcaption></figure></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.1.2</span> <span class="title">Représentation en base deux</span>
+</h3>
+<p id="p-1104">Autre que la base dix, la base deux, ou représentation binaire est probablement la plus utilisée. Une des raisons est que les signaux envoyées par les pièces électroniques se trouvent en deux états, tel que mentionné dans la section <a href="sec-circuits.html" class="internal" title="Section 2.4: Circuits logiques">2.4</a>. La représentation binaire utilise les puissances de deux et l'ensemble de chiffres \(\{0,1\}\) pour représenter les nombres. Tout nombre entier peut être représenté comme une somme de termes \(d\times 2^n\) où \(d\in \{0,1\}\) et \(n\in \N\text{.}\) Les nombres de \(1\) à \(30\) peuvent être visualisés dans la figure interactive <a class="xref" data-knowl="./knowl/fig-repbase.html" title="Figure 3.1.2">3.1.2</a> en mettant la valeur de \(b=2\text{.}\)</p>
+<p id="p-1105">La conversion d'un nombre d'une base à l'autre dépend des bases utilisées. Lorsque la base dix est impliquée, le processus est plus naturel. On peut comparer la conversion à la traduction entre deux langues. Traduire un mot d'une langue proche de la sienne, mais inconnue, est souvent un peu plus simple que de prendre un mot de sa langue et le traduire dans la langue inconnue. C'est un peu le même principe pour la conversion entre une base \(b\) et la base dix. De la base \(b\) vers dix est un peu plus simple que de la base dix vers la base \(b\text{.}\) Pour le binaire, connaitre les premières puissances de deux peut-être pratique. Les \(13\) premières sont données dans la table <a class="xref" data-knowl="./knowl/tab-puissances2.html" title="Table 3.1.3: Les premières puissances de \(2\)">3.1.3</a>.</p>
+<figure class="table table-like" id="tab-puissances2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>Les premières puissances de \(2\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t3 lines">Puissance de \(2\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{12}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{11}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{10}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{9}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^8\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^7\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^6\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^5\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^4\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^3\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^2\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^1\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^0\)</td>
+</tr>
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Valeur en base dix</td>
+<td class="l m b3 r0 l0 t0 lines">\(4096\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(2048\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(1024\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(512\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(256\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(128\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(64\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(32\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(16\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(8\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(4\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(1\)</td>
+</tr>
+</table></div></figure><article class="example example-like" id="example-35"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-35"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Du binaire vers la base dix.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-35"><article class="example example-like"><p id="p-1106">On veut convertir les nombres suivants en base dix:</p>
+<ol class="decimal">
+<li id="li-265"><p id="p-1107">\(100110_2\text{;}\)</p></li>
+<li id="li-266"><p id="p-1108">\(110111_2\text{;}\)</p></li>
+<li id="li-267"><p id="p-1109">\(111111_2\text{;}\)</p></li>
+<li id="li-268"><p id="p-1110">\(100100100_2\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-38" id="solution-38"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-38"><div class="solution solution-like"><ol id="p-1111" class="decimal">
+<li id="li-269">
+<p id="p-1112">On réécrit avec les puissances de deux</p>
+<div class="displaymath">
+\begin{equation*}
+100110_2=1\times 32+0\times 16+0\times 8+1\times 4+1\times 2+0\times 1=38\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-270">
+<p id="p-1113">On réécrit avec les puissances de deux</p>
+<div class="displaymath">
+\begin{equation*}
+110111_2=1\times 32+1\times 16+0\times 8+1\times 4+1\times 2+1\times 1=55\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-271">
+<p id="p-1114">On réécrit avec les puissances de deux</p>
+<div class="displaymath">
+\begin{equation*}
+111111_2=1\times 32+1\times 16+1\times 8+1\times 4+1\times 2+1\times 1=63\text{.}
+\end{equation*}
+</div>
+</li>
+<li id="li-272">
+<p id="p-1115">On réécrit avec les puissances de deux</p>
+<div class="displaymath">
+\begin{equation*}
+100100100_2_2= 1\times 256+ 0\times 128+ 0\times 64+1\times 32+0\times 16+0\times 8+1\times 4+0\times 2+0\times 1=292\text{.}
+\end{equation*}
+</div>
+</li>
+</ol></div></div>
+</div></article></div>
+<p id="p-1116">Une méthode suivante pour convertir un nombre de la base décimale à une autre base est présentée ci-dessous. Une autre méthode sera présentée dans la section suivante.</p>
+<article class="example example-like" id="ex-decimalebinaire"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-decimalebinaire"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">De la base dix vers le binaire.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-decimalebinaire"><article class="example example-like"><p id="p-1117">On cherche à convertir les nombres suivants en binaire:</p>
+<ol class="decimal">
+<li id="li-273"><p id="p-1118">\(101\text{;}\)</p></li>
+<li id="li-274"><p id="p-1119">\(187\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-39" id="solution-39"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-39"><div class="solution solution-like">
+<p id="p-1120">On sait qu'un nombre en binaire va s'écrire sous la forme \(d_n2^n+d_{n-1}2^{n-1}+\cdots + d_12^1+d_02^0\) avec tous les \(d_k\in \{0,1\}\text{.}\) Pour trouver \(n\text{,}\) cherche la plus grande puissance de la base qui est plus petite ou égale au  nombre à convertir. Le nombre \(n\) sera celui la valeur de cette puissance. Ainsi pour \(101\text{,}\) la plus grande puissance qui est plus petite est \(2^6=64\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+101=d_62^6+d_{5}2^{5}+\cdots + d_12^1+d_02^0\text{.}
+\end{equation*}
+</div>
+<p id="p-1121">Il faut ensuite choisir la plus grande valeur de \(d_n\) possible de sorte que \(d_n b^n\) soit inférieure au nombre \(n\text{.}\) Pour la base deux, le choix est simple et sera toujours \(1\text{.}\) Ainsi pour \(101\text{,}\) on a \(d_6=1\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+101=2^6+d_{5}2^{5}+\cdots + d_12^1+d_02^0\text{.}
+\end{equation*}
+</div>
+<p class="continuation">On envoie le terme trouvé du côté du nombre \(n\) en soustrayant et on répète ce processus jusqu'à ce que tous les \(d_k\) soient déterminés.</p>
+<div class="displaymath">
+\begin{align*}
+101-2^6&amp;=d_{5}2^{5}+d_{4}2^{4}+d_{3}2^{3}+d_{2}2^{2} + d_12^1+d_02^0\\
+37&amp;=d_{5}2^{5}+d_{4}2^{4}+d_{3}2^{3}+d_{2}2^{2} + d_12^1+d_02^0\\
+\end{align*}
+<p class="intertext">La plus grande puissance plus petite que le nombre à gauche est 5</p>
+\begin{align*}
+37&amp;=2^5+d_{4}2^{4}+d_{3}2^{3}+d_{2}2^{2} + d_12^1+d_02^0\\
+37-2^5&amp;=d_{4}2^{4}+d_{3}2^{3}+d_{2}2^{2} + d_12^1+d_02^0\\
+5&amp;=d_{4}2^{4}+d_{3}2^{3}+d_{2}2^{2} + d_12^1+d_02^0\\
+\end{align*}
+<p class="intertext">La plus grande puissance qui est plus petite que 5 est 4. Les autres puissances sont multipliées par zéro.</p>
+\begin{align*}
+5&amp;=0\times 2^{4}+0\times 2^{3}+2^{2} + d_12^1+d_02^0\\
+5-2^2&amp;=d_1 2^1+d_02^0\\
+1&amp;=d_1 2^1+d_02^0\\
+\end{align*}
+<p class="intertext">La puissance 0 est égale à 1 et donc</p>
+\begin{align*}
+1&amp;=0\times 2^1+2^0\text{.}
+\end{align*}
+</div>
+<p class="continuation">En reprenant les valeurs de \(d_k\) non nulles, on a</p>
+<div class="displaymath">
+\begin{equation*}
+101=1100101_2\text{.}
+\end{equation*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-40" id="solution-40"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-40"><div class="solution solution-like">
+<p id="p-1122">On montre une manière plus concise d'écrire le raisonnement précédent. La plus grande puissance de \(2\) qui est inférieure ou égale à \(187\) est \(128\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{align*}
+187&amp;=128+\text{quelque chose}\\
+\end{align*}
+<p class="intertext">Puisque 187-128=59 et que la plus grande puissance de 2 inférieure à 59 est 32, on a</p>
+\begin{align*}
+187&amp;=128+32+\text{autre chose}\\
+\end{align*}
+<p class="intertext">autre chose doit être égal à 27 lorsqu'on fait la soustraction. La plus grande puissance inférieure à cela est 16 et donc</p>
+\begin{align*}
+187&amp;=128+32+16+\text{quelque chose d'autre}\\
+\end{align*}
+<p class="intertext">on poursuit ainsi et on obtient finalement</p>
+\begin{align*}
+187&amp;=128+32+16+8+2+1\\
+187&amp;=10111011_2
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1123">En plus des nombres naturels, on peut aussi représenter les nombres négatifs ou même réels en d'autre base. Pour un nombre négatif, on se contentera de convertir le nombre en valeur absolue en binaire et d'ajouter un signe \(-\) devant. Pour un ordinateur toutefois, la réalité est un peu plus complexe. Pour les nombres décimaux, on peut procéder d'une manière similaire à celles utilisées pour convertir d'une base à l'autre. Si on considère un nombre à virgule écrit en binaire (dont la partie entière sera \(0\text{,}\) pour simplifier), par exemple \(0.1011001\text{,}\) alors il suffit de poursuivre l'écriture en puissance avec des nombres négatifs:</p>
+<div class="displaymath">
+\begin{equation*}
+02^0+d_{-1}2^{-1}+d_{-2}2^{-2}+\cdots +d_{-m}2^{-m}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">À noter toutefois que, comme dans le cas des nombres décimaux, il est possible que la partie fractionnaire soit infinie, périodique ou non. On se contentera pour l'instant de cas où la représentation sera finie.</p>
+<article class="example example-like" id="example-37"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-37"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">D'une représentation binaire fractionnaire à décimale.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-1124">On considère le nombre \(0.1011_2\) et on cherche sa conversion en base dix.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-41" id="solution-41"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-41"><div class="solution solution-like">
+<p id="p-1125">On décompose le nombre selon les puissances négatives de \(2\) pour obtenir</p>
+<div class="displaymath">
+\begin{equation*}
+0.1011_2=1\times 2^{-1}+0\times 2^{-2}+1\times 2^{-3}+1\times 2^{-4}=0.5+0.125+0.0625=0.6875\text{.}
+\end{equation*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1126">Il est possible qu'un nombre ayant une représentation décimale finie possède une représentation binaire infinie, il faut donc bien choisir les exemples pour éviter que cela arrive. Dans la prochaine section, on verra comment convertir un nombre décimal qui devient à représentation infinie. La table suivante pourra être utile.</p>
+<figure class="table table-like" id="table-24"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t3 lines">Puissance de \(2\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-1}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-2}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-3}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-4}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-5}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-6}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-7}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(2^{-8}\)</td>
+</tr>
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Valeurs décimales</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.5\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.25\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.126\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.0625\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.03125\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.015625\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.0078125\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(0.00390625\)</td>
+</tr>
+</table></div></figure><article class="example example-like" id="example-38"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-38"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">D'une représentation décimale fractionnaire à binaire.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-38"><article class="example example-like"><p id="p-1127">On veut convertir le nombre \(0.40625\) en binaire.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-42" id="solution-42"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-42"><div class="solution solution-like">
+<p id="p-1128">L'idée est la même que celle utilisée à l'exemple <a class="xref" data-knowl="./knowl/ex-decimalebinaire.html" title="Exemple 3.1.5: De la base dix vers le binaire">3.1.5</a>. On cherche la plus grande puissance de \(2\) qui est plus petite ou égale à \(0.40625\text{.}\) Dans ce cas, c'est \(2^{-2}=0.25\text{.}\) On a donc</p>
+<div class="displaymath">
+\begin{align*}
+0.40625&amp;=0\times 2^{-1}+1\times 2^{-2}+\text{autre chose}\\
+\end{align*}
+<p class="intertext">En soustrayant,  il reste 0.15625, pour lequel 0.125 est la plus grande puissance inférieure ou égale à ce nombre. On a alors</p>
+\begin{align*}
+0.40625&amp;=0\times 2^{-1}+\times 2^{-2}+\times 2^{-3}+\text{quelque chose}\\
+\end{align*}
+<p class="intertext">On soustrait une autre fois et on obtient 0.03125, qui est une puissance exacte de 2. Alors</p>
+\begin{align*}
+0.40625&amp;=0\times 2^{-1}+ 2^{-2}+ 2^{-3}+2^{-5}\\
+0.40625&amp;=0.01101_2\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article></div></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.1.3</span> <span class="title">Représentation en base hexadécimale</span>
+</h3>
+<p id="p-1129">La représentation binaire d'un nombre prend beaucoup plus de place que la représentation décimale. C'est un désavantage avec lequel on est prêt à vivre en informatique étant donné la simplicité d'un système à deux possibilités (ouvert-fermé, haut-bas, vrai-faux, etc.). On a dit au tout début de la section que n'importe quelle nombre \(b&gt;1\text{.}\) Si \(b&gt;10\) est un entier, quels symboles utilise-t-on pour représenter les nombres? L'un des systèmes les plus utilisés est le système hexadécimal. Celui-ci correspond à la base seize. Pour compléter l'ensemble des chiffres, on ajoute aux symboles les six premières lettres de l'alphabet, en majuscule. Ainsi, un nombre entier exprimé en hexadécimal sera de la forme</p>
+<div class="displaymath">
+\begin{equation*}
+d_{n}\times 16^n + d_{n-1}\times 16^{n-1} +\cdots + d_{_1}\times 16^1 + d_{_0}\times 16^0              
+\end{equation*}
+</div>
+<p class="continuation">avec tous les \(d_k\in \{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\}\text{.}\) Dans les calculs, on se rappelera que \(A=10,B=11,C=12,D=13,E=14\) et \(F=15\text{.}\)</p>
+<p id="p-1130">Les nombres naturels de \(0\) à \(3840\) sont transformés en base seize dans la figure interactive ci-dessous.</p>
+<figure class="figure figure-like" id="fig-repbas16"><div style="width:840px;"><p id="p-1131">Le curseur \(n\) représente le nombre en base dix. On peut voir sa conversion en représentation hexadécimale.</p></div>
+<iframe id="geog-repbase16" width="840" height="840" src="geog-repbase16-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.9<span class="period">.</span></span><span class="space"> </span>Les nombres de \(0\) à \(3840\) en base seize</figcaption></figure><p id="p-1132">Les méthodes pour convertir entre la base dix et seize sont identiques à celles pour convertir entre base dix et deux. On donne deux exemples ci-dessous. La table des premières puissances de \(16\) est donné ici pour référence.</p>
+<figure class="table table-like" id="table-25"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.10<span class="period">.</span></span><span class="space"> </span>Puissances de 16</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t3 lines">Puissance de seize</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^8\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{7}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{6}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{5}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{4}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{3}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{2}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{1}\)</td>
+<td class="l m b0 r0 l0 t3 lines">\(16^{0}\)</td>
+</tr>
+<tr>
+<td class="l m b3 r0 l0 t0 lines">Valeurs décimales</td>
+<td class="l m b3 r0 l0 t0 lines">\(4294967296\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(268435456\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(16777216\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(1048576\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(65536\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(4096\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(256\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(16\)</td>
+<td class="l m b3 r0 l0 t0 lines">\(1\)</td>
+</tr>
+</table></div></figure><article class="example example-like" id="example-39"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-39"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Conversion entre système décimal et système hexadécimal.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-1133">On veut convertir \(A0E2F3_{16}\) en décimal et \(987654321\) en hexadécimal.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-43" id="solution-43"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-43"><div class="solution solution-like">
+<p id="p-1134">La conversion d'hexadécimal vers la base dix étant plus simple, on débute par celle-ci. On a</p>
+<div class="displaymath">
+\begin{align*}
+A0E2F3_{16}&amp;=A\times 16^5+0\times 16^4+E\times 16^3+2\times 16^2+F\times 16^1+3\times 16^0\\
+&amp;=10\times 16^5+14\times 16^3+2\times 16^2+15\times 16^1+3\times 16^0\\
+qui après addition de toutes ces puissances donne\\
+&amp;=10543859\text{.}
+\end{align*}
+</div>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-44" id="solution-44"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-44"><div class="solution solution-like">
+<p id="p-1135">Pour la conversion de la base décimale vers la base seize, on regarde encore quelle est la plus grande puissance de seize qui est inférieure ou égale au nombre à convertir. Pour \(987654321\text{,}\) c'est \(16^7=268435456\) qui sera utilisé. Il y a toutefois une étape supplémentaire à considérer par rapport à la conversion au binaire. Combien de fois \(16^7\) rentre-t-il dans \(987654321\text{?}\) On utilise Sage pour faire ce calcul, en notant qu'à la section suivante on aura un opérateur spécial qui donnera directement la réponse, sans tenir compte de la partie fractionnaire.</p>
+<div class="hidden-sagecell-sage" id="sage-1"><script type="text/x-sage">987654321.0/16^7
+</script></div>
+<p id="p-1136">Comme on obtient \(3.67929906026\text{,}\) on déduit qu'on peut mettre trois puissances de \(16^7\text{,}\) mais pas quatre. On a donc</p>
+<div class="displaymath">
+\begin{equation*}
+987654321=3\times 16^7+\text{quelque chose}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">On poursuit les calculs avec Sage. Dans un premier temps, que reste-t-il si on soustrait \(3\times 16^7\) à \(987654321\text{?}\)</p>
+<div class="hidden-sagecell-sage" id="sage-2"><script type="text/x-sage">987654321-3*16^7
+</script></div>
+<p id="p-1137">La plus grande puissance de \(16\) qui est plus petite que ce nombre est \(16^6\text{.}\) En répétant la méthode ci-dessus, on calcule combien de fois cette puissance rentre dans \(182347953\text{.}\)</p>
+<div class="hidden-sagecell-sage" id="sage-3"><script type="text/x-sage">182347953.0/16^6
+</script></div>
+<p id="p-1138">La puissance peut rentrer \(10\) fois, ce qui veut dire que le symbole utilisé sera \(A\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+987654321=3\times 16^7+A\times 16^6+\text{quelque chose d'autre}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">On soustrait \(10\times 16^6\) de \(182347953\) pour obtenir le reste.</p>
+<div class="hidden-sagecell-sage" id="sage-4"><script type="text/x-sage">182347953-10*16^6
+</script></div>
+<p id="p-1139">On effectue une dernière étape complète avant de donner la réponse. Le reste pourra être complété en exercice. La cinquième puissance de \(16\) sera la prochaine à être utilisée.</p>
+<div class="hidden-sagecell-sage" id="sage-5"><script type="text/x-sage">14575793.0/16^5
+</script></div>
+<p id="p-1140">On peut donc mettre \(13\) fois \(16^5\) dans \(14575793\text{,}\) ce qui signifie que le symbole utilisé sera \(D\text{.}\) On aura</p>
+<div class="displaymath">
+\begin{equation*}
+987654321=3\times 16^7+A\times 16^6+D\times 16^5+\text{autre chose}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Le reste sera égal à \(944305\) , comme le montre le calcul ci-dessous.</p>
+<div class="hidden-sagecell-sage" id="sage-6"><script type="text/x-sage">14575793-13*16^5
+</script></div>
+<p id="p-1141">Au final, on peut montrer que</p>
+<div class="displaymath">
+\begin{equation*}
+987654321=3ADE68B1_{16}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">L'exercice <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "exo-hexaafinir" missing or not unique]</code> demande le reste de la démarche.</p>
+</div></div>
+</div></article></div></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.1.4</span> <span class="title">Opérations élémentaires en base deux</span>
+</h3></section><section class="conclusion" id="concl-representation"></section><section class="reading-questions" id="rq-representation"><h3 class="heading hide-type">
+<span class="type">Questions de compréhension de la lecture</span> <span class="codenumber">3.1.5</span> <span class="title">Questions de compréhension de la lecture</span>
+</h3>
+<section class="introduction" id="introduction-110"><p id="p-1142">Ces questions sont à faire avant de venir en classe et à remettre au début du cours.</p></section><article class="exercise exercise-like" id="exercise-139"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-1143">Noter toute question qui demeure suite à la lecture de la section et la résolutin des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article></section></section></div></main>
+</div>
+</body>
+</html>
