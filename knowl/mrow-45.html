@@ -2,7 +2,7 @@
 <html lang="fr-CA">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-29T23:46:36Z       *-->
+<!--*       on 2021-08-30T18:33:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,10 +16,9 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\neg s&amp;=\text{Je ne prendrai pas de sushis au saumon.}\\
-\neg &amp;=\text{Je ne prendrai pas de sushis au thon.}\\
-\neg &amp;=\text{Je ne prendrai pas de bol poke.}\\
-\neg &amp;=\text{Je ne prendrai pas de rouleau de printemps.}
+\neg (p\vee q)\vee (r\wedge \neg q)&amp;\equiv\neg((p\wedge q\wedge r)\vee (p\wedge q\wedge \neg r)\vee (p\wedge \neg q\wedge \neg r)\vee (\neg p\wedge q\wedge r)\vee (\neg p \wedge q \wedge \neg r))\\
+&amp;\equiv \neg(p\wedge q\wedge r)\wedge \neg(p\wedge q\wedge \neg r)\wedge \neg(p\wedge \neg q\wedge \neg r)\wedge \neg(\neg p\wedge q\wedge r)\wedge \neg(\neg p \wedge q \wedge \neg r)\\
+&amp;\equiv (\neg p\vee \neg q\vee \neg r)\wedge (\neg p\vee \neg q\vee r)\wedge (\neg p\vee  q\vee  r)\wedge ( p\vee\neg q\vee \neg r)\wedge ( p \vee\neg q \vee  r)
 \end{align*}
 </div>
 <span class="incontext"><a href="sec-eqlogfnc.html#mjx-eqn:mrow-45">Contexte</a></span>

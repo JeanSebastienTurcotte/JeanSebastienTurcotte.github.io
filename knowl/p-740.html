@@ -2,7 +2,7 @@
 <html lang="fr-CA">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-29T23:46:36Z       *-->
+<!--*       on 2021-08-30T18:33:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,15 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Pour retrouver la forme conjonctive de la proposition initiale, on nie l'équivalence ci-dessus. On a alors</p>
+<p>Il faut utiliser la loi de  <a class="xref" data-knowl="./knowl/li-oplogDeMorgan.html" title="Point 2.2.5:9">De Morgan</a> afin d'enlever la négation devant la première parenthèse. Celle-ci devient</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\neg (p\vee q)\vee (r\wedge \neg q)&amp;\equiv\neg((p\wedge q\wedge r)\vee (p\wedge q\wedge \neg r)\vee (p\wedge \neg q\wedge \neg r)\vee (\neg p\wedge q\wedge r)\vee (\neg p \wedge q \wedge \neg r))\\
-&amp;\equiv \neg(p\wedge q\wedge r)\wedge \neg(p\wedge q\wedge \neg r)\wedge \neg(p\wedge \neg q\wedge \neg r)\wedge \neg(\neg p\wedge q\wedge r)\wedge \neg(\neg p \wedge q \wedge \neg r)\\
-&amp;\equiv (\neg p\vee \neg q\vee \neg r)\wedge (\neg p\vee \neg q\vee r)\wedge (\neg p\vee  q\vee  r)\wedge ( p\vee\neg q\vee \neg r)\wedge ( p \vee\neg q \vee  r)\text{,}
-\end{align*}
+\begin{equation*}
+\neg(p\vee q)\equiv\neg p \wedge \neg q\text{.}
+\end{equation*}
 </div>
-<p class="continuation">où on a utilisé De Morgan pour transformer les négations.</p>
+<p class="continuation">On peut ensuite réécrire la proposition comme étant</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\neg(p\vee q)\vee (r\wedge \neg q)\equiv(\neg p \wedge \neg q)\vee (r\wedge \neg q)\text{,}
+\end{equation*}
+</div>
+<p class="continuation">qui est une forme normale disjonctive.</p>
 <span class="incontext"><a href="sec-eqlogfnc.html#p-740">Contexte</a></span>
 </body>
 </html>

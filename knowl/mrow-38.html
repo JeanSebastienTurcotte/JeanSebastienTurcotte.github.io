@@ -2,7 +2,7 @@
 <html lang="fr-CA">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-29T23:46:36Z       *-->
+<!--*       on 2021-08-30T18:33:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -16,9 +16,10 @@
 <body>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-\neg Q&amp;=\neg(p\wedge \neg r)\\
-&amp;=(\neg p)\vee(\neg (\neg r))&amp; &amp; \text{selon } \knowl{./knowl/li-oplogDeMorgan.html}{\text{2.2.5:9}}\\
-&amp;= \neg p\vee  r &amp;&amp; \text{selon } \knowl{./knowl/li-oplogcomp.html}{\text{2.2.5:4}}
+(A-B)^c&amp;=\{a~|~ \neg(x\in A\wedge x\notin B)\}\\
+&amp;=\{a~|~ \neg(x\in A)\vee \neg (x\notin B)&amp;&amp; \text{Selon De Morgan} \knowl{./knowl/li-oplogDeMorgan.html}{\text{2.2.5:9}}\\
+&amp;=\{a~|~ x\notin A \vee x\in B\} &amp;&amp; \text{La négation de la relation d'appartenance est la non appartenance et vice-versa}\\
+&amp;= A^c\cup B&amp;&amp;\text{Définition de l'union et du complément}
 \end{align*}
 </div>
 <span class="incontext"><a href="sec-eqlogfnc.html#mjx-eqn:mrow-38">Contexte</a></span>

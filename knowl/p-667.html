@@ -2,7 +2,7 @@
 <html lang="fr-CA">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-29T23:46:35Z       *-->
+<!--*       on 2021-08-30T18:33:32Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,15 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Soit \(p,q\) deux propositions. On dit que \(p\) est équivalente à \(q\text{,}\) et on écrit \(p\equiv q\text{,}\) si \(p\leftrightarrow q\) est une tautologie.</p>
-<span class="incontext"><a href="sec-eqlogfnc.html#p-667">Contexte</a></span>
+<p>On veut montrer que \((A\cup B)^c=A^c\cap B^c\text{.}\) Par définition, on a \(A\cup B=\{c~|~ c\in A\vee c\in B\}\text{.}\) D'un point de vue de la logique, le complément représente la négation. On a alors</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+(A\cup B)^c&amp;=\{c~|~\neg ( c\in A\vee c\in B)\}\\
+&amp;=\{c~|~\neg (c\in A)\wedge \neg( c\in B)\} &amp; &amp; \text{Selon } \knowl{./knowl/exo-negdisj.html}{\text{2.1.5.6}}\\
+&amp;=\{c~|~c\notin A\wedge c\notin B)\}&amp; &amp; \text{négation de ka relation d'appartenance}\\
+&amp;=A^c\cap B^c &amp;&amp; \text{définition de l'intersection}
+\end{align*}
+</div>
+<span class="incontext"><a href="sec-logprop.html#p-667">Contexte</a></span>
 </body>
 </html>

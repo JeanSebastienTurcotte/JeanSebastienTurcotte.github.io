@@ -2,7 +2,7 @@
 <html lang="fr-CA">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-29T23:46:40Z       *-->
+<!--*       on 2021-08-30T18:33:38Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>Le plus simple pour construire le circuit associé à une table de vérité est de construire la forme normale disjonctive de l'expression. Comme il y a deux sorties qui donnent \(1\text{.}\) On joint les lignes de ces sorties par des disjonctions. On obtient \(X\vee (\neg X\wedge Y\wedge Z)\text{.}\) Il faudra donc combiner l'inverse de \(X\) avec \(Y\) et ensuite combiner ce résultat avec \(Z\) dans des portes ET. Ensuite, on combine cette sortie avec \(X\) dans une porte OU. À noter qu'à l'exercice <a class="xref" data-knowl="./knowl/exo-ETmultiple.html" title="Exercice 2.4.4.1">2.4.4.1</a>, on verra qu'on peut combiner plus de deux entrées dans une porte ET grâce à l'associativité.</p>
+<p>Pour la paire d'entrée \(0\)-\(0\text{,}\) la porte OU les combinant retournent \(1\text{.}\)  La valeur de \(Y\) est inversée par la porte non et se combine ensuite avec le résultat précédent dans la porte ET.  La valeur du Y a été inversée et est maintenant \(1\text{,}\) mais la porte OU a retourné \(0\text{.}\) La porte ET finale retourne \(0\) comme sortie du circuit.</p>
 <span class="incontext"><a href="sec-circuits.html#p-1040">Contexte</a></span>
 </body>
 </html>
