@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-30T18:33:21Z       *-->
+<!--*       on 2021-09-03T17:30:37Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>MaDIR Équivalence logique et formes normales</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
@@ -26,6 +26,19 @@
   options: {
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -136,6 +149,12 @@ $\Box$
 <li><a href="sec-eqlogfnc.html" data-scroll="sec-eqlogfnc" class="active">Équivalence logique et formes normales</a></li>
 <li><a href="sec-propquant.html" data-scroll="sec-propquant">Les propositions quantifiées</a></li>
 <li><a href="sec-circuits.html" data-scroll="sec-circuits">Circuits logiques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-reptheonombres.html" data-scroll="chap-reptheonombres"><span class="codenumber">3</span> <span class="title">Représentation des nombres et arithmétique modulaire</span></a><ul>
+<li><a href="section-8.html" data-scroll="section-8">Problem with intertext</a></li>
+<li><a href="sec-representation.html" data-scroll="sec-representation">Représentation de nombres</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -761,7 +780,7 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Indice.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like">Penser à quoi ressemble la table de vérité de cette proposition afin de trouver une forme normale.</div></div>
 </div></article><article class="exercise exercise-like" id="exercise-91"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <p id="p-765">Transformer l'expression \((\neg p \wedge q) \vee \neg (\neg r \vee q)\) en l'une des formes normales en utilisant les propriétés (pas de table de vérité).</p></article><article class="exercise exercise-like" id="exercise-92"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-766">Noter toute question qui demeure suite à la lecture de la section et la résolutin des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article></section><section class="exercises" id="exo-eqlogfnc"><h3 class="heading hide-type">
+<p id="p-766">Noter toute question qui demeure suite à la lecture de la section et la résolution des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article></section><section class="exercises" id="exo-eqlogfnc"><h3 class="heading hide-type">
 <span class="type">Exercices</span> <span class="codenumber">2.2.4</span> <span class="title">Exercices</span>
 </h3>
 <div class="exercisegroup" id="exercisegroup-10">

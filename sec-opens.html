@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-30T18:33:18Z       *-->
+<!--*       on 2021-09-03T17:30:33Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>MaDIR Opérations sur les ensembles</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
@@ -26,6 +26,19 @@
   options: {
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -136,6 +149,12 @@ $\Box$
 <li><a href="sec-eqlogfnc.html" data-scroll="sec-eqlogfnc">Équivalence logique et formes normales</a></li>
 <li><a href="sec-propquant.html" data-scroll="sec-propquant">Les propositions quantifiées</a></li>
 <li><a href="sec-circuits.html" data-scroll="sec-circuits">Circuits logiques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-reptheonombres.html" data-scroll="chap-reptheonombres"><span class="codenumber">3</span> <span class="title">Représentation des nombres et arithmétique modulaire</span></a><ul>
+<li><a href="section-8.html" data-scroll="section-8">Problem with intertext</a></li>
+<li><a href="sec-representation.html" data-scroll="sec-representation">Représentation de nombres</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -469,7 +488,7 @@ A\cap(B\cap C)&amp;=(A\cap B)\cap C\text{.}
 <p id="p-193">Trouver un ensemble \(C\subseteq\mathscr{P}(S)\) tel que \(|C|=3\)</p></article><article class="task exercise-like" id="task-23"><h6 class="heading"><span class="codenumber">(d)</span></h6>
 <p id="p-194">Un étudiant affirme avoir trouvé \(D\in \mathscr{P}(S)\) tel que \(|D|=6\text{.}\) Donner un exemple d'un tel ensemble ou expliquer pourquoi ce n'est pas possible.</p></article><article class="task exercise-like" id="task-24"><h6 class="heading"><span class="codenumber">(e)</span></h6>
 <p id="p-195">Un étudiant affirme avoir trouvé \(E\subseteq \mathscr{P}(S)\) tel que \(|E|=6\text{.}\) Donner un exemple d'un tel ensemble ou expliquer pourquoi ce n'est pas possible.</p></article></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-196">Noter toute question qui demeure suite à la lecture de la section et la résolutin des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article></section><section class="exercises" id="exo-opens"><h3 class="heading hide-type">
+<p id="p-196">Noter toute question qui demeure suite à la lecture de la section et la résolution des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article></section><section class="exercises" id="exo-opens"><h3 class="heading hide-type">
 <span class="type">Exercices</span> <span class="codenumber">1.2.4</span> <span class="title">Exercices</span>
 </h3>
 <div class="exercisegroup" id="exercisegroup-1">

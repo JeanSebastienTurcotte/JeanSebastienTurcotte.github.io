@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-30T18:33:19Z       *-->
+<!--*       on 2021-09-03T17:30:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>MaDIR Les fonctions</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>window.MathJax = {
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
   tex: {
     inlineMath: [['\\(','\\)']],
     tags: "none",
@@ -26,6 +26,19 @@
   options: {
     ignoreHtmlClass: "tex2jax_ignore",
     processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.88,
@@ -138,6 +151,12 @@ $\Box$
 <li><a href="sec-circuits.html" data-scroll="sec-circuits">Circuits logiques</a></li>
 </ul>
 </li>
+<li class="link">
+<a href="chap-reptheonombres.html" data-scroll="chap-reptheonombres"><span class="codenumber">3</span> <span class="title">Représentation des nombres et arithmétique modulaire</span></a><ul>
+<li><a href="section-8.html" data-scroll="section-8">Problem with intertext</a></li>
+<li><a href="sec-representation.html" data-scroll="sec-representation">Représentation de nombres</a></li>
+</ul>
+</li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-fonctions"><h2 class="heading hide-type">
@@ -174,7 +193,7 @@ f&amp;: &amp;A&amp;\to B\\
 &amp;&amp;a&amp;\to f(a)=b\text{.}
 \end{align*}
 </div>
-<p id="p-302">Chaque élément \(a\in A\) possède un élément \(b\in B\) tel que \(f(a)=b\text{,}\) mais un élément de \(B\) peut ne pas être atteint par un élément de \(A\text{.}\) Dans la définition d'une fonction, on spécifie souvent les trois ensembles suivants:</p>
+<p id="p-302">Chaque élément \(a\in A\) possède un et un seul élément \(b\in B\) tel que \(f(a)=b\text{,}\) mais un élément de \(B\) peut ne pas être atteint par un élément de \(A\text{.}\) Dans la définition d'une fonction, on spécifie souvent les trois ensembles suivants:</p>
 <dl class="description-list">
 <dt id="li-70">Le domaine:</dt>
 <dd><p id="p-303">L'ensemble \(A\) est appelé le domaine de la fonction.</p></dd>
@@ -451,28 +470,28 @@ f&amp;: &amp;A&amp;\to B\\
 <p id="p-407">\(R\) n'est pas une fonction.</p></article><article class="task exercise-like" id="task-105"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-408">\(R\) est une fonction.</p></article></article><article class="exercise exercise-like" id="exercise-40"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-409">Soit \(A=\{3n-1~|~ n\in \N \text{ et } 1\leq n \leq 5\}\) et \(B=\{c,d,h,o,q\}\text{.}\) Représenter dans un diagramme sagittal la fonction \(f:A\to B\) qui associe à \(a\in A\) la première lettre de son écriture dans la langue française.</p></article><article class="exercise exercise-like" id="exercise-41"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-410">Noter toute question qui demeure suite à la lecture de la section et la résolutin des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article>
+<p id="p-410">Noter toute question qui demeure suite à la lecture de la section et la résolution des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article>
 </div>
 </div>
 <div class="exercisegroup" id="exercisegroup-4">
 <h6 class="heading"><span class="title">Exercices à remettre avant le cours B</span></h6>
 <div class="exercisegroup-exercises">
 <article class="exercise exercise-like" id="exercise-42"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-411">Quels énoncés parmi les suivants sont équivalent à dire que \(f:A\to B\) est injective?</p>
+<p id="p-411">Quels énoncés parmi les suivants sont équivalent à dire que \(f:A\to B\) est injective? Justifier.</p>
 <ol class="lower-alpha">
 <li id="li-116"><p id="p-412">Le codomaine est égal à l'image.</p></li>
 <li id="li-117"><p id="p-413">Pour tout \(a\in A\) on a \(f(a)\neq \emptyset\text{.}\)</p></li>
 <li id="li-118"><p id="p-414">Si \(a_1\neq a_2\) alors \(f(a_1)\neq f(a_2)\text{.}\)</p></li>
-<li id="li-119"><p id="p-415">\(\displaystyle |A|&lt; |B|\)</p></li>
+<li id="li-119"><p id="p-415">\(\displaystyle |A|\leq |B|\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-43"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-416">Quels énoncés parmi les suivants sont équivalent à dire que \(f:A\to B\) est surjective?</p>
+<p id="p-416">Quels énoncés parmi les suivants sont équivalent à dire que \(f:A\to B\) est surjective? Justifier.</p>
 <ol class="lower-alpha">
 <li id="li-120"><p id="p-417">Le codomaine est égal à l'image.</p></li>
 <li id="li-121"><p id="p-418">Pour tout \(b\in B\) on a \(f^{-1}(\{b\})\neq \emptyset\text{.}\)</p></li>
-<li id="li-122"><p id="p-419">Pour tout \(C\subseteq B\) on a \(f^{-1}(C)\neq \emptyset\text{.}\)</p></li>
-<li id="li-123"><p id="p-420">\(\displaystyle |A|&gt; |B|\)</p></li>
+<li id="li-122"><p id="p-419">Pour tout \(C\subseteq B\) où \(C\neq \emptyset\text{,}\) on a \(f^{-1}(C)\neq \emptyset\text{.}\)</p></li>
+<li id="li-123"><p id="p-420">\(\displaystyle |A|\geq |B|\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-44"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<p id="p-421">Noter toute question qui demeure suite à la lecture de la section et la résolutin des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article>
+<p id="p-421">Noter toute question qui demeure suite à la lecture de la section et la résolution des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article>
 </div>
 </div></section><section class="exercises" id="exo-"><h3 class="heading hide-type">
 <span class="type">Exercices</span> <span class="codenumber">1.3.6</span> <span class="title">Exercices</span>
@@ -540,7 +559,7 @@ f|_C=f(C)=\{(c,f(c))\in A\times B~|~ c\in C\}\text{.}
 <ol class="lower-alpha">
 <li id="li-135"><p id="p-452">Une relation \(f:A\to B\) qui satisfait la propriété que si \(f(a_1)\neq f(a_2)\text{,}\) alors \(a_1\neq a_2\) pour tous les \(a_1,a_2\in A\text{.}\)</p></li>
 <li id="li-136"><p id="p-453">Un ensemble \(\{(a,b)~|~a\in A \text{ et } b\in B\}\text{.}\)</p></li>
-<li id="li-137"><p id="p-454">Un ensemble \(\{(a,b)~|~a\in A \}\text{.}\)</p></li>
+<li id="li-137"><p id="p-454">Un ensemble \(\{(a,f(a))~|~a\in A \}\text{.}\)</p></li>
 </ol></article><article class="exercise exercise-like" id="exercise-50"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <div class="introduction" id="introduction-44">
 <p id="p-455">Pour chacune des fonctions suivantes, déterminer</p>
