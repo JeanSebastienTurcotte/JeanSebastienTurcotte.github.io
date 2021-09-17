@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-09-17T16:45:54Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
+<p>Dans la section précédente, on a utilisé une méthode similaire à l'étranglement pour convertir un nombre de la base décimale aux bases binaires et hexadécimale. On peut utiliser l'écriture sous forme quotient et reste pour trouver les chiffres de l'écriture dans la nouvelle base. On montre l'idée générale avec un exempe concret, qu'on pourra généraliser facilement par la suite. On considère l'écriture de \(187\) dans la base deux, établie à l'exemple <a class="xref" data-knowl="./knowl/ex-decimalebinaire.html" title="Exemple 3.1.5: De la base dix vers le binaire">3.1.5</a>. On suppose que l'écriture de \(187\) a \(n\) chiffres. On remarque que</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+187&amp;=d_n2^n+d_{n-1}2^{n-1}+\cdots d_12^1+d_02^0\\
+&amp;=2(d_n2^{n-1}+d_{n-1}2^{n-2}+\cdots d_12^0)+d_0\text{.}
+\end{align*}
+</div>
+<p class="continuation">Puisque \(q=d_n2^{n-1}+d_{n-2}2^{n-1}+\cdots d_12^0\in \mathbb{Z}\text{,}\) on voit que \(187=2q+d_0\) et donc, selon la proposition <a class="xref" data-knowl="./knowl/prop-divisioneuclidienne.html" title="Proposition 3.2.3: La division euclidienne">3.2.3</a>, le premier chiffre de l'écriture de \(187\) en binaire correspond au reste de la division de \(187\) par \(2\text{.}\) Ensuite pour trouver \(d_1\text{,}\) on répète avec le quotient \(q\text{.}\) Dans le cas de \(187\text{,}\) on a \(q=93\) et \(d=d_0=1\text{.}\) En continuant,</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+93&amp;=d_n2^{n-1}+d_{n-2}2^{n-1}+\cdots d_12^0\\
+&amp;=2(d_n2^{n-2}+d_{n-1}2^{n-3}+\cdots d_22^2)+d_1
+\end{align*}
+</div>
+<p class="continuation">, on peut trouver \(d_1=1\) et le prochain quotient égal à \(46\text{.}\) Avec cela, on obtient \(d_2=0\text{,}\) amenant le quotient suivant à \(23\text{.}\) On obtient \(d_3=1\) et le quotient suivant vaut \(11\text{.}\) On continue avec \(d_4=1\) pour un quotient de \(5\text{,}\) puis d_5=1 pour un quotient de \(2\text{,}\) \(d_6=0\) pour un quotient de \(1\) et finalement, \(d_7=1\) pour un quotient de \(0\text{.}\) On peut donc écrire \(187=10111011_2\text{.}\)</p>
+<span class="incontext"><a href="sec-divisibilite.html#p-1347">Contexte</a></span>
+</body>
+</html>

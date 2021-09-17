@@ -2,7 +2,7 @@
 <html lang="fr-CA">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-03T17:30:53Z       *-->
+<!--*       on 2021-09-17T16:45:47Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,18 +15,17 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraphe</span></h6>
-<p>On regarde maintenant la proposition</p>
+<p>Dans un premier temps, on considère la proposition</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-\forall x \forall y\, P(x,y)\text{.}
+\exists x  \, \forall y \, P(x,y)\text{.}
 \end{equation*}
 </div>
-<p class="continuation">En utilisant un procédé similaire, on obtient</p>
+<p class="continuation">On pose \(Q(x,y)\) la proposition \(\forall y P(x,y)\text{.}\) La proposition originale s'écrit donc comme \(\exists x \, Q(x,y)\text{.}\) Selon la négation d'une proposition quantifiée par un quantificateur existentiel, on a \(\neg(\exists x \, Q(x,y))\equiv \forall x \,\neg Q(x,y)\text{.}\) On peut ensuite calculer la négation de \(Q(x,y)\) en utilisant la règle pour la négation d'une proposition quantifiée par un quantificateur universel. On obtient \(\neg Q(x,y)=\neg(\forall y P(x,y))=\exists y \neg P(x,y)\text{.}\) Ainsi,</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-\neg(\forall x \forall y\, P(x,y))&amp;\equiv \exists x\, \neg(\forall y\, P(x,y))\\
-&amp;\equiv \exists x\, \exists y\,\neg P(x,y)\text{.}
-\end{align*}
+\begin{equation*}
+\neg (\exists x  \, \forall y \, P(x,y))\equiv \forall x\, \exists y\, \neg P(x,y)\text{.}
+\end{equation*}
 </div>
 <span class="incontext"><a href="sec-propquant.html#p-901">Contexte</a></span>
 </body>

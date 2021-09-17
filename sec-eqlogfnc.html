@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-03T17:30:37Z       *-->
+<!--*       on 2021-09-17T16:45:27Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -49,7 +49,8 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Évaluer (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
+<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Évaluer (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -109,6 +110,8 @@
 \DeclareMathOperator{\Arg}{Arg}
 \DeclareMathOperator{\vspan}{span}
 \DeclareMathOperator{\Det}{det}
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\ppcm}{ppcm}
 \renewcommand{\Re}{\operatorname{Re}}
 \newcommand{\CQFD}{\begin{flushright}   
 $\blacksquare$
@@ -153,8 +156,8 @@ $\Box$
 </li>
 <li class="link">
 <a href="chap-reptheonombres.html" data-scroll="chap-reptheonombres"><span class="codenumber">3</span> <span class="title">Représentation des nombres et arithmétique modulaire</span></a><ul>
-<li><a href="section-8.html" data-scroll="section-8">Problem with intertext</a></li>
-<li><a href="sec-representation.html" data-scroll="sec-representation">Représentation de nombres</a></li>
+<li><a href="sec-representation.html" data-scroll="sec-representation">Représentation des nombres</a></li>
+<li><a href="sec-divisibilite.html" data-scroll="sec-divisibilite">La divisibilité dans les entiers</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -648,7 +651,7 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 </div></article></div>
 <p id="p-747">Pour obtenir la forme normale conjonctive à partir de la table de vérité, il faut travailler un peu plus fort. On utilise le fait que De Morgan transforme les \(\wedge\) en \(\vee\) et vice-versa par le biais de la négation. En prenant la forme disjonctive de la négation d'une proposition et en la niant à son tour, on obtiendra la forme conjonctive de la proposition originale.</p>
 <article class="example example-like" id="example-24"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-24"><h6 class="heading">
-<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Forme normale disjonctive à partir de la table de vérité.</span>
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Forme normale conjonctive à partir de la table de vérité.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-748">On reprend la proposition \(\neg (p\vee q)\vee (r\wedge \neg q)\text{,}\) dont une forme normale disjonctive a été trouvée à l'exemple <a class="xref" data-knowl="./knowl/ex-fnprop.html" title="Exemple 2.2.9: Transformer des propositions sous formes normales">2.2.9</a>. La table de vérité de cette proposition est donnée ci-dessous.</p>
 <figure class="table table-like" id="table-13"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.13<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(\neg (p\vee q)\vee (r\wedge \neg q)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -767,13 +770,14 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 <li id="li-198"><p id="p-755">La notion de <a class="xref" data-knowl="./knowl/def-propequivalentes.html" title="Définition 2.2.2: Propositions équivalentes">propositions équivalentes</a>;</p></li>
 <li id="li-199"><p id="p-756">Les différentes <a class="xref" data-knowl="./knowl/li-oplogprop.html" title="Liste 2.2.5: Équivalences logiques de base">équivalences logiques</a> de base et leurs liens avec les <a class="xref" data-knowl="./knowl/li-opensprop.html" title="Liste 1.2.13: Propriétés des opérations sur les ensembles">propriétés</a> des opérations sur les ensembles;</p></li>
 <li id="li-200"><p id="p-757">La forme <a class="xref" data-knowl="./knowl/ex-implicationsansfleche.html" title="Exemple 2.2.8: L'implication, sans flèche">sans flèche</a> de l'implication;</p></li>
-<li id="li-201"><p id="p-758">Les formes noramles disjonctive et conjonctive et comment les obtenirs à partir de la table de vérité.</p></li>
+<li id="li-201"><p id="p-758">Les formes normales disjonctive et conjonctive et comment les obtenirs à partir de la table de vérité.</p></li>
 </ul></section><section class="reading-questions" id="rq-eqlogfnc"><h3 class="heading hide-type">
 <span class="type">Questions de compréhension de la lecture</span> <span class="codenumber">2.2.3</span> <span class="title">Questions de compréhension de la lecture</span>
 </h3>
 <section class="introduction" id="introduction-77"><p id="p-759">Ces questions sont à faire avant de venir en classe et à remettre au début du cours.</p></section><article class="exercise exercise-like" id="exercise-86"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-760">Utiliser des tables de vérité pour démontrer les <a class="xref" data-knowl="./knowl/li-oplogabs.html" title="Point 2.2.5:5">propriétés d'absorption</a>.</p></article><article class="exercise exercise-like" id="exercise-87"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
 <p id="p-761">Montrer que \(\neg(p\oplus q)\) est logiquement équivalent à \(p\leftrightarrow q\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-88"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-762">Montrer que \((\neg p \wedge q)\wedge (p\vee \neg q)\) est une contradiction.</p></article><article class="exercise exercise-like" id="exercise-89"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <p id="p-763">Déterminer si \(p\rightarrow (q\vee r)\) est équivalent à \((p\rightarrow q)\vee (p\rightarrow r)\text{,}\) à savoir si l'implication se distribue sur la disjonction.</p></article><article class="exercise exercise-like" id="exercise-90"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-764">Soit \(p,q,r\) des variables propositionnelles. Donner une proposition moléculaire formée à partir de \(p,q,r\) qui est vraie quand exactement deux variables sont vraies et fausse dans les autres cas.</p>
 <div class="solutions">
@@ -798,20 +802,21 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 <div class="introduction" id="introduction-80"><p id="p-774">Démontrer les équivalences suivantes sans utiliser de table de vérité.</p></div>
 <article class="task exercise-like" id="task-219"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-775">\(\neg(p\vee(\neg p\wedge q))\equiv \neg(p\vee q)\)</p></article><article class="task exercise-like" id="task-220"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-776">\((p\rightarrow \neg q)\wedge (p\rightarrow \neg r)\equiv \neg( p\wedge(q\vee r))\)</p></article></article><article class="exercise exercise-like" id="exercise-96"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-777">Batman a capturé le Sphynx et lui demande d'avouer ses plus récents crimes. Le sphynx étant ce qu'il est, il propose au chevalier noir l'énigme suivante. Il lui dit: <blockquote class="blockquote" id="blockquote-1">J'ai capturé la fille du commissaire Gordon ou posé la bombe dans la banque de Gotham. De plus si j'ai piraté les archives du palais de justice, alors j'ai donné un pot-de-vin à un procureur. Par contre je n'ai pas donné de pot-de-vin ni incendié l'hôpital.</blockquote></p>
-<p id="p-778">Connaissant bien le Sphynx, Batman sait que tout ce qu'il vient d'affirmer est faux. Il réussit à déterminer les deux crimes commis par le Sphynx. Que sont-ils?</p></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-779">Donner une forme normale disjonctive et une forme normale conjonctive de \(p\oplus q\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-98"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
-<p id="p-780">Transformer l'expression \((\neg p \wedge q) \vee \neg (\neg r \vee \neg q)\) en  forme normale disjonctive en utilisant une table de vérité.</p></article><article class="exercise exercise-like" id="exercise-99"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<p id="p-781">Transformer l'expression \((\neg p \wedge q) \vee \neg (\neg r \vee \neg q)\) en  forme normale conjonctive en utilisant une table de vérité.</p></article><article class="exercise exercise-like" id="exercise-100"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-81"><p id="p-782">Donner une forme normale disjonctive et une forme normale conjonctive des propositions suivantes.</p></div>
+<p id="p-776">\((p\rightarrow \neg q)\wedge (p\rightarrow \neg r)\equiv \neg( p\wedge(q\vee r))\)</p></article></article><article class="exercise exercise-like" id="exo-negationxor"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-777">Montrer que \(\neg (p\oplus q)\equiv \neg p\oplus q\equiv p\oplus \neg q\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-97"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-778">Batman a capturé le Sphynx et lui demande d'avouer ses plus récents crimes. Le sphynx étant ce qu'il est, il propose au chevalier noir l'énigme suivante. Il lui dit: <blockquote class="blockquote" id="blockquote-1">J'ai capturé la fille du commissaire Gordon ou posé la bombe dans la banque de Gotham. De plus si j'ai piraté les archives du palais de justice, alors j'ai donné un pot-de-vin à un procureur. Par contre je n'ai pas donné de pot-de-vin ni incendié l'hôpital.</blockquote></p>
+<p id="p-779">Connaissant bien le Sphynx, Batman sait que tout ce qu'il vient d'affirmer est faux. Il réussit à déterminer les deux crimes commis par le Sphynx. Que sont-ils?</p></article><article class="exercise exercise-like" id="exercise-98"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-780">Donner une forme normale disjonctive et une forme normale conjonctive de \(p\oplus q\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-99"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-781">Transformer l'expression \((\neg p \wedge q) \vee \neg (\neg r \vee \neg q)\) en  forme normale disjonctive en utilisant une table de vérité.</p></article><article class="exercise exercise-like" id="exercise-100"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-782">Transformer l'expression \((\neg p \wedge q) \vee \neg (\neg r \vee \neg q)\) en  forme normale conjonctive en utilisant une table de vérité.</p></article><article class="exercise exercise-like" id="exercise-101"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-81"><p id="p-783">Donner une forme normale disjonctive et une forme normale conjonctive des propositions suivantes.</p></div>
 <article class="task exercise-like" id="task-221"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-783">\((p\vee q)\rightarrow(p\oplus q)\)</p></article><article class="task exercise-like" id="task-222"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-784">\((p\vee q)\rightarrow(\neg p\wedge r)\)</p></article><article class="task exercise-like" id="task-223"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-785">\((p\leftrightarrow q)\oplus(\neg p\leftrightarrow q)\)</p></article></article><article class="exercise exercise-like" id="exercise-101"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-82"><p id="p-786">Donner une proposition sous forme normale disjonctive qui possède la table de vérité suivante.</p></div>
+<p id="p-784">\((p\vee q)\rightarrow(p\oplus q)\)</p></article><article class="task exercise-like" id="task-222"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-785">\((p\vee q)\rightarrow(\neg p\wedge r)\)</p></article><article class="task exercise-like" id="task-223"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-786">\((p\leftrightarrow q)\oplus(\neg p\leftrightarrow q)\)</p></article></article><article class="exercise exercise-like" id="exercise-102"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-82"><p id="p-787">Donner une proposition sous forme normale disjonctive qui possède la table de vérité suivante.</p></div>
 <article class="task exercise-like" id="task-224"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-787"><figure class="table table-like" id="table-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.14<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q,r)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<p id="p-788"><figure class="table table-like" id="table-14"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.14<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q,r)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t3 lines">\(p\)</td>
 <td class="l m b0 r0 l0 t3 lines">\(q\)</td>
@@ -867,7 +872,7 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 <td class="l m b3 r0 l0 t0 lines">V</td>
 </tr>
 </table></div></figure></p></article><article class="task exercise-like" id="task-225"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-788"><figure class="table table-like" id="table-15"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.15<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<p id="p-789"><figure class="table table-like" id="table-15"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.15<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t3 lines">\(p\)</td>
 <td class="l m b0 r2 l0 t3 lines">\(q\)</td>
@@ -899,17 +904,17 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 <div class="exercisegroup" id="exercisegroup-11">
 <h6 class="heading"><span class="title">Exercices supplémentaires</span></h6>
 <div class="exercisegroup-exercises">
-<article class="exercise exercise-like" id="exercise-102"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-789">Utiliser les autres <a class="xref" data-knowl="./knowl/li-oplogprop.html" title="Liste 2.2.5: Équivalences logiques de base">équivalences</a> de la logique pour démontrer les <a class="xref" data-knowl="./knowl/li-oplogabs.html" title="Point 2.2.5:5">propriétés d'absorption</a>.</p></article><article class="exercise exercise-like" id="exercise-103"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-83"><p id="p-790">Utiliser les lois de De Morgan pour donner la négation des propositions suivantes.</p></div>
+<article class="exercise exercise-like" id="exercise-103"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-790">Utiliser les autres <a class="xref" data-knowl="./knowl/li-oplogprop.html" title="Liste 2.2.5: Équivalences logiques de base">équivalences</a> de la logique pour démontrer les <a class="xref" data-knowl="./knowl/li-oplogabs.html" title="Point 2.2.5:5">propriétés d'absorption</a>.</p></article><article class="exercise exercise-like" id="exercise-104"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-83"><p id="p-791">Utiliser les lois de De Morgan pour donner la négation des propositions suivantes.</p></div>
 <article class="task exercise-like" id="task-226"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-791">Alex est en sciences de la nature et Omar est en sciences informatiques et mathématiques.</p></article><article class="task exercise-like" id="task-227"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-792">L'autobus est en retard ou ma montre est en avance.</p></article><article class="task exercise-like" id="task-228"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-793">Une année est bissextile si elle est divisible par \(4\) mais pas par \(100\text{,}\) ou si elle est divisible par \(400\text{.}\)</p></article><article class="task exercise-like" id="task-229"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-794">J'ai trois enfants et un chien, ou j'ai un chat ou une fille.</p></article></article><article class="exercise exercise-like" id="exercise-104"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-84"><p id="p-795">Donner une proposition sous forme normale disjonctive qui possède la table de vérité suivante.</p></div>
+<p id="p-792">Alex est en sciences de la nature et Omar est en sciences informatiques et mathématiques.</p></article><article class="task exercise-like" id="task-227"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-793">L'autobus est en retard ou ma montre est en avance.</p></article><article class="task exercise-like" id="task-228"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-794">Une année est bissextile si elle est divisible par \(4\) mais pas par \(100\text{,}\) ou si elle est divisible par \(400\text{.}\)</p></article><article class="task exercise-like" id="task-229"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-795">J'ai trois enfants et un chien, ou j'ai un chat ou une fille.</p></article></article><article class="exercise exercise-like" id="exercise-105"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-84"><p id="p-796">Donner une proposition sous forme normale disjonctive qui possède la table de vérité suivante.</p></div>
 <article class="task exercise-like" id="task-230"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-796"><figure class="table table-like" id="table-16"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.16<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<p id="p-797"><figure class="table table-like" id="table-16"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.16<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t3 lines">\(p\)</td>
 <td class="l m b0 r2 l0 t3 lines">\(q\)</td>
@@ -936,7 +941,7 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 <td class="l m b3 r0 l0 t0 lines">V</td>
 </tr>
 </table></div></figure></p></article><article class="task exercise-like" id="task-231"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-797"><figure class="table table-like" id="table-17"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.17<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q,r)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<p id="p-798"><figure class="table table-like" id="table-17"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.17<span class="period">.</span></span><span class="space"> </span>Table de vérité de \(f(p,q,r)\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t3 lines">\(p\)</td>
 <td class="l m b0 r0 l0 t3 lines">\(q\)</td>
@@ -992,10 +997,10 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 <td class="l m b3 r0 l0 t0 lines">F</td>
 </tr>
 </table></div></figure></p></article></article><article class="exercise exercise-like" id="exo-Sheffer"><h6 class="heading">
-<span class="codenumber">13<span class="period">.</span></span><span class="space"> </span><span class="title">La barre de Sheffer.</span>
+<span class="codenumber">14<span class="period">.</span></span><span class="space"> </span><span class="title">La barre de Sheffer.</span>
 </h6>
 <div class="introduction" id="introduction-85">
-<p id="p-798">On a vu qu'on pouvait réduire le nombre d'opérateurs nécessaires pour décrire des propositions à trois, en utilisant la conjonction, la disjonction et la négation. Pour cela, on a pu réécrire les implications simple et double et le ou exclusif avec ces trois opérateurs. Il existe un opérateur particulier qui possède la propriété que tous les autres opérateurs peuvent s'écrire uniquement avec cet opérateur. On l'appelle la barre de Sheffer, définie comme suit:</p>
+<p id="p-799">On a vu qu'on pouvait réduire le nombre d'opérateurs nécessaires pour décrire des propositions à trois, en utilisant la conjonction, la disjonction et la négation. Pour cela, on a pu réécrire les implications simple et double et le ou exclusif avec ces trois opérateurs. Il existe un opérateur particulier qui possède la propriété que tous les autres opérateurs peuvent s'écrire uniquement avec cet opérateur. On l'appelle la barre de Sheffer, définie comme suit:</p>
 <figure class="table table-like" id="tab-Sheffer"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">2.2.18<span class="period">.</span></span><span class="space"> </span>Table de vérité de la barre de Sheffer</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t3 lines">\(p\)</td>
@@ -1025,20 +1030,21 @@ p\rightarrow q&amp;\equiv\neg \neg (p\rightarrow q) \\
 </table></div></figure>
 </div>
 <article class="task exercise-like" id="task-232"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-799">En utilisant des tables de vérité, montrer que</p>
+<p id="p-800">En utilisant des tables de vérité, montrer que</p>
 <div class="displaymath">
 \begin{equation*}
 p\uparrow q\equiv \neg(p\wedge q)\text{.}
 \end{equation*}
 </div>
-<p id="p-800">On appelle souvent la barre de Sheffer le “NAND” en informatique, car c'est la négation (N) du et (AND).</p></article><article class="task exercise-like" id="task-233"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-801">Montrer que \(\neg p\equiv p\uparrow p\text{.}\)</p></article><article class="task exercise-like" id="task-234"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-802">Montrer que \(p\wedge q\equiv (p\uparrow q)\uparrow(p\uparrow q)\text{.}\)</p></article><article class="task exercise-like" id="task-235"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-803">Montrer que \(p\vee q\equiv (p\uparrow p)\uparrow(q\uparrow q)\text{.}\)</p></article><article class="task exercise-like" id="task-236"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-804">Montrer que \(p\rightarrow q\equiv p\uparrow(q\uparrow q)\text{.}\)</p></article></article><article class="exercise exercise-like" id="exercise-106"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
-<p id="p-805">Démontrer à nouveau les équivalences de l'exercice <a class="xref" data-knowl="./knowl/exo-Sheffer.html" title="Exercice 2.2.4.13: La barre de Sheffer">2.2.4.13</a> en utilisant la définition de la barre de Sheffer et les propriétés des opérateurs logiques.</p></article>
+<p id="p-801">On appelle souvent la barre de Sheffer le “NAND” en informatique, car c'est la négation (N) du et (AND).</p></article><article class="task exercise-like" id="task-233"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-802">Montrer que \(\neg p\equiv p\uparrow p\text{.}\)</p></article><article class="task exercise-like" id="task-234"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-803">Montrer que \(p\wedge q\equiv (p\uparrow q)\uparrow(p\uparrow q)\text{.}\)</p></article><article class="task exercise-like" id="task-235"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-804">Montrer que \(p\vee q\equiv (p\uparrow p)\uparrow(q\uparrow q)\text{.}\)</p></article><article class="task exercise-like" id="task-236"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-805">Montrer que \(p\rightarrow q\equiv p\uparrow(q\uparrow q)\text{.}\)</p></article></article><article class="exercise exercise-like" id="exercise-107"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-806">Démontrer à nouveau les équivalences de l'exercice <a class="xref" data-knowl="./knowl/exo-Sheffer.html" title="Exercice 2.2.4.14: La barre de Sheffer">2.2.4.14</a> en utilisant la définition de la barre de Sheffer et les propriétés des opérateurs logiques.</p></article>
 </div>
 </div></section></section></div></main>
 </div>
+<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </body>
 </html>
