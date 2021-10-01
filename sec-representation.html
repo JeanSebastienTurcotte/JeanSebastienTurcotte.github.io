@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-09-17T16:45:32Z       *-->
+<!--*       on 2021-10-01T19:35:34Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -166,6 +166,7 @@ $\Box$
 <a href="chap-reptheonombres.html" data-scroll="chap-reptheonombres"><span class="codenumber">3</span> <span class="title">Représentation des nombres et arithmétique modulaire</span></a><ul>
 <li><a href="sec-representation.html" data-scroll="sec-representation" class="active">Représentation des nombres</a></li>
 <li><a href="sec-divisibilite.html" data-scroll="sec-divisibilite">La divisibilité dans les entiers</a></li>
+<li><a href="sec-modulo.html" data-scroll="sec-modulo">Arithmétique modulaire</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
@@ -191,7 +192,7 @@ $\Box$
 <span class="type">Sous-section</span> <span class="codenumber">3.1.1</span> <span class="title">Systèmes positionnels</span>
 </h3>
 <p id="p-1103">La représentation d'un nombre peut se faire de plusieurs manières. Une manière brute et assez inefficace consiste par exemple à faire un trait pour chaque unité. Ce système devient vite encombrant et il est difficile de rapidement lire un nombre. D'autres systèmes un peu mieux ont été inventés par différentes civilisation au cours de l'histoire.  Un système dans lequel nombre peut s'écrire sous une forme ressemblant à l'équation <a class="xref" data-knowl="./knowl/eq-basedix.html" title="Équation 3.1">(3.1)</a> de introduction est appelé un système positionnel. Ces systèmes sont normalement construits selon une base entière \(b&gt;1\text{,}\) dans le cas de l'introduction, c'est dix, et d'un ensemble de symboles en nombre égal à la base. On peut utiliser une base différente, par exemple quatre avec les symboles \(0,1,2,3\text{,}\) pour représenter n'importe quel nombre.</p>
-<p id="p-1104">Chaque position correspond à une puissance de la base, puissance croissante lorsqu'on lit le nombre de droite à gauche. Ainsi le nombre à droite correspond aux unités, le deuxième nombre correspond à un multiple de \(b\text{,}\) le troisième aux multiples de \(b^2\) et ainsi de suite. Afin de distinguer du cas usuel, lorsque la base sera différente de dix, on l'indiquera en indice. Cet indice sera toujours sous-entendu comme étant écrit en base dix.</p>
+<p id="p-1104">Chaque position correspond à une puissance de la base, puissance croissante lorsqu'on lit le nombre de droite à gauche. Ainsi le nombre à droite correspond aux unités, le deuxième nombre correspond à un multiple de \(b\text{,}\) le troisième au multiple de \(b^2\) et ainsi de suite. Afin de distinguer du cas usuel, lorsque la base sera différente de dix, on l'indiquera en indice. Cet indice sera toujours sous-entendu comme étant écrit en base dix.</p>
 <article class="example example-like" id="example-34"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-34"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Des exemples en base quatre.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-34"><article class="example example-like"><p id="p-1105">On considère les nombres suivants, écrits en base quatre:</p>
@@ -209,7 +210,7 @@ $\Box$
 <p id="p-1111">On a donc</p>
 <div class="displaymath">
 \begin{equation*}
-123_4=1\times 4^2+2\times 4^1 2+3\times 4^0=16+8+3=27\text{.}
+123_4=1\times 4^2+2\times 4^1 +3\times 4^0=16+8+3=27\text{.}
 \end{equation*}
 </div>
 </li>
@@ -217,7 +218,7 @@ $\Box$
 <p id="p-1112">De plus,</p>
 <div class="displaymath">
 \begin{equation*}
-102030_4=1\times 4^6 + 0\times 4^5 + 2\times 4^4 + 0\times 4^3 + 3\times 4^2 + 0\times 4^1=4656 \text{.}
+102030_4=1\times 4^5 + 0\times 4^4 + 2\times 4^3 + 0\times 4^2 + 3\times 4^1 + 0\times 4^0=1164 \text{.}
 \end{equation*}
 </div>
 </li>
@@ -237,7 +238,7 @@ $\Box$
 <iframe id="geog-repbase" width="840" height="840" src="geog-repbase-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>Les nombres de \(0\) à \(30\) dans différentes bases</figcaption></figure></section><section class="subsection" id="subsection-22"><h3 class="heading hide-type">
 <span class="type">Sous-section</span> <span class="codenumber">3.1.2</span> <span class="title">Représentation en base deux</span>
 </h3>
-<p id="p-1116">Autre que la base dix, la base deux, ou représentation binaire est probablement la plus utilisée. Une des raisons est que les signaux envoyées par les pièces électroniques se trouvent en deux états, tel que mentionné dans la section <a href="sec-circuits.html" class="internal" title="Section 2.4: Circuits logiques">2.4</a>. La représentation binaire utilise les puissances de deux et l'ensemble de chiffres \(\{0,1\}\) pour représenter les nombres. Tout nombre entier peut être représenté comme une somme de termes \(d\times 2^n\) où \(d\in \{0,1\}\) et \(n\in \N\text{.}\) Les nombres de \(1\) à \(30\) peuvent être visualisés dans la figure interactive <a class="xref" data-knowl="./knowl/fig-repbase.html" title="Figure 3.1.2">3.1.2</a> en mettant la valeur de \(b=2\text{.}\)</p>
+<p id="p-1116">Autre que la base dix, la base deux, ou représentation binaire est probablement la plus utilisée. Une des raisons est que les signaux envoyées par les pièces électroniques se trouvent en deux états, tel que mentionné dans la section <a href="sec-circuits.html" class="internal" title="Section 2.4: Circuits logiques">2.4</a>. La représentation binaire utilise les puissances de deux et l'ensemble de chiffres \(\{0,1\}\) pour représenter les nombres. Tout nombre entier peut être représenté comme une somme de termes \(d\times 2^n\) où \(d\in \{0,1\}\) et \(n\in \N\text{.}\) Les nombres de \(0\) à \(30\) peuvent être visualisés dans la figure interactive <a class="xref" data-knowl="./knowl/fig-repbase.html" title="Figure 3.1.2">3.1.2</a> en mettant la valeur de \(b=2\text{.}\)</p>
 <p id="p-1117">La conversion d'un nombre d'une base à l'autre dépend des bases utilisées. Lorsque la base dix est impliquée, le processus est plus naturel. On peut comparer la conversion à la traduction entre deux langues. Traduire un mot d'une langue proche de la sienne, mais inconnue, est souvent un peu plus simple que de prendre un mot de sa langue et le traduire dans la langue inconnue. C'est un peu le même principe pour la conversion entre une base \(b\) et la base dix. De la base \(b\) vers dix est un peu plus simple que de la base dix vers la base \(b\text{.}\) Pour le binaire, connaitre les premières puissances de deux peut-être pratique. Les \(13\) premières sont données dans la table <a class="xref" data-knowl="./knowl/tab-puissances2.html" title="Table 3.1.3: Les premières puissances de \(2\)">3.1.3</a>.</p>
 <figure class="table table-like" id="tab-puissances2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>Les premières puissances de \(2\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -311,7 +312,7 @@ $\Box$
 <p id="p-1127">On réécrit avec les puissances de deux</p>
 <div class="displaymath">
 \begin{equation*}
-100100100_2_2= 1\times 256+ 0\times 128+ 0\times 64+1\times 32+0\times 16+0\times 8+1\times 4+0\times 2+0\times 1=292\text{.}
+100100100_2= 1\times 256+ 0\times 128+ 0\times 64+1\times 32+0\times 16+0\times 8+1\times 4+0\times 2+0\times 1=292\text{.}
 \end{equation*}
 </div>
 </li>
@@ -351,7 +352,7 @@ $\Box$
 37-2^5&amp;=d_{4}2^{4}+d_{3}2^{3}+d_{2}2^{2} + d_12^1+d_02^0\\
 5&amp;=d_{4}2^{4}+d_{3}2^{3}+d_{2}2^{2} + d_12^1+d_02^0\\
 \end{align*}
-<p class="intertext">La plus grande puissance qui est plus petite que 5 est 4. Les autres puissances sont multipliées par zéro.</p>
+<p class="intertext">La plus grande puissance qui est plus petite que 5 est 4. Les puissances précédente qui ne sont pas utilisées sont multipliées par zéro.</p>
 \begin{align*}
 5&amp;=0\times 2^{4}+0\times 2^{3}+2^{2} + d_12^1+d_02^0\\
 5-2^2&amp;=d_1 2^1+d_02^0\\
@@ -394,10 +395,10 @@ $\Box$
 <p id="p-1135">En plus des nombres naturels, on peut aussi représenter les nombres négatifs ou même réels en d'autre base. Pour un nombre négatif, on se contentera de convertir le nombre en valeur absolue en binaire et d'ajouter un signe \(-\) devant. Pour un ordinateur toutefois, la réalité est un peu plus complexe. Pour les nombres décimaux, on peut procéder d'une manière similaire à celles utilisées pour convertir d'une base à l'autre. Si on considère un nombre à virgule écrit en binaire (dont la partie entière sera \(0\text{,}\) pour simplifier), par exemple \(0.1011001\text{,}\) alors il suffit de poursuivre l'écriture en puissance avec des nombres négatifs:</p>
 <div class="displaymath">
 \begin{equation*}
-02^0+d_{-1}2^{-1}+d_{-2}2^{-2}+\cdots +d_{-m}2^{-m}\text{.}
+0\times 2^0+d_{-1}2^{-1}+d_{-2}2^{-2}+\cdots +d_{-m}2^{-m}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">À noter toutefois que, comme dans le cas des nombres décimaux, il est possible que la partie fractionnaire soit infinie, périodique ou non. On se contentera pour l'instant de cas où la représentation sera finie.</p>
+<p class="continuation">À noter toutefois que, comme dans le cas des nombres décimaux, il est possible que la partie fractionnaire soit infinie, périodique ou non. On se contentera de cas où la représentation sera finie.</p>
 <article class="example example-like" id="example-37"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-37"><h6 class="heading">
 <span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">D'une représentation binaire fractionnaire à décimale.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-37"><article class="example example-like"><p id="p-1136">On considère le nombre \(0.1011_2\) et on cherche sa conversion en base dix.</p>
@@ -411,7 +412,7 @@ $\Box$
 </div>
 </div></div>
 </div></article></div>
-<p id="p-1138">Il est possible qu'un nombre ayant une représentation décimale finie possède une représentation binaire infinie, il faut donc bien choisir les exemples pour éviter que cela arrive. Dans la prochaine section, on verra comment convertir un nombre décimal qui devient à représentation infinie. La table suivante pourra être utile.</p>
+<p id="p-1138">Il est possible qu'un nombre ayant une représentation décimale finie possède une représentation binaire infinie, il faut donc bien choisir les exemples pour éviter que cela arrive. Dans la prochaine section, on verra comment convertir un nombre décimal qui devient à représentation infinie périodique. La table suivante pourra être utile.</p>
 <figure class="table table-like" id="table-24"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t3 lines">Puissance de \(2\)</td>
@@ -975,14 +976,14 @@ S&amp;\equiv(\neg A\wedge \neg B\wedge P)\vee (\neg A \wedge B \wedge\neg P)\vee
 <p id="p-1203">Qu'ont de particulier les nombres binaires qui se terminent par \(0\text{?}\)</p></article><article class="exercise exercise-like" id="exercise-143"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
 <div class="introduction" id="introduction-111"><p id="p-1204">Convertir les nombres suivants en base dix.</p></div>
 <article class="task exercise-like" id="task-318"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1205">1010111_2</p></article><article class="task exercise-like" id="task-319"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1206">101010_2</p></article><article class="task exercise-like" id="task-320"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1207">1111111_2</p></article><article class="task exercise-like" id="task-321"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1208">1010111_2</p></article><article class="task exercise-like" id="task-322"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1209">ABCDEF_{16}</p></article><article class="task exercise-like" id="task-323"><h6 class="heading"><span class="codenumber">(f)</span></h6>
-<p id="p-1210">123456_{16}</p></article><article class="task exercise-like" id="task-324"><h6 class="heading"><span class="codenumber">(g)</span></h6>
-<p id="p-1211">1A2B3C_{16}</p></article><article class="task exercise-like" id="task-325"><h6 class="heading"><span class="codenumber">(h)</span></h6>
-<p id="p-1212">A1B2C3_{16}</p></article></article><article class="exercise exercise-like" id="exercise-144"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-1205">\(1010111_2\)</p></article><article class="task exercise-like" id="task-319"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1206">\(101010_2\)</p></article><article class="task exercise-like" id="task-320"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1207">\(1111111_2\)</p></article><article class="task exercise-like" id="task-321"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1208">\(1010111_2\)</p></article><article class="task exercise-like" id="task-322"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1209">\(ABCDEF_{16}\)</p></article><article class="task exercise-like" id="task-323"><h6 class="heading"><span class="codenumber">(f)</span></h6>
+<p id="p-1210">\(123456_{16}\)</p></article><article class="task exercise-like" id="task-324"><h6 class="heading"><span class="codenumber">(g)</span></h6>
+<p id="p-1211">\(1A2B3C_{16}\)</p></article><article class="task exercise-like" id="task-325"><h6 class="heading"><span class="codenumber">(h)</span></h6>
+<p id="p-1212">\(A1B2C3_{16}\)</p></article></article><article class="exercise exercise-like" id="exercise-144"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
 <p id="p-1213">Noter toute question qui demeure suite à la lecture de la section et la résolution des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article></article><article class="subexercises" id="subexercises-5"><h6 class="heading"><span class="title">Exercices à remettre avant le cours B</span></h6>
 <article class="exercise exercise-like" id="exercise-145"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <div class="introduction" id="introduction-112"><p id="p-1214">Effectuer les additions suivantes.</p></div>

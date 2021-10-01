@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-10-01T19:35:37Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="fr-CA">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>MaDIR Arithmétique modulaire</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Évaluer (Sage)'});
+});
+</script><link href="https://unpkg.com/prismjs@v1.22.0/themes/prism.css" rel="stylesheet">
+<script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Évaluer (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_green_plum.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Sauter au contenu</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\require{cancel}        
+\newcommand{\Z}{\mathbb{Z}}                
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Prob}[1]{\mathbb{P}\left(#1\right)}
+\newcommand{\Probc}[2]{\mathbb{P}\left(#1~\left|\right .~#2\right)}
+\newcommand{\E}[1]{\mathbb{E}\left(#1\right)}
+\newcommand{\Ec}[2]{\mathbb{E}\left(#1~\left|\right .~#2\right)}
+\newcommand{\indicator}[1]{1{\hskip -2.5 pt}\hbox{I}_{\left\{ {#1} \right\} }}
+\newcommand{\pfrac}[2]{\left(\frac{#1}{#2}\right)}
+\newcommand{\RH}{\overset{\text{\scalebox{0.8}{ R.H.}}}{=}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\vecl}[1]{\overrightarrow{#1}}
+\newcommand{\vecd}[2]{\begin{pmatrix}#1 \\ #2\end{pmatrix}}
+\newcommand{\vecddd}[3]{\begin{pmatrix}#1 \\ #2 \\ #3\end{pmatrix}}
+\newcommand{\pscal}[2]{\vecl{#1}\cdot \vecl{#2}}
+\newcommand{\matcold}[4]{\begin{pmatrix}#1 &amp; #3 \\ #2 &amp; #4\end{pmatrix}}
+\newcommand{\matcolt}[9]{\begin{pmatrix}#1 &amp; #4 &amp; #7 \\ #2 &amp; #5 &amp; #8 \\ #3 &amp; #6 &amp; #9\end{pmatrix}}
+\newcommand{\matsimile}[2]{\overset{\scriptsize L_{#1}\leftrightarrow L_{#2}}{\sim}}
+\newcommand{\matsimils}[2]{\overset{\scriptsize #2L_{#1}\rightarrow L_{#1}}{\sim}}
+\newcommand{\matsimilc}[3]{\overset{\scriptsize #2L_{#1}+L_{#3}\rightarrow L_{#3}}{\sim}}
+\newcommand{\matII}{\begin{pmatrix} 1&amp; 0 \\  0 &amp; 1\end{pmatrix}}
+\newcommand{\matIII}{\begin{pmatrix} 1&amp; 0 &amp; 0\\  0 &amp; 1 &amp; 0 \\ 0&amp; 0&amp; 1\end{pmatrix}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\sech}{sech}
+\DeclareMathOperator{\csch}{csch}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\cis}{cis}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\Det}{det}
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\ppcm}{ppcm}
+\renewcommand{\Re}{\operatorname{Re}}
+\newcommand{\CQFD}{\begin{flushright}   
+$\blacksquare$
+\end{flushright}}
+\newcommand{\cqfd}{\begin{flushright}
+$\Box$
+\end{flushright}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="madir.html"><span class="title">Mathématiques discrètes:</span> <span class="subtitle">Version préliminaire</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Table des matières</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-divisibilite.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><span id="nextbutton" class="next-button button toolbar-item disabled">Suivant</span></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Table des matières</button><a class="previous-button toolbar-item button" href="sec-divisibilite.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><span class="next-button button toolbar-item disabled">Suivant</span>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link">
+<a href="chap-ensfct.html" data-scroll="chap-ensfct"><span class="codenumber">1</span> <span class="title">Ensembles et fonctions</span></a><ul>
+<li><a href="sec-ens.html" data-scroll="sec-ens">Les ensembles</a></li>
+<li><a href="sec-opens.html" data-scroll="sec-opens">Opérations sur les ensembles</a></li>
+<li><a href="sec-fonctions.html" data-scroll="sec-fonctions">Les fonctions</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-logique.html" data-scroll="chap-logique"><span class="codenumber">2</span> <span class="title">Logique mathématique</span></a><ul>
+<li><a href="sec-logprop.html" data-scroll="sec-logprop">La logique propositionnelle</a></li>
+<li><a href="sec-eqlogfnc.html" data-scroll="sec-eqlogfnc">Équivalence logique et formes normales</a></li>
+<li><a href="sec-propquant.html" data-scroll="sec-propquant">Les propositions quantifiées</a></li>
+<li><a href="sec-circuits.html" data-scroll="sec-circuits">Circuits logiques</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="chap-reptheonombres.html" data-scroll="chap-reptheonombres"><span class="codenumber">3</span> <span class="title">Représentation des nombres et arithmétique modulaire</span></a><ul>
+<li><a href="sec-representation.html" data-scroll="sec-representation">Représentation des nombres</a></li>
+<li><a href="sec-divisibilite.html" data-scroll="sec-divisibilite">La divisibilité dans les entiers</a></li>
+<li><a href="sec-modulo.html" data-scroll="sec-modulo" class="active">Arithmétique modulaire</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="sec-modulo"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Arithmétique modulaire</span>
+</h2>
+<section class="introduction" id="intro-modulo"><p id="p-1433">Au moment d'écrire ces lignes, il est 16:00. Quelle heure sera-t-il dans \(2\) heures? Bien sûr, la réponse est \(18:00\text{.}\) Si la question avait pourtant été quelle heure sera-t-il dans \(20\) heures, la réponse n'aurait pourtant pas été \(36:00\text{,}\) mais plutôt \(12:00\text{.}\) Cet exemple représente un classique de la notion d'arithmétique modulaire. On utilise l'arithmétique modulaire dans des contextes où un aspect cyclique est présent, pour effectuer certaines formes de vérification et en cryptographie.</p>
+<p id="p-1434">Dans cette section, on définit la relation de congruence modulo \(n\) et on explique les règles de calculs de l'arithmétique modulaire. On présente aussi une introduction à la cryptographie.</p></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.3.1</span> <span class="title">Congruence modulo \(n\)</span>
+</h3>
+<p id="p-1435">Lorsqu'on effectue la division d'un entier par \(2\text{,}\) les restes possibles de la forme quotient reste sont \(0\) ou \(1\text{.}\) Pour une division par \(3\text{,}\) les restes sont limités à l'ensemble \(\{0,1,2\}\text{.}\) De manière générale, le reste de la division d'un entier par \(n&gt;0\) est un élément de \(\{0,1,\ldots, n-1\}\text{.}\) Lorsqu'on parle de la division par un entier spécifique \(n\text{,}\) il est souvent utile d'associer les entiers à leur reste de la division par \(n\text{.}\) On parle alors des classes d'équivalence modulo \(n\text{.}\)</p>
+<article class="definition definition-like" id="def-modulo"><h6 class="heading">
+<span class="type">Définition</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Congruence modulo \(n\).</span>
+</h6>
+<p id="p-1436">Soit \(a,b\in \mathbb{Z}\) des entiers et \(n&gt;0\) un autre entier positif. On dit que \(a\) est congru à \(b\) modulo \(n\) si \(a\) et \(b\) possède le même reste lors de la division par \(n\text{.}\) On peut alors écrire</p>
+<div class="displaymath">
+\begin{equation*}
+a\equiv b \mod n\text{.}
+\end{equation*}
+</div>
+<p id="p-1437">On dit alors que \(a\) et \(b\) sont dans la même classe d'équivalence modulo \(n\text{.}\) De manière générale, pour un entier \(0\leq r&lt; n\text{,}\) on définit la classe d'équivalence  à \(r\) modulo \(n\) par</p>
+<div class="displaymath">
+\begin{equation*}
+E_{r,n}=\{a\in \mathbb{Z}~ |~ a \text{ divisé par } n \text{ produit un reste de } r\}\text{.}
+\end{equation*}
+</div></article><p id="p-1438">Dans le cas des heures de la journée, on peut dire que \(36\) est dans la même classe d'équivalence que \(12\) modulo \(24\text{.}\) C'est pourquoi \(20\) heures après \(16:00\text{,}\) il est \(12:00\text{.}\) Les classes d'équivalence établissent un élément qui les représente et associe à tout autre entier équivalent cet élément.</p>
+<article class="example example-like" id="ex-modulo5"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-modulo5"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Les classes d'équivalence modulo \(5\text{.}\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-modulo5"><article class="example example-like"><p id="p-1439">On considère les entiers et la division par \(5\text{.}\) On cherche à décrire en extension les classes d'équivalence modulo \(5\text{,}\) à savoir les ensembles \(E_{r,5}\) de la définition <a class="xref" data-knowl="./knowl/def-modulo.html" title="Définition 3.3.1: Congruence modulo \(n\)">3.3.1</a>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-54" id="solution-54"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-54"><div class="solution solution-like">
+<p id="p-1440">Les restes de la division par \(5\) possibles sont \(\{0,1,2,3,4\}\text{.}\) À chacun de ces restes correspond une classe d'équivalence qui contient d'autres entiers. Par exemple,\(E_{0,5}\) contient tous les nombres qui produisent un reste de \(0\) lorsque divisé par \(5\text{.}\) Ce sont les multiples de \(5\text{:}\)</p>
+<div class="displaymath">
+\begin{equation*}
+E_{0,5}=\{\ldots, -10,-5,0,5,10,15,20,\ldots\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1441">Les nombres \(m\) dans \(E_{1,5}\) s'écrivent comme \(m=5q+1\text{.}\) Ce sont donc les nombres qui valent un de plus qu'un multiple de \(5\text{.}\) On aura alors</p>
+<div class="displaymath">
+\begin{equation*}
+E_{1,5}=\{\ldots, -9,-4,1,6,11,16,21,\ldots\}\text{.}
+\end{equation*}
+</div>
+<p id="p-1442">D'une manière analogue, on remarque que la classe d'équivalence \(E_{2,5}\) contient les nombres qui valent deux de plus qu'un multiple de \(5\text{,}\) \(E_{3,5}\) les nombres qui valent trois de plus qu'un multiple de \(5\) et finalement, les nombres qui valent quatre de plus qu'un multiple de \(5\) pour \(E_{4,5}\text{.}\) On a</p>
+<div class="displaymath">
+\begin{align*}
+E_{2,5}&amp;=\{\ldots, -8,-3,2,7,12,17,22,\ldots\}\\
+E_{3,5}&amp;=\{\ldots, -7,-2,3,8,13,18,23,\ldots\}\\
+E_{4,5}&amp;=\{\ldots, -6,-1,4,9,14,19,24,\ldots\}\text{.}
+\end{align*}
+</div>
+</div></div>
+</div></article></div>
+<p id="p-1443">En déterminant dans quelle classe d'équivalence un nombre se trouve, on peut obtenir l'information importante sous une forme plus standard, comme avec l'exemple de l'heure. Ceci est aussi vrai pour le mois, la journée<a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 7 </sup></a>, etc.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-7"><div class="fn">Le cas des journées est un peu plus complexe dû aux années bissextiles.</div></div>
+<article class="example example-like" id="ex-modulotemps"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-modulotemps"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Classes d'équivalence et moments.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-modulotemps"><article class="example example-like"><p id="p-1444">Au moment d'écrire ces lignes, la date est \(2021-09-17-14:40\) et c'est un vendredi. Que peut-on dire de</p>
+<ol class="decimal">
+<li id="li-337"><p id="p-1445">La journée de la semaine  \(18\) jours après l'écriture de ces lignes;</p></li>
+<li id="li-338"><p id="p-1446">Le mois de l'année  \(10\) mois après l'écriture de ces lignes;</p></li>
+<li id="li-339"><p id="p-1447">L'heure  \(75\) heures après l'écriture de ces lignes;</p></li>
+<li id="li-340"><p id="p-1448">Le jour de la semaine  \(2\) ans après l'écriture de ces lignes;</p></li>
+<li id="li-341"><p id="p-1449">Le jour de la semaine  \(4\) ans après l'écriture de ces lignes;</p></li>
+<li id="li-342"><p id="p-1450">La date  \(35\) jours après l'écriture de ces lignes;</p></li>
+<li id="li-343"><p id="p-1451">La date  \(55\) jours après l'écriture de ces lignes.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-55" id="solution-55"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-55"><div class="solution solution-like">
+<p id="p-1452">On prend comme convention d'ordonner les journées de la semaine du dimanche au samedi, avec dimanche correspondant à \(0\) et samedi à \(6\text{.}\) On commence à numéroter par \(0\) afin de correspondre aux classes d'équivalence. Ainsi, vendredi correspond à \(5\text{.}\) Comme il y a sept jours dans une semaine, on veut travailler modulo \(7\text{.}\) \(18\) jours après l'écriture, on était le jour \(5+18=23\text{.}\) En regardant le reste de \(23\) lors de la division par \(7\text{,}\) on retrouve \(2\text{,}\) ce qui signigie que \(23\equiv 2\mod 7\text{.}\) On peut donc dire que \(18\) jours plus tard, c'était l'équivalent du jour \(2\text{,}\) c'est-à-dire un mardi.</p>
+<p id="p-1453">On note au passage ici que le choix de faire débuter la semaine au dimanche est arbitraire et ne change rien. Si on avait fait commencer la semaine le mercredi (donc vendredi\(=2\text{,}\) alors on aurait eu \(2+18\equiv 6\mod 7\text{,}\) ce qui donne encore le mardi.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-56" id="solution-56"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-56"><div class="solution solution-like"><p id="p-1454">D'une manière similaire, on pourrait associer les mois de l'année à des nombres en commençant par janvier à \(0\text{.}\) On numérote toutefois déjà les mois de  \(1\) à \(12\text{,}\) allant de janvier à décembre. Dans ce cas, on peut aussi choisir décembre comme point de départ décembre. Puisque \(12\equiv 0\mod 12\text{,}\) on a équivalence. Septembre étant le neuvième mois, \(10\) mois après septembre, ce sera équivalent au \(9+10=19\equiv 7\mod 12\text{,}\) donc au septième mois, soit juillet.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-57" id="solution-57"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">3</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-57"><div class="solution solution-like"><p id="p-1455">On travaille modulo \(24\text{,}\) avec le début correspondant à minuit. Dans \(75\) heures, puisque \(14+75=89\) et que \(89\equiv 17\mod 24\text{,}\) on conclut que \(75\) heures il était \(17:40\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-58" id="solution-58"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">4</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-58"><div class="solution solution-like"><p id="p-1456">L'année \(2022\) et l'année \(2023\) ne sont pas des années bissextiles. Elle contiennent donc chacun \(365\) jours. Pour trouver le jour de la semaine \(2\) ans après le \(17\) septembre \(2021\text{,}\) il suffit de travailler modulo \(7\) avec le vendredi de \(2021\text{.}\) En ajoutant les \(365+365\) journées de ces deux années, on trouve \(5+365+365=735\text{,}\) qui est congru à \(0\) modulo \(7\text{.}\) Dans deux ans, le \(17\) septembre sera donc un dimanche.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-59" id="solution-59"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">5</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-59"><div class="solution solution-like"><p id="p-1457">Dans les quatre années suivant \(2021\text{,}\) il y a nécessairement une année bissextile. Celle-ci se trouve en \(2024\text{.}\) Donc pour calculer le jour de la semaine, il faut ajouter \(4\times 365+1\) jours au vendredi \((5)\) de \(2021\) et travailler encore une fois modulo \(7\text{.}\) On trouve alors \(5+4\times 365+1=1466\equiv 3\mod 7\text{.}\) Le \(17\) septembre \(2025\) sera (était?) donc un mercredi.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-60" id="solution-60"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">6</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-60"><div class="solution solution-like">
+<p id="p-1458">À partir d'ici, les choses se compliquent légèrement. La difficulté vient du fait que les mois n'ont pas tous le même nombre de jours et donc, on ne peut pas travailler modulo un entier régulier. On commence par ajouter les \(35\) jours à \(17\) pour obtenir \(35+17=52\text{.}\) Puisque septembre compte \(30\) jours, on travaillera modulo \(30\text{.}\) On apportera toutefois une précision dans la prochaine solution.</p>
+<p id="p-1459">Donc, \(52\equiv 22\mod 30\text{,}\) ce qui signifie que la date \(35\) jours après le \(17\) septembre est équivalent à un \(22\) et donc, le \(22\) octobre.</p>
+</div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-61" id="solution-61"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">7</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-61"><div class="solution solution-like">
+<p id="p-1460">Si on essaie la même chose pour trouver la date \(55\) jours après le \(17\) septembre, on trouvera \(17+55=72\equiv 12\text{.}\) On comprend assez rapidement qu'il ne peut s'agir du \(12\) octobre. Il serait logique de penser que la date est alors le \(12\) novembre, mais cela est aussi <a class="external" href="https://www.google.com/search?q=55+days+from+september+17&amp;rlz=1C1GCEA_enCA915CA915&amp;sxsrf=AOaemvJTJFUW9YSkjMCqpt2-I1bUR3ONdA%3A1631907814317&amp;ei=5u9EYbzYEr6q5NoPtc6a6AY&amp;oq=55+days+from+september+17&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBggAEBYQHjoHCAAQRxCwAzoHCAAQsAMQQzoICCEQFhAdEB46BQghEKABSgUIOhIBMkoECEEYAFDUpwRY4bcEYIO6BGgCcAJ4AIABuwGIAcYJkgEDOS4zmAEAoAEByAEKwAEB&amp;sclient=gws-wiz&amp;ved=0ahUKEwi848-s4obzAhU-FVkFHTWnBm0Q4dUDCA4&amp;uact=5" target="_blank">faux</a>. L'erreur vient du fait que le prochain mois, octobre, compte \(31\) jours et non pas \(30\) comme septembre. On doit donc retrancher une journée à la date trouvée pour obtenir le \(11\) novembre.</p>
+<p id="p-1461">Le cas plus général est un problème relativement difficile étant donné la dépendance avec la date de départ, le nombre de jours par mois variant d'un mois à l'autre ainsi que les années bissextiles.</p>
+</div></div>
+</div></article></div>
+<article class="remark remark-like" id="remark-4"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Sur la notation modulo.</span>
+</h6>
+<p id="p-1462">Après avoir vu plusieurs exemples, il est temps de faire une mise au point sur la notation utilisée pour dénoter la congruence modulo \(n\text{.}\) Si \(a,b\) sont congrus modulo \(n\text{,}\) ils sont dits équivalents, en quelque sorte égaux, par rapport à la division par \(n\text{.}\) On ne veut toutefois pas écrire \(a=b\text{,}\) car au sens usuel de l'égalité, c'est probablement faux. Le symbole \(\equiv\) est utilisée pour dénoter l'équivalence ou la congruence entre deux objets mathématiques. Il serait par contre erroné de simplement écrire \(a\equiv b\text{,}\) puisque la congruence est dépendante du choix de \(n\text{.}\) Ainsi \(10\equiv 2\mod 8\text{,}\) mais \(10\cancel \equiv 2\mod 5\text{.}\)</p></article><p id="p-1463">Si deux entiers \(a,b\) sont dans une même classe d'équivalence, alors ils se trouvent à une distance d'un multiple de \(n\text{.}\) On a donc \(a-b=kn\) où \(k\in \mathbb{Z}\text{.}\) Ceci permet de donner une définition alternative à la congruence modulo \(n\text{.}\)</p>
+<article class="proposition theorem-like" id="prop-modulodivisibilite"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.5</span><span class="period">.</span><span class="space"> </span><span class="title">Congruence modulo \(n\) et divisibilité.</span>
+</h6>
+<p id="p-1464">Soit \(a,b\) deux entiers et \(n&gt; 0\) un autre entier. Alors \(a\equiv b\mod n\) si et seulement si \(n\mid (a-b)\text{.}\)</p></article><article class="hiddenproof" id="proof-3"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-3"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-3"><article class="hiddenproof"><p id="p-1465">Puisqu'on a affaire à une double implication, on procède en deux étapes.</p>
+<p id="p-1466">Dans un premier temps, on suppose que \(a\equiv b\mod n\) au sens de la définition <a class="xref" data-knowl="./knowl/def-modulo.html" title="Définition 3.3.1: Congruence modulo \(n\)">3.3.1</a>. On tente maintenant de montrer que \(n\) divise \(a-b\text{.}\) D'une part, on sait qu'il existe \(q_1,r_1\in \mathbb{Z}\) tels que \(a=nq_1+r_1\text{.}\) De plus,  on sait qu'il existe \(q_2,r_2\in \mathbb{Z}\) tels que \(b=nq_2+r_2\text{.}\) Puisque \(a\equiv b\mod n\text{,}\) on doit avoir \(r_1=r_2\text{.}\) On peut alors écrire</p>
+<div class="displaymath">
+\begin{align*}
+a-b&amp;=nq_1+r_1-(nq_2+r_2)\\
+&amp;=nq_1+r_1-nq_2-r_2\\
+&amp;=nq_1-nq_2+r_1-r_2\\
+&amp;=n(q_1-q_2)+0\text{.}
+\end{align*}
+</div>
+<p class="continuation">Ainsi, puisque \(a-b=n(q_1-q_2)\text{,}\) on conclut que \(n\mid(a-b)\text{.}\)</p>
+<p id="p-1467">On suppose maintenant que \(n\mid (a-b)\) et on veut montrer que cette hypothèse entraine que \(a\equiv b\mod n\text{.}\) Si \(n\) divise \(a-b\text{,}\) alors on peut écrire \(a-b=kn\) pour un certain \(k\in \mathbb{Z}\text{.}\) Si on écrit la division de chaque côté sous la forme quotient reste, il suit du fait que \(\frac{a-b}{n}=\frac{a}{n}-\frac{b}{n}\) que la forme quotient reste du côté gauche doit s'écrire \(nq_1+r_1-(nq_2+r_2)\text{.}\) De l'autre côté, \(\frac{kn}{n}=k\) et le reste est nul. On doit donc avoir \(nq_1+r_1-(nq_2+r_2)=kn+0\) et en développant, on est forcé d'avoir \(r_1-r_2=0\text{.}\) Les nombres \(a,b\) ont donc le même reste lors de la division par \(n\) et ainsi, \(a\equiv b\mod n\text{.}\)</p></article></div></section><section class="subsection" id="subsection-30"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.3.2</span> <span class="title">Arithmétique modulaire</span>
+</h3>
+<p id="p-1468">La grande utilité des congruences modulo vient de l'arithmétique qu'il est possible d'effectuer dans les classes d'équivalences. Afin d'illustrer par des exemples, on considère à nouveau les classes d'équivalence de la division par \(5\) établies à l'exemple <a class="xref" data-knowl="./knowl/ex-modulo5.html" title="Exemple 3.3.2: Les classes d'équivalence modulo \(5\text{.}\)">3.3.2</a>. Si on prend deux nombres de la classe d'équivalence \(E_{0,5}\) et qu'on les additionne, par exemple \(a=5,b=15,a+b=20\text{,}\) on obtient toujours un membre de \(E_{0,5}\text{.}\) Qu'en est-il de deux membres de la classe \(E_{1,5}\text{?}\) Par exemple, avec \(a=-4,b=16,a+b=12\text{,}\) cette fois on obtient un membre de la classe \(E_{2,5}\) puisque \(12\equiv 2\mod 5\text{.}\) Dans un sens, c'est parfaitement logique puisque \(1+1=2\) et que les membres de \(E_{1,5}\) sont l'équivalent du nombre \(1\) au niveau de la division par \(5\text{.}\) Le produit se comporte aussi de cette manière. Un nombre dans \(E_{2,5}\) multiplié par un nombre dans \(E_{3,5}\) se retrouvera dans \(E_{1,5}\) puisque \(2\times 3=6\equiv 1\mod 5\text{.}\) Par exemple \(12\times -2=-24\equiv 1\mod 5\) puisque \(-24\) est un de plus qu'un multiple de \(5\text{.}\) On généralise cette idée dans la proposition suivante.</p>
+<article class="proposition theorem-like" id="prop-moduloprop"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Propriété de l'arithmétique modulaire.</span>
+</h6>
+<p id="p-1469">Soit \(a,b,c,d\in \mathbb{Z}\) et \(n&gt;0\) des entiers tels que \(a\equiv b\mod n\) et \(c\equiv d\mod n\text{.}\) Alors</p>
+<ol class="decimal">
+<li id="li-344"><p id="p-1470">\((a+c)\equiv (b+d)\mod n\text{;}\)</p></li>
+<li id="li-345"><p id="p-1471">\((a-c)\equiv (b-d)\mod n\text{;}\)</p></li>
+<li id="li-346"><p id="p-1472">\((ac)\equiv (bd)\mod n\text{.}\)</p></li>
+</ol></article><article class="hiddenproof" id="proof-4"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-4"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-4"><article class="hiddenproof"><p id="p-1473">L'idée derrière cette propriété découle du fait suivant: si \(a=b\text{,}\) alors pour tout \(c\in \R\text{,}\) on a \(a+c=b+c\text{.}\) On peut toujours effectuer une même opération de part et d'autre d'une égalité et préserver celle-ci. Dans le contexte des congruences modulo \(n\text{,}\) il n'est pas nécessaire d'ajouter de chaque côté le même nombre, en autant que les ajouts soient dans la même classe d'équivalence. On démontre maintenant la première propriété.</p>
+<p id="p-1474">Puisque \(a\equiv b\mod n\) et \(c\equiv d \mod n\text{,}\) on sait qu'il existe \(q_1,q_2,q_3,q_4,r_1,r_2\in \mathbb{Z}\) tels que \(a=nq_1+r_1,b=nq_2+r_1,c=nq_3+r_2\) et \(d=nq_4+r_2\text{.}\) En additionnant \(a+c\) et \(b+d\text{,}\) on trouve</p>
+<div class="displaymath">
+\begin{align*}
+a+c&amp;=nq_1+r_1+nq_3+r_2\\
+&amp;=nq_1+nq_3+r_1+r_2\\
+&amp;=n(q_1+q_3)+(r_1+r_2)\text{.}
+\end{align*}
+</div>
+<p class="continuation">De même</p>
+<div class="displaymath">
+\begin{align*}
+b+d&amp;=nq_2+r_1+nq_4+r_2\\
+&amp;=nq_2+nq_4+r_1+r_2\\
+&amp;=n(q_2+q_4)+(r_1+r_2)\text{.}
+\end{align*}
+</div>
+<p id="p-1475">Si \(r_1+r_2&lt; n\text{,}\) alors on vient de montrer que \(a+c\) et \(b+d\) ont le même reste lorsque divisés par \(n\text{.}\) Ils sont donc congrus modulo \(n\text{.}\) Si toutefois \(r_1+r_2\geq n\text{,}\) alors il faut d'abord écrire \(r_1+r_2=n+r_3\text{.}\) Puisque \(0\leq r_1,r_2&lt; n\text{,}\) on sait que \(r_1+r_2&lt; 2n\) et donc \(0\leq r_3&lt; n\text{.}\) On a alors</p>
+<div class="displaymath">
+\begin{equation*}
+a+c=n(q_1+q_3+1)+r_3
+\end{equation*}
+</div>
+<p class="continuation">et</p>
+<div class="displaymath">
+\begin{equation*}
+b+d=n(q_2+q_4+1)+r_3
+\end{equation*}
+</div>
+<p class="continuation">et le résultat tient aussi.</p></article></div>
+<article class="hiddenproof" id="proof-5"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-5"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-5"><article class="hiddenproof"><p id="p-1476">La deuxième propriété peut être démontrée d'une manière identique à la première, mais on choisit ici de présenter une approche différente tirant profit de la proposition <a class="xref" data-knowl="./knowl/prop-modulodivisibilite.html" title="Proposition 3.3.5: Congruence modulo \(n\) et divisibilité">3.3.5</a>. D'une part, si \(a\equiv b\mod n\text{,}\) alors \(a-b=k_1n\) puisque \(n\mid (a-b)\text{.}\) De même, \(c-d=k_2n\text{.}\) On peut alors écrire \(a-c=k_1n+b-(k_2n+d)\text{,}\) qui devient \(a-c=(k_1+k_2)n+b-d\text{.}\) Or cela signifie que</p>
+<div class="displaymath">
+\begin{equation*}
+a-c-(b+d)=(k_1+k_2)n
+\end{equation*}
+</div>
+<p class="continuation">et donc, que \(n\mid (a-c-(b-d))\text{.}\) Selon la proposition <a class="xref" data-knowl="./knowl/prop-modulodivisibilite.html" title="Proposition 3.3.5: Congruence modulo \(n\) et divisibilité">3.3.5</a>, on a donc \(a-c\equiv b-d\text{.}\)</p></article></div>
+<article class="hiddenproof" id="proof-6"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-6"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-6"><article class="hiddenproof"><p id="p-1477">Voir l'exercice <code class="code-inline tex2jax_ignore">[provisional cross-reference: exo-produitmodulopreuve]</code>.</p></article></div>
+<p id="p-1478">On regarde maintenant un des avantages de ces propriétés. En particulier, quand on travaille avec de grands nombres, on peut considérablement simplifier les calculs en utilisant les propriétés de l'arithmétique modulaire</p>
+<article class="example example-like" id="example-49"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-49"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Application des propriétés de l'arithmétique modulaire.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-49"><article class="example example-like"><p id="p-1479">On cherche le reste de la division de \(2^{345}\) par \(7\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-62" id="solution-62"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-62"><div class="solution solution-like">
+<p id="p-1480">L'idée est de décomposer le nombre \(2^{345}\) en quelque chose de plus petit et dont on connait le reste de la division par \(7\text{.}\) Dans ce cas-ci, on voit que \(345=5\times 69\) et donc \(2^{345}=(2^5)^{69}\text{.}\) Comme \(2^5=32\equiv 4\mod 7\text{,}\) la troisième propriété appliquée à répétition nous permet de dire que</p>
+<div class="displaymath">
+\begin{equation*}
+2^{345}\equiv 4^{69}\mod 7\text{.}
+\end{equation*}
+</div>
+<p class="continuation">On peut ensuite observer que \(4^3=64\equiv 1\mod 7\) et puisque \(69=3\times 23\text{,}\) alors</p>
+<div class="displaymath">
+\begin{align*}
+2^{345}&amp;\equiv 4^{69}\mod 7\\
+&amp;\equiv (4^3)^{23}\mod 7\\
+&amp;\equiv 1^{23}\mod 7\\
+&amp;\equiv 1\mod 7\text{.}
+\end{align*}
+</div>
+<p id="p-1481">Le reste de la division par \(7\) du nombre \(2^{345}\) est donc \(1\text{.}\) On note au passage qu'on aurait pu y arriver plus rapidement en divisant \(345\) par \(6\) plutôt que par \(5\) initialement.</p>
+</div></div>
+</div></article></div>
+<p id="p-1482">Dans la proposition <a class="xref" data-knowl="./knowl/prop-modulodivisibilite.html" title="Proposition 3.3.5: Congruence modulo \(n\) et divisibilité">3.3.5</a>, il est question d'addition, de soustraction et de multiplication. Dans un chapitre où la division tient une place si importante, ne devrait-il pas y avoir une propriété de division? Par exemple, \(28\equiv 4\mod 6\) et si on divise par \(4\) de chaque côté, on obtient \(7\equiv 1\mod 6\text{,}\) qui est vrai. Mais si on considère plutôt \(10\equiv 4 \mod 6\) et qu'on divise par \(2\text{,}\) l'équivalence ne tient plus puisque \(5\cancel \equiv 2\mod 6\text{.}\) On voit donc que la situation est plus complexe qu'elle en a l'air.</p>
+<p id="p-1483">D'où vient le problème? On imagine un cas général où \(ac\equiv bc\mod n\text{.}\) On peut alors dire que \(ac=bc+kn\) pour un certain \(k\in\mathbb{Z}\text{.}\) Que se passe-t-il si on divise la congruence par \(c\text{?}\) Puisque \(ac-bc=(a-b)c=kn\text{,}\) il s'en suit que \(c\mid kn\text{.}\) On ne sait toutefois pas si \(c\mid n\) ou \(c\mid k\text{.}\) En fait, ça pourrait même être ni l'un ni l'autre, par exemple \(6\mid (3\times 4)\text{,}\) mais \(6\) ne divise ni \(3\) ni \(4\text{.}\) Dans la congruence avec \(28\) et \(4\text{,}\) on a \(a=7,b=1,c=4\) et \(n=6\text{.}\) On peut alors écrire \(7\times 4=1\times 4+4\times 6\text{,}\) ce qui donne \(k=4\text{.}\) Dans ce cas, la division par \(c=4\) laisse \(n=6\) intact, d'où le fait que la congruence tient le coup après la division. Par contre pour la congruence avec \(10\) et \(4\text{,}\) on a \(a=5,b=2,c=2\) et toujours \(n=6\text{,}\) ce qui permet d'écrire \(5\times 2=2\times 2+1\times 6\text{,}\) avec \(k=1\text{.}\) Cette fois, la division par \(c=2\) touche en partie \(n=6\text{,}\) ce qui rend la congruence fausse.</p>
+<p id="p-1484">Dans le pire des cas, la division par \(c\) va simplifier de \(n\) la plus grande partie commune à \(c,n\text{,}\) soit \(\pgcd{(c,n)}\text{.}\) Ceci amène à la proposition suivante.</p>
+<article class="proposition theorem-like" id="prop-divmodulo"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.8</span><span class="period">.</span><span class="space"> </span><span class="title">La division dans une congruence modulo \(n\).</span>
+</h6>
+<p id="p-1485">Soit \(a,b,c\in\mathbb{Z}\) et \(n&gt;0\) des entiers tels que \(ac\equiv bc\mod n\text{.}\) Alors \(a\equiv b\mod \frac{n}{\pgcd{(c,n)}}\text{.}\)</p>
+<p id="p-1486">En particulier, si \(\pgcd{(c,n)}=1\text{,}\) alors \(a\equiv b\mod n\text{.}\)</p></article><article class="remark remark-like" id="remark-5"><h6 class="heading">
+<span class="type">Remarque</span><span class="space"> </span><span class="codenumber">3.3.9</span><span class="period">.</span><span class="space"> </span><span class="title">Ce que la proposition ne dit pas.</span>
+</h6>
+<p id="p-1487">À noter que la proposition ne dit pas que \(a\cancel \equiv b\mod n\text{.}\) On ne peut tout simplement pas en être certain. En reprenant les exemples qui précèdent la proposition ci-dessus, puisque \(7\times 4\equiv 1\times4\mod 6\text{,}\) on sait que \(7\equiv 1\mod \frac{6}{\pgcd{(4,6)}}\text{,}\) c'est-à-dire \(7\equiv 1\mod 3\text{.}\) Cela n'empêchait \(7\equiv 1\mod 6\text{.}\) Pour l'autre exemple par contre, on n'a que \(5\equiv 2 \mod \frac{6}{\pgcd{(2,6)}}\text{,}\) soit  \(5\equiv 2 \mod 3\text{.}\)</p></article><p id="p-1488">On reprend les calculs de l'exemple <a class="xref" data-knowl="./knowl/ex-modulotemps.html" title="Exemple 3.3.3: Classes d'équivalence et moments">3.3.3</a> en les regardant sous l'oeil de la proposition <a class="xref" data-knowl="./knowl/prop-moduloprop.html" title="Proposition 3.3.6: Propriété de l'arithmétique modulaire">3.3.6</a>.</p>
+<article class="example example-like" id="example-50"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-50"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.3.10</span><span class="period">.</span><span class="space"> </span><span class="title">Classes d'équivalence et moments, prise deux.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-50"><article class="example example-like"><p id="p-1489">On reprend la date \(2021-09-17-14:40\) ( un vendredi) comme référence et on considère à nouveau les moments suivants (sans les deux derniers):</p>
+<ol class="decimal">
+<li id="li-347"><p id="p-1490">La journée de la semaine  \(18\) jours après l'écriture de ces lignes;</p></li>
+<li id="li-348"><p id="p-1491">Le mois de l'année  \(10\) mois après l'écriture de ces lignes;</p></li>
+<li id="li-349"><p id="p-1492">L'heure  \(75\) heures après l'écriture de ces lignes;</p></li>
+<li id="li-350"><p id="p-1493">Le jour de la semaine  \(2\) ans après l'écriture de ces lignes;</p></li>
+<li id="li-351"><p id="p-1494">Le jour de la semaine  \(4\) ans après l'écriture de ces lignes;</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-63" id="solution-63"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-63"><div class="solution solution-like"><p id="p-1495">En travaillant modulo \(7\text{,}\) puisque \(18\equiv 4\mod 7\text{,}\) on peut dire que \(5+18\equiv 5+4\mod 7\text{.}\) Puisque \(9\equiv 2\mod 7\text{,}\) on conclut à nouveau que \(18\) jours après l'écriture, c'était un mardi. Une autre approche consiste à dire que \(18\equiv -3 \mod 7\) et donc \(5+18\equiv 5-3 \mod 7\) et ainsi, on retrouve le mardi.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-64" id="solution-64"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-64"><div class="solution solution-like"><p id="p-1496">Puisque \(10\equiv -2 \mod 12\text{,}\) plutôt que d'additionner \(10\) mois, on peut soustraire \(2\) mois au mois actuel et trouver la réponse, soit \(9-2=7\) et donc, juillet.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-65" id="solution-65"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">3</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-65"><div class="solution solution-like"><p id="p-1497">En travaillant modulo \(24\text{,}\) on a \(75\equiv 3\mod 24\) et donc, \(75\) heures après l'écriture de ces lignes est équivalent en termes d'heures à \(3\) heures après. Il était donc \(17:40\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-66" id="solution-66"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">4</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-66"><div class="solution solution-like"><p id="p-1498">Tel que discuté précédemment, il n'y a pas d'année bissextile en \(2022\) ni en \(2023\text{.}\) Ces deux années comptent donc pour \(730\) jours. Puisque \(730\equiv 2\mod 7\text{,}\) la journée de la semaine deux ans après l'écriture de ces lignes est un dimanche.</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-67" id="solution-67"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">5</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-67"><div class="solution solution-like"><p id="p-1499">Les quatre années comptant ici pour \(1461\) jours et que \(1461\equiv 5\mod 7\) et que \(5\equiv -2 \mod 7\text{,}\) le jour de la semaine \(4\) ans après l'écriture de ces lignes est un mercredi.</p></div></div>
+</div></article></div>
+<p id="p-1500">Il est parfois pratique de visualiser les opérations d'addition et de multiplication à l'aide d'une table. À titre d'exemple, voici la table de multiplication pour l'arithmétique usuelle:</p>
+<figure class="table table-like" id="table-29"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.11<span class="period">.</span></span><span class="space"> </span>Table de la multiplication usuelle</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="r m b2 r2 l2 t2 lines">\(\times\)</td>
+<td class="r m b2 r0 l0 t2 lines">0</td>
+<td class="r m b2 r0 l0 t2 lines">1</td>
+<td class="r m b2 r0 l0 t2 lines">2</td>
+<td class="r m b2 r0 l0 t2 lines">3</td>
+<td class="r m b2 r0 l0 t2 lines">4</td>
+<td class="r m b2 r0 l0 t2 lines">5</td>
+<td class="r m b2 r0 l0 t2 lines">6</td>
+<td class="r m b2 r0 l0 t2 lines">7</td>
+<td class="r m b2 r0 l0 t2 lines">8</td>
+<td class="r m b2 r2 l0 t2 lines">9</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r2 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r0 l0 t0 lines">5</td>
+<td class="r m b0 r0 l0 t0 lines">6</td>
+<td class="r m b0 r0 l0 t0 lines">7</td>
+<td class="r m b0 r0 l0 t0 lines">8</td>
+<td class="r m b0 r2 l0 t0 lines">9</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r0 l0 t0 lines">6</td>
+<td class="r m b0 r0 l0 t0 lines">8</td>
+<td class="r m b0 r0 l0 t0 lines">10</td>
+<td class="r m b0 r0 l0 t0 lines">12</td>
+<td class="r m b0 r0 l0 t0 lines">14</td>
+<td class="r m b0 r0 l0 t0 lines">16</td>
+<td class="r m b0 r2 l0 t0 lines">18</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">6</td>
+<td class="r m b0 r0 l0 t0 lines">9</td>
+<td class="r m b0 r0 l0 t0 lines">12</td>
+<td class="r m b0 r0 l0 t0 lines">15</td>
+<td class="r m b0 r0 l0 t0 lines">18</td>
+<td class="r m b0 r0 l0 t0 lines">21</td>
+<td class="r m b0 r0 l0 t0 lines">24</td>
+<td class="r m b0 r2 l0 t0 lines">27</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">4</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r0 l0 t0 lines">8</td>
+<td class="r m b0 r0 l0 t0 lines">12</td>
+<td class="r m b0 r0 l0 t0 lines">16</td>
+<td class="r m b0 r0 l0 t0 lines">20</td>
+<td class="r m b0 r0 l0 t0 lines">24</td>
+<td class="r m b0 r0 l0 t0 lines">28</td>
+<td class="r m b0 r0 l0 t0 lines">32</td>
+<td class="r m b0 r2 l0 t0 lines">36</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">5</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">5</td>
+<td class="r m b0 r0 l0 t0 lines">10</td>
+<td class="r m b0 r0 l0 t0 lines">15</td>
+<td class="r m b0 r0 l0 t0 lines">20</td>
+<td class="r m b0 r0 l0 t0 lines">25</td>
+<td class="r m b0 r0 l0 t0 lines">30</td>
+<td class="r m b0 r0 l0 t0 lines">35</td>
+<td class="r m b0 r0 l0 t0 lines">40</td>
+<td class="r m b0 r2 l0 t0 lines">45</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">6</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">6</td>
+<td class="r m b0 r0 l0 t0 lines">12</td>
+<td class="r m b0 r0 l0 t0 lines">18</td>
+<td class="r m b0 r0 l0 t0 lines">24</td>
+<td class="r m b0 r0 l0 t0 lines">30</td>
+<td class="r m b0 r0 l0 t0 lines">36</td>
+<td class="r m b0 r0 l0 t0 lines">42</td>
+<td class="r m b0 r0 l0 t0 lines">48</td>
+<td class="r m b0 r2 l0 t0 lines">54</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">7</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">7</td>
+<td class="r m b0 r0 l0 t0 lines">14</td>
+<td class="r m b0 r0 l0 t0 lines">21</td>
+<td class="r m b0 r0 l0 t0 lines">28</td>
+<td class="r m b0 r0 l0 t0 lines">35</td>
+<td class="r m b0 r0 l0 t0 lines">42</td>
+<td class="r m b0 r0 l0 t0 lines">49</td>
+<td class="r m b0 r0 l0 t0 lines">56</td>
+<td class="r m b0 r2 l0 t0 lines">63</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">8</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">8</td>
+<td class="r m b0 r0 l0 t0 lines">16</td>
+<td class="r m b0 r0 l0 t0 lines">24</td>
+<td class="r m b0 r0 l0 t0 lines">32</td>
+<td class="r m b0 r0 l0 t0 lines">40</td>
+<td class="r m b0 r0 l0 t0 lines">48</td>
+<td class="r m b0 r0 l0 t0 lines">56</td>
+<td class="r m b0 r0 l0 t0 lines">64</td>
+<td class="r m b0 r2 l0 t0 lines">72</td>
+</tr>
+<tr>
+<td class="r m b2 r2 l2 t0 lines">9</td>
+<td class="r m b2 r0 l0 t0 lines">0</td>
+<td class="r m b2 r0 l0 t0 lines">9</td>
+<td class="r m b2 r0 l0 t0 lines">18</td>
+<td class="r m b2 r0 l0 t0 lines">27</td>
+<td class="r m b2 r0 l0 t0 lines">36</td>
+<td class="r m b2 r0 l0 t0 lines">45</td>
+<td class="r m b2 r0 l0 t0 lines">54</td>
+<td class="r m b2 r0 l0 t0 lines">63</td>
+<td class="r m b2 r0 l0 t0 lines">72</td>
+<td class="r m b2 r2 l0 t0 lines">81</td>
+</tr>
+</table></div></figure><p id="p-1501">Voici maintenant des tables similaires pour l'addition et la multiplication modulo \(5\text{:}\)</p>
+<figure class="table table-like" id="table-30"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.12<span class="period">.</span></span><span class="space"> </span>Table de l'addition modulo \(5\)</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="r m b2 r2 l2 t2 lines">+</td>
+<td class="r m b2 r0 l0 t2 lines">0</td>
+<td class="r m b2 r0 l0 t2 lines">1</td>
+<td class="r m b2 r0 l0 t2 lines">2</td>
+<td class="r m b2 r0 l0 t2 lines">3</td>
+<td class="r m b2 r2 l0 t2 lines">4</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r2 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r2 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r2 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="r m b0 r2 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="r m b2 r2 l2 t0 lines">4</td>
+<td class="r m b2 r0 l0 t0 lines">4</td>
+<td class="r m b2 r0 l0 t0 lines">0</td>
+<td class="r m b2 r0 l0 t0 lines">1</td>
+<td class="r m b2 r0 l0 t0 lines">2</td>
+<td class="r m b2 r2 l0 t0 lines">3</td>
+</tr>
+</table></div></figure><figure class="table table-like" id="tab-multmod5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.13<span class="period">.</span></span><span class="space"> </span>Table de la multiplication modulo 5</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="r m b2 r2 l2 t2 lines">\(\times\)</td>
+<td class="r m b2 r0 l0 t2 lines">0</td>
+<td class="r m b2 r0 l0 t2 lines">1</td>
+<td class="r m b2 r0 l0 t2 lines">2</td>
+<td class="r m b2 r0 l0 t2 lines">3</td>
+<td class="r m b2 r2 l0 t2 lines">4</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r2 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r2 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">2</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="r m b0 r2 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="r m b0 r2 l2 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">0</td>
+<td class="r m b0 r0 l0 t0 lines">3</td>
+<td class="r m b0 r0 l0 t0 lines">1</td>
+<td class="r m b0 r0 l0 t0 lines">4</td>
+<td class="r m b0 r2 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="r m b2 r2 l2 t0 lines">4</td>
+<td class="r m b2 r0 l0 t0 lines">0</td>
+<td class="r m b2 r0 l0 t0 lines">4</td>
+<td class="r m b2 r0 l0 t0 lines">3</td>
+<td class="r m b2 r0 l0 t0 lines">2</td>
+<td class="r m b2 r2 l0 t0 lines">1</td>
+</tr>
+</table></div></figure><p id="p-1502">Puisque tous les entiers ont leur équivalent modulo \(5\) dans l'ensemble \(\{0,1,2,3,4\}\text{,}\) il n'est pas nécessaire de construire une table plus grande.</p></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.3.3</span> <span class="title">Résolution d'équations en congruence modulo</span>
+</h3>
+<p id="p-1503">On considère l'équation \(3x-2=4\text{.}\) Cette équation se résout en envoyant le \(-2\) à droite et en divisant par \(3\text{,}\) obtenant ainsi \(x=2\text{.}\) Qu'en est-il de l'équation \(3x-2\equiv 4\mod 5\) maintenant? Peut-on trouver des solutions à cette équation? Comme ici la valeur du modulo est petite, on pourrait tester tous les cas possibles (modulo \(5\)) et voir que \(x=2\) est encore une solution. Bien sûr, n'importe quel autre nombre dans la classe d'équivalence de \(2\) fera aussi l'affaire. Par exemple, puisque \(12\equiv 2\mod 5\text{,}\) on peut vérifier que \(3\times 12-2=34\equiv 4\mod 5\text{.}\)</p>
+<p id="p-1504">On note que dans l'équation \(3x\equiv 6\mod 5\) obtenue dans la résolution, on peut diviser de chaque côté par \(3\) puisque \(\pgcd{(3,5)}=1\) (proposition <a class="xref" data-knowl="./knowl/prop-divmodulo.html" title="Proposition 3.3.8: La division dans une congruence modulo \(n\)">3.3.8</a>). On n'a donc pas à modifier le modulo. On regarde d'autres exemples.</p>
+<article class="example example-like" id="example-51"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-51"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.3.14</span><span class="period">.</span><span class="space"> </span><span class="title">Des équations à congruence modulo.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-51"><article class="example example-like"><p id="p-1505">On cherche toutes à résoudre les congruences suivantes (indépendamment):</p>
+<ol class="decimal">
+<li id="li-352"><p id="p-1506">\(\displaystyle 5x\equiv 12\mod 13.\)</p></li>
+<li id="li-353"><p id="p-1507">\(\displaystyle 122x\equiv 83 \mod 9.\)</p></li>
+<li id="li-354"><p id="p-1508">\(2x\equiv 3\mod 8\text{.}\)</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-68" id="solution-68"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-68"><div class="solution solution-like"><p id="p-1509">Pour la première congruence, on ne peut pas directement diviser par \(5\) puisque \(5\not\mid 12\text{.}\) Mais on peut toutefois ajouter un élément de la classe d'équivalence de \(0\) à droite sans changer la véracité de la congruence, selon la proposition <a class="xref" data-knowl="./knowl/prop-moduloprop.html" title="Proposition 3.3.6: Propriété de l'arithmétique modulaire">3.3.6</a>. En ajoutant \(13\equiv 0\mod 13\text{,}\) on obtient \(5x\equiv (12+13)\mod 13\text{,}\) qui revient à \(5x\equiv 25\mod 13\text{.}\) Maintenant qu'on a \(5\mid 25\) et que \(\pgcd{(5,13)}=1\text{,}\) on peut diviser par \(5\) et obtenir \(x\equiv 5\mod 13\text{.}\) Les solutions sont donc tous les nombres congrus à \(5\) modulo \(13\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-69" id="solution-69"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-69"><div class="solution solution-like"><p id="p-1510">Pour la seconde congruence, il peut être une bonne idée de réduire dans un premier temps modulo \(9\) les membres de chaque côté de l'équation. En effet, si \(122=9q_1+r_1\) et \(83=9q_2+r_2\text{,}\) alors la congruence peut s'écrire de manière plus simple \(r_1x\equiv r_2\mod 9\text{.}\) Puisque \(122\equiv 5 \mod 9 \) et \(83\equiv 2\mod 9\text{,}\) la congruence peut s'écrire \(5x\equiv 2\mod 9\text{.}\) Cette fois, ajouter \(9\) ne sera pas suffisant, mais si on ajoute \(18\equiv 0\mod 9\text{,}\) on obtient \(5x\equiv 20\mod 9\) et en divisant, on conclut que \(x\equiv 4\mod 9\text{.}\) Les solutions sont donc tous les nombres congrus à \(4\) modulo \(9\text{.}\)</p></div></div>
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-70" id="solution-70"><span class="type">Solution.</span> <span class="space"> </span><span class="codenumber">3</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-70"><div class="solution solution-like"><p id="p-1511">Dans cet exemple, peu importe combien de multiples de \(8\) on ajoute à \(3\text{,}\) on n'obtiendra jamais un nombre pair qui permettra la division par \(2\text{.}\) Cette congruence en fait n'a pas de solutions. Lorsqu'on multiplie \(2\) par un entier, on obtient un nombre pair, qui ne peut pas être congru à \(3\) modulo \(8\text{.}\)</p></div></div>
+</div></article></div>
+<p id="p-1512">Puisqu'il est possible qu'une congruence ne possède pas de solutions, il serait intéressant de savoir quand des solutions seront possibles. En fait, on peut établir un critère pour savoir quand la congruence n'aura pas de solutions.</p>
+<article class="proposition theorem-like" id="prop-congruence0solution"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.15</span><span class="period">.</span><span class="space"> </span><span class="title">Congruence sans solutions.</span>
+</h6>
+<p id="p-1513">Soit \(a,b,n\in \mathbb{Z}\) avec \(a,n\) différents de \(0\text{.}\) Si \(\pgcd{(a,n)}\not \mid b\text{,}\) alors la congruence \(ax\equiv b\mod n\) ne possède pas de solutions.</p></article><article class="hiddenproof" id="proof-7"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-7"><h6 class="heading"><span class="type">Démonstration<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-7"><article class="hiddenproof"><p id="p-1514">On suppose que \(s\) est une solution à la congruence. Cela signifie que \(as\equiv b\mod n\) ou de manière équivalente, \(n\mid (as-b)\text{.}\) On réécrit pour obtenir \(as-b=kn\) pour un certain \(k\in \mathbb{Z}\text{.}\) On divise maintenant cette équation par \(\pgcd{(a,n)}\text{.}\) On obtient alors \(r-\frac{b}{\pgcd{(a,n)}}=t\) où \(s,t\) sont des entiers. Or puisque \(\pgcd{(a,n)}\not \mid b\text{,}\) le terme \(\frac{b}{\pgcd{(a,n)}}\) lui, n'est pas entier. Ceci crée une contradiction et donc, il ne peut pas exister de solutions.</p></article></div>
+<p id="p-1515">Jusqu'à maintenant, les exemples qui fonctionnaient avaient pour \(1\) pour pgcd entre \(a\) et \(n\text{.}\) La proposition <a class="xref" data-knowl="./knowl/prop-divmodulo.html" title="Proposition 3.3.8: La division dans une congruence modulo \(n\)">3.3.8</a> ne permet pas de diviser dans une congruence sans changer la valeur du modulo. On considère par exemple \(6x\equiv 4\mod 10\text{.}\) On peut ajouter \(20\) à droite pour obtenir \(6x\equiv 24\mod 10\text{.}\) En divisant, on doit toutefois ajuster le modulo par un facteur \(\pgcd{(6,10)}=2\text{.}\) La nouvelle équation est donc équivalente à \(x\equiv 4\mod 5\text{.}\) On cherchait toutefois des solutions par rapport au modulo \(10\text{.}\) Peut-on ramener ces solutions dans ce cadre? Quels sont les nombres modulo \(10\) qui sont congrus à \(4\) modulo \(5\text{?}\) Il y a bien sûr \(4\text{,}\) mais aussi \(4+5=9\text{.}\) On peut donc dire qu'il y a “\(2\)” solutions (en réalité, une infinité, mais deux classes d'équivalence) à cette congruence. La proposition suivante donne le nombre de classes d'équivalence solutions à une congruence modulo \(n\text{.}\) Elle complète la proposition <a class="xref" data-knowl="./knowl/prop-congruence0solution.html" title="Proposition 3.3.15: Congruence sans solutions">3.3.15</a>.</p>
+<article class="proposition theorem-like" id="proposition-7"><h6 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">3.3.16</span><span class="period">.</span><span class="space"> </span><span class="title">Congruence et solutions.</span>
+</h6>
+<p id="p-1516">Soit \(a,b\in \mathbb{Z}\) et \(n\in \mathbb{N}\) avec \(a,n\) différents de \(0\text{.}\) Si \(\pgcd{(a,n)} \mid b\text{,}\) alors la congruence \(ax\equiv b\mod n\) possède des solutions, une infinité provenant d'autant de classes d'équivalence différente que la valeur du \(\pgcd{(a,n)}\text{.}\)</p></article><p id="p-1517">L'équation \(6x\equiv 4\mod 10\) qui avait pour solutions \(x\equiv 4\mod 10\) et \(x\equiv 9\mod 10\) vérifie bel et bien la proposition puisque les solutions proviennent de \(2=\pgcd{(6,10)}\) classes d'équivalence différentes modulo \(10\text{.}\) Un cas particulier découlant directement de la proposition précédente est celui où \(\pgcd{(a,n)}=1\text{.}\) Une solution à l'équation \(ax\equiv 1\mod n\) est alors appelée l'inverse de \(a\) modulo \(n\text{.}\)</p>
+<article class="definition definition-like" id="def-inversemodulo"><h6 class="heading">
+<span class="type">Définition</span><span class="space"> </span><span class="codenumber">3.3.17</span><span class="period">.</span><span class="space"> </span><span class="title">L'inverse d'un nombre modulo \(n\).</span>
+</h6>
+<p id="p-1518">Soit \(a,n\) deux entiers avec \(\pgcd{(a,n)}=1\text{.}\) Les nombres dans l'unique classe d'équivalence satisfaisant l'équation \(ax\equiv 1\mod n\) sont appelés des inverses de \(a\) modulo \(n\text{.}\)</p></article><p id="p-1519">On considère l'équation \(3x\equiv 1 \mod 5\text{.}\) Puisque \(\pgcd{(3,5)}=1\text{,}\) il existe une classe d'équivalence pour laquelle le produit de tout nombre y appartenant multiplié par \(3\) donne \(1\text{.}\) Ce sont les inverses de \(3\) en modulo \(5\text{.}\) En regardant la table <a class="xref" data-knowl="./knowl/tab-multmod5.html" title="Table 3.3.13: Table de la multiplication modulo 5">3.3.13</a> ou tout simplement en essayant les quelques possibilités, on trouve que \(x=2\) est un inverse pour \(3\) en modulo \(5\text{.}\) C'est donc en fait toute la classe d'équivalence de \(2\) qui est considérée comme inverse.</p>
+<article class="example example-like" id="ex-inversemodulo"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex-inversemodulo"><h6 class="heading">
+<span class="type">Exemple</span><span class="space"> </span><span class="codenumber">3.3.18</span><span class="period">.</span><span class="space"> </span><span class="title">Un inverse modulo \(72\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex-inversemodulo"><article class="example example-like"><p id="p-1520">On cherche un inverse à \(5\) modulo \(72\text{,}\) c'est-à-dire un nombre \(x\) tel que \(5x\equiv 1\mod 72\text{.}\)</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-71" id="solution-71"><span class="type">Solution.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-solution-71"><div class="solution solution-like">
+<p id="p-1521">Pour trouver un inverse, il faut trouver \(x\) tel que \(72\mid (5x-1)\text{.}\) En d'autres mots, \(5x-1=72y\) pour un certain \(y\in \mathbb{Z}\text{.}\) En réécrivant, on remarque qu'il faut que \(5x-72y=1\) et de plus, \(\pgcd{(5,72)}=1\text{.}\) Le <a class="xref" data-knowl="./knowl/exo-Bezout.html" title="Exercice 3.2.5.6: Le lemme de Bézout">lemme de Bézout</a> et l'algorithme d'Euclide seront utiles pour trouver l'inverse. D'une part, on a</p>
+<div class="displaymath">
+\begin{align*}
+72&amp;=5\times 14+2\\
+5&amp;=2\times 2+1\\
+2&amp;=1\times 2+0\text{,}
+\end{align*}
+</div>
+<p class="continuation">selon l'algorithme d'Euclide. Puis, en réorganisant ces équations, on trouve</p>
+<div class="displaymath">
+\begin{align*}
+1&amp;=5-2\times 2\\
+1&amp;=5-(72-5\times 14)\times 2\\
+1&amp;=5-72\times 2+5\times 28\\
+1&amp;=5(1+28)-72\times2\\
+1&amp;=5\times (29)-72\times 2\text{.}
+\end{align*}
+</div>
+<p id="p-1522">\(29\) est donc un inverse à \(5\) modulo \(72\text{.}\)</p>
+</div></div>
+</div></article></div></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type">
+<span class="type">Sous-section</span> <span class="codenumber">3.3.4</span> <span class="title">Introduction à la cryptographie</span>
+</h3>
+<p id="p-1523">La transmission de messages secrets existe depuis toujours. Des messages entre amoureux aux codes secrets militaires, on a toujours cherché des moyens d'encoder de l'information afin de la transmettre pour que seul son destinataire puisse la déchiffrer. De nos jours, la majorité des opérations effectuées en ligne sont encryptées mathématiquement afin de les rendres sécuritaires: opérations bancaires, transactions par cartes de crédit, connexion à un compte quelconque, etc.</p>
+<p id="p-1524">On illustre ici comment l'arithmétique modulaire peut aider à mettre en place un système d'encodage. La première de ces techniques est un peu primitives et est loin de celles utilisées de nos jours, car elle n'est pas assez sécuritaires, mais elles illustrent tout de même l'idée de la cryptographie.</p>
+<p id="p-1525">L'un des premiers systèmes d'encodage est appelé le chiffrement de César. L'histoire veut que Jules César l'utilisait pour envoyer des messages à ses commandants. Il apparait toutefois évident que ce type de chiffrement était connu bien avant César. Son principe est simple, on associe à chaque lettre de l'alphabet un nombre correspondant à sa position, \(A=1,B=2,\ldots , Y=25,Z=26\text{.}\) On effectue par la suite un décalage uniforme des lettres du message à coder. Par exemple, le message “BONJOUR” est d'abord transformé en nombres, donnant \(2 15 14 10 15 21 18 \text{,}\) puis on décale l'alphabet en ajoutant à chaque nombre un paramètre de translation. Avec ce paramètre égal à \(3\text{,}\) on obtient \(5 18 17 13 18 24 21 \text{.}\) On reconvertit ensuite en lettres pour avoir le message crypté: “ERQMRXU”, qui est ensuite transmit au destinaire. Celui-ci pourra le décoder en effectuant la conversion en nombres et le décalage inverse s'il connait le paramètre de translation. L'arithmétique modulaire est utilisé pour faire l'encryption. Si la position d'une lettre additionnée du paramètre de translation dépasse \(26\text{,}\) on se ramène dans le bon intervalle en travaillant modulo \(26\text{.}\)</p>
+<p id="p-1526">Les cellules Sage ci-dessous montrent comment on peut coder ce processus. La première cellule crée une fonction qui prend un message ne contenant que des caractères alphabétiques et le convertit en liste de nombres selon la position des lettres. On enlève les espaces et on met la phrase en majuscule.</p>
+<aside class="aside aside-like" id="aside-3"><h6 class="heading"><span class="title">En passant.</span></h6>
+<p id="p-1527">On peut parfois utiliser la cryptographie dans un but autre que celui d'envoyer un message secret. Sur certains forums de discussions, un encodage de César est parfois utilisé afin de ne pas divulgâcher une série, un film, un jeu vidéo ou autre. Typiquement, on utilise le chiffrement de César avec décalage de 13 caractères. On l'appelle d'ailleurs ROT-13. Un exemple peut-être vu à <a class="external" href="https://www.vendetta-online.com/x/msgboard/15/10908?page=3" target="_blank">cette adresse</a><a data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 8 </sup></a> concernant Harry Potter.</p>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn"><code class="code-inline tex2jax_ignore">https://www.vendetta-online.com/x/msgboard/15/10908?page=3</code></div></div></aside><div class="sagecell-sage" id="sage-11"><script type="text/x-sage">#Fonction pour convertir un message en nombres
+def msganombres(M):
+    M=M.replace(" ", "") #On enlève les espaces
+    M=M.upper() #On met tous les caractères en majuscules
+    Alphabet=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    Mnombres=[] #Le message en chiffre
+    for lettre in M:
+        Mnombres.append(Alphabet.index(lettre)+1) #Le plus 1 est nécessaire, car Sage commence ses positions à 0.
+    return Mnombres
+</script></div>
+<p id="p-1528">La deuxième cellule crée une fonction qui, à partir d'une liste de nombres, renvoie un message. Ce message est écrit en majuscule et ne possède pas d'espaces.</p>
+<div class="sagecell-sage" id="sage-12"><script type="text/x-sage">#Fonction pour convertir une liste de nombres en message
+def nombresamessage(L):
+    Alphabet=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    M="" #Le message
+    for nombre in L:
+        M=M+Alphabet[nombre-1] #Le -1 est nécessaire, car Sage commence ses positions à 0.
+    return M
+</script></div>
+<p id="p-1529">La troisième cellule effectue le décalage d'une liste. À partir d'une liste <code class="code-inline tex2jax_ignore">L</code> et d'un nombre \(n\text{,}\) on ajoute \(n\) à chaque entrée de la liste, en travaillant modulo \(26\text{.}\)</p>
+<div class="sagecell-sage" id="sage-13"><script type="text/x-sage"># Fonction pour translater le message
+def Cesar(L,n):# On translate la liste L de n modulo 26
+    Lt=[] #La liste translaté
+    for i in range(len(L)):
+        Lt.append((L[i]+n )%26)
+    return Lt
+</script></div>
+<p id="p-1530">Finalement, la dernière fonction prend un message et un nombre \(n\) et retourne le message codé.</p>
+<div class="sagecell-sage" id="sage-14"><script type="text/x-sage">#Fonction pour crypter un message
+def EncodeurCesar(M,n):# Code le message M selon le chiffrement de césar avec paramètre n
+    L=msganombres(M)
+    Lt=Cesar(L,n)
+    Mcode=nombresamessage(Lt)
+    return Mcode
+</script></div>
+<p id="p-1531">On teste finalement ici avec les messages secrets “Bonjour” et “Vive les maths”. Il faut s'assurer d'avoir exécuter toutes les cellules ci-dessus pour que la prochaine fonctionne.</p>
+<div class="sagecell-sage" id="sage-15"><script type="text/x-sage">print(EncodeurCesar("Bonjour",3))
+print(EncodeurCesar("Vive les maths",14))
+</script></div>
+<p id="p-1532">Pour décoder un message crypté à l'aide de chiffrement de César, il suffit d'appliquer le chiffrement inverse. Ainsi, si on a le message “WPDPEFOTLYEDOPDTXDZYEWPDXPTWWPFCD” et qu'on sait que le message a été chiffré à l'aide d'un César avec paramètre \(11\text{,}\) on peut appliquer un chiffrement de \(-11\) pour décoder le message.</p>
+<div class="sagecell-sage" id="sage-16"><script type="text/x-sage">print(EncodeurCesar('WPDPEFOTLYEDOPDTXDZYEWPDXPTWWPFCD',-11))
+</script></div>
+<p id="p-1533">Le chiffrement de César est simple, mais peu sécuritaire. Avec un message suffisament long, un personne pourrait intercepter le message et utiliser une analyse fréquentielle sur les lettres afin de deviner le paramètre de translation utilisé. Dans la langue française, la lettre “e” est la plus utilisés, avec un peu plus de \(12\%\) selon <a class="external" href="https://fr.wikipedia.org/wiki/Fr%C3%A9quence_d%27apparition_des_lettres_en_fran%C3%A7ais" target="_blank">Wikipedia</a>.</p>
+<p id="p-1534">Ainsi, si on reçoit le message</p>
+<pre class="code-display tex2jax_ignore">HBJSHPYKLSHSBULTVUHTPWPLYYVAWYLALTVPAHWSBTLWVBYLJYPYLBUTVATHJOHUKLSSLLZATVYALQLUHPWSBZKLMLBVBCYLTVPAHWVYALWVBYSHTVBYKLKPLB</pre>
+<p class="continuation">, on peut vérifier que la lettre la plus fréquente dans ce message est “L”. Sage peut être utile avec la fonction <code class="code-inline tex2jax_ignore">mode</code>, qui retourne l'élément d'une liste qui apparait le plus souvent.</p>
+<div class="sagecell-sage" id="sage-17"><script type="text/x-sage">Mbizarre='HBJSHPYKLSHSBULTVUHTPWPLYYVAWYLALTVPAHWSBTLWVBYLJYPYLBUTVATHJOHUKLSSLLZATVYALQLUHPWSBZKLMLBVBCYLTVPAHWVYALWVBYSHTVBYKLKPLB'
+mode(list(Mbizarre))
+</script></div>
+<p id="p-1535">Il est donc plausible de penser que le chiffrement a envoyé “E” sur “L” et on peut tenter de déchiffrer ce message en appliquant un chiffrement inverse. Comme \(\text{E}=5\) et que \(\text{L}=12\text{,}\) on essaie un chiffrement de \(-7\text{.}\)</p>
+<div class="sagecell-sage" id="sage-18"><script type="text/x-sage">EncodeurCesar(Mbizarre,-7)
+</script></div>
+<p id="p-1536">Une belle chanson!</p>
+<p id="p-1537">Pire encore, étant donné le petit nombre de possibilités, même sans avoir recours à l'analyse de la lettre la plus fréquente il est possible de déchiffrer le message. Il suffit d'essayer chacune des \(25\) possibilités (on n'a certainement pas fait un décalage de \(26\equiv 0 \mod 26\) caractères) et de constater que la plupart des messages seront insignifiants. On pourra alors rapidement décoder le bon message.</p>
+<p id="p-1538">On imagine un instant que les systèmes précédents ne soient pas si facile que cela à décoder. Un autre désavantage de ces systèmes est que pour envoyer un message à quelqu'un, je dois aussi lui transmettre quelle encryption j'ai effectuée, afin qu'il puisse décrypter le messsage. Cette information doit être transmise de manière sécuritaire afin que personne d'autre que la personne visée par le message ne puisse le déchiffrer (encore une fois, on suppose que le décodage n'est pas facile). Un système où l'auteur et le destinataire doivent connaitre la méthode d'encryptage est appelé un système à clé privée.</p>
+<p id="p-1539">L'un des système d'encodage les plus populaires et sécuritaire est basé sur un concept simple. Il est facile de multiplier deux nombres, mais factoriser un nombre qui serait le produit de deux nombres (premiers) est difficile. Quand on dit difficile, on parle bien entendu de très grand nombres, contenant des centaines et des centaines de chiffres. Le système de chiffrement RSA utilise ce principe. Contrairement aux autres systèmes précédents, c'est un système  à clé publique.</p>
+<p id="p-1540">On suppose que Damien veut offrir aux gens la possibilité de lui envoyer des messages privés. Pour ce faire, il choisit deux nombres premiers. Pour l'exemple, il choisit \(p=7\) et \(q=13\text{.}\) Il garde ces deux nombres secrets, mais donne à qui veut bien lui envoyer un message le produit \(pq=91\text{.}\) Ensuite, Damien doit sélectionner un autre nombre \(e\) tel que \(\pgcd{(e,(p-1)(q-1))}=1\text{.}\) Puisque \((p-1)(q-1)=6\times 12=72\text{,}\) Damien choisit \(e=5\text{.}\) Damien donne aussi à qui veut bien lui envoyer un message ce nombre \(e\text{.}\) Ensemble, la paire \((91,5)\) constitue la clé publique de Damien.</p>
+<p id="p-1541">Dans la réalité, Damien choisirait des nombres beaucoup plus grands, sans quoi la sécurité du système RSA expliqué ci-dessous serait nulle. On considère maintenant Marie, qui souhaite envoyer le message “Bonjour” à Damien. Marie commence par transformer son message en nombres et obtient <code class="code-inline tex2jax_ignore">2 15 14 10 15 21 18 </code>. Puis, elle prend chacun de des chiffres \(M\) de son message et les encode à l'aide de la formule \(C=M^e\mod pq\text{.}\) Par exemple “B” devient \(2^5 \mod 91 =32\text{,}\) puis “O” devient \(15^5 \mod 91=71\text{,}\) “N” devient (reste) \(14\) et ainsi de suite. Le message devient ainsi <code class="code-inline tex2jax_ignore">32 71 14 82 71 21 44</code>. C'est ce message qui est transmis à Damien.</p>
+<p id="p-1542">Damien reçoit donc le message <code class="code-inline tex2jax_ignore">32 71 14 82 71 21 44</code> et entreprend donc de le décoder. Pour cela, il doit calculer un inverse de \(e\) modulo \((p-1)(q-1)\text{.}\) Puisque \(e\) avait été choisi pour qu'un inverse existe, il sait que  c'est posssible. Damien se souvient de l'exemple <a class="xref" data-knowl="./knowl/ex-inversemodulo.html" title="Exemple 3.3.18: Un inverse modulo \(72\)">3.3.18</a> et sait que \(d=29\) est un inverse pour \(5\) modulo \(72\text{.}\) Pour décoder le message de Marie, Damien applique à chaque nombre reçu la formule \(M=C^d \mod pq\text{.}\) On utilise Sage pour décoder le message.</p>
+<div class="sagecell-sage" id="sage-19"><script type="text/x-sage">C=[32, 71, 14, 82, 71, 21, 44]
+M=[]
+for c in C:
+    M.append(c^29 % 91)
+print(M)
+</script></div>
+<p id="p-1543">La sécurité du système RSA vient du fait que, sans connaitre \(p\) et \(q\) individuellement, il est impossible de déterminer l'inverse de \(e\) et ainsi décoder le message. Lorsqu'en pratique, \(p,q,e\) sont choisis de sorte à posséder un très grand nombre de chiffres, même l'ordinateur le plus puissant ne pourra décoder le message en un temps raisonnable sans connaitre \(d\text{.}\)</p>
+<p id="p-1544">L'explication du pourquoi le décodage fonctionne avec la formule \(M=C^d \mod pq\) utilise un résultat appelé le petit théorème de Fermat. On explore ceci dans l'exercice <code class="code-inline tex2jax_ignore">[provisional cross-reference: exo-RSA]</code>. Les cellules suivantes permettent d'encoder un message avec le cryptage RSA à partir de deux nombres \(pq,e\) et d'en décoder un à partir des trois nombres \(p,q,e\text{.}\) Il faut s'assurer d'avoir exécuter les cellules plus haut afin de d'utiliser certaines fonctions définies dans celles-ci.</p>
+<div class="sagecell-sage" id="sage-20"><script type="text/x-sage">#Fonction pour encoder un message en RSA
+def RSAcode(M,pq,e):
+    L=msganombres(M)
+    Mcode=[]
+    for c in L:
+        Mcode.append(c^e % pq)
+    return Mcode
+</script></div>
+<div class="sagecell-sage" id="sage-21"><script type="text/x-sage">#Fonction pour décoder un message chiffré en RSA
+def RSAdecode(C,p,q,e):
+    N=(p-1)*(q-1)
+    if gcd(e,N)!=1:
+        print("Le choix de {},{},{} n'est pas compatible avec RSA. Le message ne peut être décodé. Vérifiez les paramètres.".format(p,q,e))
+        return []
+    else:
+        d=inverse_mod(e,N) #Fonction sage qui calcule l'inverse modulo N
+        L=[]
+        for c in C:
+            L.append(c^d % (p*q))
+        M=nombresamessage(L)
+        return M
+</script></div>
+<div class="sagecell-sage" id="sage-22"><script type="text/x-sage">C=RSAcode("Bonjour",91,5)
+print(C)
+</script></div>
+<div class="sagecell-sage" id="sage-23"><script type="text/x-sage">RSAdecode(C,7,13,5)
+</script></div>
+<div class="sagecell-sage" id="sage-24"><script type="text/x-sage">RSAdecode(C,7,13,3)# Un décodage non compatible car pgcd(3,72) ne donne pas 1
+</script></div>
+<p id="p-1545">Le principe RSA présenté ici est une simplification du vrai système RSA qui est encore utilisé. Dans la réalité, on va faire des blocs de lettres et juxtaposer leur équivalent en nombres avant de faire le cryptage.</p></section><section class="conclusion" id="concl-modulo"><p id="p-1546">Les points importants de cette section sont:</p>
+<ol class="decimal">
+<li id="li-355"><p id="p-1547">La définition de <a class="xref" data-knowl="./knowl/def-modulo.html" title="Définition 3.3.1: Congruence modulo \(n\)">congruence modulo</a> et des classes d'équivalence;</p></li>
+<li id="li-356"><p id="p-1548">L'équivalence entre <a class="xref" data-knowl="./knowl/prop-modulodivisibilite.html" title="Proposition 3.3.5: Congruence modulo \(n\) et divisibilité">modulo et divisibilité</a>;</p></li>
+<li id="li-357"><p id="p-1549">Les <a class="xref" data-knowl="./knowl/prop-moduloprop.html" title="Proposition 3.3.6: Propriété de l'arithmétique modulaire">propriétés</a> de l'arithmétique modulaire;</p></li>
+<li id="li-358"><p id="p-1550">Le fait qu'on ne peut pas <a class="xref" data-knowl="./knowl/prop-divmodulo.html" title="Proposition 3.3.8: La division dans une congruence modulo \(n\)">diviser</a> dans une congruence modulo sans changer la valeur du modulo, sauf si le pgcd est \(1\text{.}\)</p></li>
+</ol></section><section class="reading-questions" id="rq-modulo"><h3 class="heading hide-type">
+<span class="type">Questions de compréhension de la lecture</span> <span class="codenumber">3.3.5</span> <span class="title">Questions de compréhension de la lecture</span>
+</h3>
+<section class="introduction" id="introduction-146"><p id="p-1551">Ces questions sont à faire avant de venir en classe et à remettre au début du cours.</p></section><article class="exercise exercise-like" id="exercise-178"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-147"><p id="p-1552">Déterminer</p></div>
+<article class="task exercise-like" id="task-430"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1553">La journée de la semaine \(48\) jours après un jeudi;</p></article><article class="task exercise-like" id="task-431"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1554">La journée de la semaine \(111\) jours après un mardi;</p></article><article class="task exercise-like" id="task-432"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1555">La journée de la semaine \(26\) jours <em class="emphasis">avant</em> un samedi.</p></article></article><article class="exercise exercise-like" id="exercise-179"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-1556">Donner \(5\) entiers qui sont congrus à \(8\) modulo \(13\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-180"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-1557">Donner les tables d'addition et de multiplication modulo \(6\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-181"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1558">Donner les tables d'addition et de multiplication modulo \(7\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-182"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-1559">Quels sont les entiers dans \(\{0,1,2,3,4,5\}\) qui ont un inverse modulo \(6\text{?}\) Est-ce que cela satisfait la définition <a class="xref" data-knowl="./knowl/def-inversemodulo.html" title="Définition 3.3.17: L'inverse d'un nombre modulo \(n\)">3.3.17</a>.</p></article><article class="exercise exercise-like" id="exercise-183"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-1560">Quels sont les entiers dans \(\{0,1,2,3,4,5,6\}\) qui ont un inverse modulo \(7\text{?}\) Est-ce que cela satisfait la définition <a class="xref" data-knowl="./knowl/def-inversemodulo.html" title="Définition 3.3.17: L'inverse d'un nombre modulo \(n\)">3.3.17</a>.</p></article><article class="exercise exercise-like" id="exercise-184"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-1561">Le message</p>
+<pre class="code-display tex2jax_ignore">ORTEGAXGVGYJKIXEVZUMXGVNOKGRKDGSKT
+</pre>
+<p class="continuation">a été encodé à l'aide d'un chiffrement de César avec décalage correspondant à la date de l'examen intra. Quel est ce message.</p></article><article class="exercise exercise-like" id="exercise-185"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-1562">Noter toute question qui demeure suite à la lecture de la section et la résolution des exercices ci-dessus ou toute précision/clarification à apporter. Note: cette question est facultative.</p></article></section><section class="exercises" id="exo-modulo"><h3 class="heading hide-type">
+<span class="type">Exercices</span> <span class="codenumber">3.3.6</span> <span class="title">Exercices</span>
+</h3>
+<article class="subexercises" id="subexercises-11"><h6 class="heading"><span class="title">À faire en classe</span></h6>
+<div class="introduction" id="introduction-148"><p id="p-1563">Ces exercices sont faits pour travailler en classe. Ils servent à approfondir les notions de la section et à atteindre les objectifs d'apprentissage plus avancés.</p></div>
+<article class="exercise exercise-like" id="exercise-186"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-149"><p id="p-1564">Déterminer le plus petit entier positif congru à \(5^{2021}\) modulo:</p></div>
+<article class="task exercise-like" id="task-433"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1565">\(2\text{;}\)</p></article><article class="task exercise-like" id="task-434"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1566">\(3\text{;}\)</p></article><article class="task exercise-like" id="task-435"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1567">\(4\text{;}\)</p></article><article class="task exercise-like" id="task-436"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1568">\(6\text{;}\)</p></article></article><article class="exercise exercise-like" id="exercise-187"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-150">Pour chaque opération ci-dessous, donner la réponse sous la forme d'un entier entre \(0\) et \(51\text{.}\)</div>
+<article class="task exercise-like" id="task-437"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1569">\((121\mod 52 +95 \mod 52)\mod 52\text{;}\)</p></article><article class="task exercise-like" id="task-438"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1570">\((121\mod 52 -95 \mod 52)\mod 52\text{;}\)</p></article><article class="task exercise-like" id="task-439"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1571">\(((121\mod 52) \times (95 \mod 52))\mod 52\text{;}\)</p></article><article class="task exercise-like" id="task-440"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1572">\(3\text{;}\)</p></article></article><article class="exercise exercise-like" id="exercise-188"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-1573">Donner les réponses aux calculs de l'exercice précédent sous la forme d'un entier entre \(-51\) et \(0\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-189"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1574">Montrer que chacune des classes d'équivalence modulo \(5\text{,}\) obtenues à l'exemple <a class="xref" data-knowl="./knowl/ex-modulo5.html" title="Exemple 3.3.2: Les classes d'équivalence modulo \(5\text{.}\)">3.3.2</a>, peut être écrite sous la forme de l'ensemble \(E_{r,5}=\{x\in \mathbb{Z}~|~ x=r+5k \,\text{pour un certain } k\in \mathbb{Z}\}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-190"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-1575">On considère les entiers impairs \(I=\{1,3,5,7,9,\ldots\}\text{.}\) Pour \(n\in I\text{,}\) calculer \(n^2\mod 8\) pour quelques entiers. Comment démontrer que cela sera toujours vrai?</p></article><article class="exercise exercise-like" id="exercise-191"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-151">
+<p id="p-1576">Un tableau contenant une infinité de lignes et \(5\) colonnes contenant les nombres naturels est construit. Les premières lignes sont données à la table ci-dessous. On considère l'élément à la première ligne et la première colonne comme la position \((0,0)\text{.}\) De manière générale, un élément en position \((i,j)\) est à la ligne \(i\) et colonne \(j\text{.}\) Par exemple, \(15\) est à la position \((2,3)\text{.}\)</p>
+<figure class="table table-like" id="table-32"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.19<span class="period">.</span></span><span class="space"> </span>Un tableau de nombres</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(5\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(7\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(8\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(9\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(10\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(11\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(12\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(13\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(14\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(15\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(16\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(17\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(18\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(19\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(20\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(21\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(22\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(23\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(24\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(25\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(26\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(27\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(28\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(29\)</td>
+</tr>
+</table></div></figure>
+</div>
+<article class="task exercise-like" id="task-441"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1577">À quelle ligne et quelle colonne retrouve-t-on le nombre \(33\text{?}\)</p></article><article class="task exercise-like" id="task-442"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1578">À quelle ligne et quelle colonne retrouve-t-on le nombre \(66\text{?}\)</p></article><article class="task exercise-like" id="task-443"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1579">À quelle ligne et quelle colonne retrouve-t-on le nombre \(87\text{?}\)</p></article><article class="task exercise-like" id="task-444"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1580">À quelle ligne et quelle colonne retrouve-t-on votre numéro de  DA?</p></article></article><article class="exercise exercise-like" id="exercise-192"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-152"><p id="p-1581">Résoudre les congruences suivantes ou expliquer pourquoi il n'y a pas de solutions.</p></div>
+<article class="task exercise-like" id="task-445"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1582">\(2x\equiv 1\mod 5\)</p></article><article class="task exercise-like" id="task-446"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1583">\(3x\equiv 1\mod 4\)</p></article><article class="task exercise-like" id="task-447"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1584">\(3x\equiv 1\mod 7\)</p></article><article class="task exercise-like" id="task-448"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1585">\(4x\equiv 1\mod 6\)</p></article><article class="task exercise-like" id="task-449"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1586">\(5x\equiv 1\mod 7\)</p></article></article><article class="exercise exercise-like" id="exercise-193"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-153"><p id="p-1587">Résoudre les congruences suivantes sans essayer toutes les possibilités ou expliquer pourquoi il n'y a pas de solutions.</p></div>
+<article class="task exercise-like" id="task-450"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1588">\(2x\equiv 3\mod 5\)</p></article><article class="task exercise-like" id="task-451"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1589">\(3x\equiv 2\mod 4\)</p></article><article class="task exercise-like" id="task-452"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1590">\(3x\equiv 6\mod 7\)</p></article><article class="task exercise-like" id="task-453"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1591">\(4x\equiv 5\mod 6\)</p></article><article class="task exercise-like" id="task-454"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1592">\(5x\equiv 3\mod 7\)</p></article><a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Indice.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like"><p id="p-1593">Les résultats de l'exercice précédent peuvent être utile.</p></div></div></article><article class="exercise exercise-like" id="exercise-194"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-1594">Sachant que \(x=68\) est une solution à l'équation \(5x\equiv 1\mod 113\text{,}\) trouver une solution à</p>
+<div class="displaymath">
+\begin{equation*}
+5x\equiv 34\mod 113\text{.}
+\end{equation*}
+</div></article><article class="exercise exercise-like" id="exercise-195"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-1595">On consdière la paire de congruences suivantes:</p>
+<div class="displaymath">
+\begin{align*}
+x&amp;\equiv 2\mod 3\\
+x&amp;\equiv 3\mod 5\text{.}
+\end{align*}
+</div>
+<p id="p-1596">Trouver une valeur de \(x\) qui satisfait simultanément ces deux équations.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Indice.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like"><p id="p-1597">Écrire la soution à la première congruence comme \(x=2+3k\) et remplacer dans la deuxième.</p></div></div>
+</div></article></article><article class="subexercises" id="subexercises-12"><h6 class="heading"><span class="title">Exercices supplémentaires</span></h6>
+<article class="exercise exercise-like" id="exercise-196"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-1598">Une relation \(R\) entre deux objets est une relation d'équivalence si pour \(a,b,c\) on a</p>
+<ul class="disc">
+<li id="li-359"><p id="p-1599">que la relation est symétrique, c'est-à-dire que si \((a,b)\in R\text{,}\) alors \((b,a)\in R\text{;}\)</p></li>
+<li id="li-360"><p id="p-1600">que la relation est réflexive, c'est-à-dire que \((a,a)\in R\text{;}\)</p></li>
+<li id="li-361"><p id="p-1601">que la relation est transitive, c'est-à-dire que si \((a,b)\in R\) et \((b,c)\in R\text{,}\) alors \((a,c)\in R\text{.}\)</p></li>
+</ul>
+<p id="p-1602">Pour la congruence modulo \(n\text{,}\) on peut plus simplement écrire \((a,b) \leftrightarrow a\equiv b\mod n\text{.}\) Montrer que la congruence modulo est une relation d'équivalence.</p></article><article class="exercise exercise-like" id="exercise-197"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-154"><p id="p-1603">Encoder les messages suivants avec le décalage de César précisé avec le message.</p></div>
+<article class="task exercise-like" id="task-455"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1604"><code class="code-inline tex2jax_ignore">Mon enseignant est le meilleur</code> avec décalage \(22\)</p></article><article class="task exercise-like" id="task-456"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1605"><code class="code-inline tex2jax_ignore">Je vais faire tous les devoirs</code> avec décalage \(9\)</p></article><article class="task exercise-like" id="task-457"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1606"><code class="code-inline tex2jax_ignore">Un jour je serai le meilleur dresseur</code> avec décalage \(1\)</p></article></article><article class="exercise exercise-like" id="exercise-198"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-155"><p id="p-1607">Décoder les messages suivants, qui ont été chiffrés par un décalage de César précisé avec le message.</p></div>
+<article class="task exercise-like" id="task-458"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1608"><code class="code-inline tex2jax_ignore">EHBWEPXAWQZADKNO</code> avec décalage \(22\)</p></article><article class="task exercise-like" id="task-459"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1609"><code class="code-inline tex2jax_ignore">MNBYXVVNBMNBYXRANBMNBJWJWJB</code> avec décalage \(9\)</p></article><article class="task exercise-like" id="task-460"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1610"><code class="code-inline tex2jax_ignore">MFTNBUIFNBUJRVFTEJTDSFUFTDFTUWSBJNFOUHFOJBM</code> avec décalage \(1\)</p></article></article><article class="exercise exercise-like" id="exercise-199"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-156"><p id="p-1611">Encoder les messages suivants avec le système RSA dont les paramètres sont précisés avec le message.</p></div>
+<article class="task exercise-like" id="task-461"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1612"><code class="code-inline tex2jax_ignore">Mon enseignant est le meilleur</code> avec paramètres \(pq=2077, e=15841\)</p></article><article class="task exercise-like" id="task-462"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1613"><code class="code-inline tex2jax_ignore">Je vais faire tous les devoirs</code> avec paramètres \(pq=18871, e=3261\)</p></article><article class="task exercise-like" id="task-463"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1614"><code class="code-inline tex2jax_ignore">Un jour je serai le meilleur dresseur</code> avec paramètres \(pq=45113,e=5555\)</p></article><article class="task exercise-like" id="task-464"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1615">Qui a-t-il de particulier avec ces messages codés? Est-ce qu'il y a une lettre qui est facile à décoder? En utilisant des blocs de lettres comme dans le vrai RSA, ceci ne se produit pas.</p></article></article><article class="exercise exercise-like" id="exercise-200"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-157"><p id="p-1616">Décoder les messages suivants, qui ont été chiffrés par RSA avec paramètres précisés avec le message.</p></div>
+<article class="task exercise-like" id="task-465"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1617"><code class="code-inline tex2jax_ignore">[8, 349, 1231, 64, 1000, 1, 684, 125, 807, 8, 349, 1231, 64]</code> avec \(p=89,q=17,e=531\)</p></article><article class="task exercise-like" id="task-466"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1618"><code class="code-inline tex2jax_ignore">[6041, 80552, 64471, 1, 40280, 76462, 6041, 75310, 6041, 40280, 2122, 78295, 80552, 16446, 1, 32487, 2122, 80552, 6041, 73799, 1, 20790, 3336, 6041, 40280, 20790, 16446, 1, 79033, 2122, 46951, 6415, 70263, 2122, 46951, 40280]</code> avec \(p=389,q=233,e=111\)</p></article><article class="task exercise-like" id="task-467"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1619"><code class="code-inline tex2jax_ignore">[10, 1, 7357, 15878, 6017, 16044, 6017, 1172, 6017, 341, 6017, 10370, 341, 6017, 13378, 1, 16044, 11527, 341, 1518, 11527, 7357, 3855]</code> avec \(p=101,q=167,e=333\)</p></article></article><article class="exercise exercise-like" id="exercise-201"><h6 class="heading">
+<span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">QFINXUFWNYNTS.</span>
+</h6>
+<p id="p-1620">Le message</p>
+<pre class="code-display tex2jax_ignore">
+    AYHOPYXBPKPZWHYBAKHUZSHKPZWHYPAPVUYHCPYHPAHBSPZHUAZBIAPSAVBAWSHPZPYTVABZKVUJZBYSPUJVUUBUVFHBTHUXBHUA
+    </pre>
+<p class="continuation">a été encodé à l'aide d'un décalage César, mais le décalage est inconnu. Déterminer le message original, sans essayer toutes les possibilités.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Indice.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like"><p id="p-1621">Si même après avoir déterminé quelles lettres sont les plus fréquentes le message ne se déchiffre toujours pas, un indice avec décalage 5 a été crypté dans le titre de l'exercice.</p></div></div>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-18" id="hint-18"><span class="type">Indice.</span> <span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-18"><div class="hint solution-like">
+<p id="p-1622">Ne pas lire avant d'avoir réfléchi et cherché à propos de l'indice 1. L'indice ci-dessous est un décalage de César avec décalage \(21\text{.}\) Décoder chaque phrase individuellement pour une meilleure lisibilité.</p>
+<p id="p-1623">QFINXUFWNYNTSJXYZSWTRFSIJLJTWLJUJWJHVZNJXYJHWNYXFSXZYNQNXJWQFQJYYWJJ</p>
+<p id="p-1624">FUWJXJVZJQQJXTSYQJXQJYYWJXQJXUQZXZYNQNXJJXIJQFQFSLZJKWFSHFNXJ</p>
+</div></div>
+</div></article></article></section></section></div></main>
+</div>
+<script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>
