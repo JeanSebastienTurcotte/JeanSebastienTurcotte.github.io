@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-10-01T19:35:37Z       *-->
+<!--*       on 2021-10-14T12:18:25Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -139,10 +139,10 @@ $\Box$
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Table des matières</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-divisibilite.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><span id="nextbutton" class="next-button button toolbar-item disabled">Suivant</span></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Table des matières</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec-divisibilite.html" title="Précédent">Précédent</a><a id="upbutton" class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><a id="nextbutton" class="next-button button toolbar-item" href="chap-denombrement.html" title="Suivant">Suivant</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Table des matières</button><a class="previous-button toolbar-item button" href="sec-divisibilite.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><span class="next-button button toolbar-item disabled">Suivant</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Table des matières</button><a class="previous-button toolbar-item button" href="sec-divisibilite.html" title="Précédent">Précédent</a><a class="up-button button toolbar-item" href="chap-reptheonombres.html" title="Haut">Haut</a><a class="next-button button toolbar-item" href="chap-denombrement.html" title="Suivant">Suivant</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -168,6 +168,9 @@ $\Box$
 <li><a href="sec-divisibilite.html" data-scroll="sec-divisibilite">La divisibilité dans les entiers</a></li>
 <li><a href="sec-modulo.html" data-scroll="sec-modulo" class="active">Arithmétique modulaire</a></li>
 </ul>
+</li>
+<li class="link">
+<a href="chap-denombrement.html" data-scroll="chap-denombrement"><span class="codenumber">4</span> <span class="title">Dénombrement</span></a><ul><li><a href="section-11.html" data-scroll="section-11">Exercices principes d'étiquetage</a></li></ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Rédigé avec PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
@@ -819,13 +822,12 @@ print(C)
 <article class="task exercise-like" id="task-437"><h6 class="heading"><span class="codenumber">(a)</span></h6>
 <p id="p-1569">\((121\mod 52 +95 \mod 52)\mod 52\text{;}\)</p></article><article class="task exercise-like" id="task-438"><h6 class="heading"><span class="codenumber">(b)</span></h6>
 <p id="p-1570">\((121\mod 52 -95 \mod 52)\mod 52\text{;}\)</p></article><article class="task exercise-like" id="task-439"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1571">\(((121\mod 52) \times (95 \mod 52))\mod 52\text{;}\)</p></article><article class="task exercise-like" id="task-440"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1572">\(3\text{;}\)</p></article></article><article class="exercise exercise-like" id="exercise-188"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-1573">Donner les réponses aux calculs de l'exercice précédent sous la forme d'un entier entre \(-51\) et \(0\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-189"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-1574">Montrer que chacune des classes d'équivalence modulo \(5\text{,}\) obtenues à l'exemple <a class="xref" data-knowl="./knowl/ex-modulo5.html" title="Exemple 3.3.2: Les classes d'équivalence modulo \(5\text{.}\)">3.3.2</a>, peut être écrite sous la forme de l'ensemble \(E_{r,5}=\{x\in \mathbb{Z}~|~ x=r+5k \,\text{pour un certain } k\in \mathbb{Z}\}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-190"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
-<p id="p-1575">On considère les entiers impairs \(I=\{1,3,5,7,9,\ldots\}\text{.}\) Pour \(n\in I\text{,}\) calculer \(n^2\mod 8\) pour quelques entiers. Comment démontrer que cela sera toujours vrai?</p></article><article class="exercise exercise-like" id="exercise-191"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-1571">\(((121\mod 52) \times (95 \mod 52))\mod 52\text{;}\)</p></article></article><article class="exercise exercise-like" id="exercise-188"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-1572">Donner les réponses aux calculs de l'exercice précédent sous la forme d'un entier entre \(-51\) et \(0\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-189"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-1573">Montrer que chacune des classes d'équivalence modulo \(5\text{,}\) obtenues à l'exemple <a class="xref" data-knowl="./knowl/ex-modulo5.html" title="Exemple 3.3.2: Les classes d'équivalence modulo \(5\text{.}\)">3.3.2</a>, peut être écrite sous la forme de l'ensemble \(E_{r,5}=\{x\in \mathbb{Z}~|~ x=r+5k \,\text{pour un certain } k\in \mathbb{Z}\}\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-190"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-1574">On considère les entiers impairs \(I=\{1,3,5,7,9,\ldots\}\text{.}\) Pour \(n\in I\text{,}\) calculer \(n^2\mod 8\) pour quelques entiers. Comment démontrer que cela sera toujours vrai?</p></article><article class="exercise exercise-like" id="exercise-191"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
 <div class="introduction" id="introduction-151">
-<p id="p-1576">Un tableau contenant une infinité de lignes et \(5\) colonnes contenant les nombres naturels est construit. Les premières lignes sont données à la table ci-dessous. On considère l'élément à la première ligne et la première colonne comme la position \((0,0)\text{.}\) De manière générale, un élément en position \((i,j)\) est à la ligne \(i\) et colonne \(j\text{.}\) Par exemple, \(15\) est à la position \((2,3)\text{.}\)</p>
+<p id="p-1575">Un tableau contenant une infinité de lignes et \(5\) colonnes contenant les nombres naturels est construit. Les premières lignes sont données à la table ci-dessous. On considère l'élément à la première ligne et la première colonne comme la position \((0,0)\text{.}\) De manière générale, un élément en position \((i,j)\) est à la ligne \(i\) et colonne \(j\text{.}\) Par exemple, \(15\) est à la position \((2,3)\text{.}\)</p>
 <figure class="table table-like" id="table-32"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.3.19<span class="period">.</span></span><span class="space"> </span>Un tableau de nombres</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r0 l0 t0 lines">\(0\)</td>
@@ -869,85 +871,86 @@ print(C)
 </tr>
 </table></div></figure>
 </div>
-<article class="task exercise-like" id="task-441"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1577">À quelle ligne et quelle colonne retrouve-t-on le nombre \(33\text{?}\)</p></article><article class="task exercise-like" id="task-442"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1578">À quelle ligne et quelle colonne retrouve-t-on le nombre \(66\text{?}\)</p></article><article class="task exercise-like" id="task-443"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1579">À quelle ligne et quelle colonne retrouve-t-on le nombre \(87\text{?}\)</p></article><article class="task exercise-like" id="task-444"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1580">À quelle ligne et quelle colonne retrouve-t-on votre numéro de  DA?</p></article></article><article class="exercise exercise-like" id="exercise-192"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-152"><p id="p-1581">Résoudre les congruences suivantes ou expliquer pourquoi il n'y a pas de solutions.</p></div>
-<article class="task exercise-like" id="task-445"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1582">\(2x\equiv 1\mod 5\)</p></article><article class="task exercise-like" id="task-446"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1583">\(3x\equiv 1\mod 4\)</p></article><article class="task exercise-like" id="task-447"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1584">\(3x\equiv 1\mod 7\)</p></article><article class="task exercise-like" id="task-448"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1585">\(4x\equiv 1\mod 6\)</p></article><article class="task exercise-like" id="task-449"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1586">\(5x\equiv 1\mod 7\)</p></article></article><article class="exercise exercise-like" id="exercise-193"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-153"><p id="p-1587">Résoudre les congruences suivantes sans essayer toutes les possibilités ou expliquer pourquoi il n'y a pas de solutions.</p></div>
-<article class="task exercise-like" id="task-450"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1588">\(2x\equiv 3\mod 5\)</p></article><article class="task exercise-like" id="task-451"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1589">\(3x\equiv 2\mod 4\)</p></article><article class="task exercise-like" id="task-452"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1590">\(3x\equiv 6\mod 7\)</p></article><article class="task exercise-like" id="task-453"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1591">\(4x\equiv 5\mod 6\)</p></article><article class="task exercise-like" id="task-454"><h6 class="heading"><span class="codenumber">(e)</span></h6>
-<p id="p-1592">\(5x\equiv 3\mod 7\)</p></article><a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Indice.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like"><p id="p-1593">Les résultats de l'exercice précédent peuvent être utile.</p></div></div></article><article class="exercise exercise-like" id="exercise-194"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
-<p id="p-1594">Sachant que \(x=68\) est une solution à l'équation \(5x\equiv 1\mod 113\text{,}\) trouver une solution à</p>
+<article class="task exercise-like" id="task-440"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1576">À quelle ligne et quelle colonne retrouve-t-on le nombre \(33\text{?}\)</p></article><article class="task exercise-like" id="task-441"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1577">À quelle ligne et quelle colonne retrouve-t-on le nombre \(66\text{?}\)</p></article><article class="task exercise-like" id="task-442"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1578">À quelle ligne et quelle colonne retrouve-t-on le nombre \(87\text{?}\)</p></article><article class="task exercise-like" id="task-443"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1579">À quelle ligne et quelle colonne retrouve-t-on votre numéro de  DA?</p></article></article><article class="exercise exercise-like" id="exercise-192"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-152"><p id="p-1580">Résoudre les congruences suivantes ou expliquer pourquoi il n'y a pas de solutions.</p></div>
+<article class="task exercise-like" id="task-444"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1581">\(2x\equiv 1\mod 5\)</p></article><article class="task exercise-like" id="task-445"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1582">\(3x\equiv 1\mod 4\)</p></article><article class="task exercise-like" id="task-446"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1583">\(3x\equiv 1\mod 7\)</p></article><article class="task exercise-like" id="task-447"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1584">\(4x\equiv 1\mod 6\)</p></article><article class="task exercise-like" id="task-448"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1585">\(5x\equiv 1\mod 7\)</p></article></article><article class="exercise exercise-like" id="exercise-193"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-153"><p id="p-1586">Résoudre les congruences suivantes sans essayer toutes les possibilités ou expliquer pourquoi il n'y a pas de solutions.</p></div>
+<article class="task exercise-like" id="task-449"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1587">\(2x\equiv 3\mod 5\)</p></article><article class="task exercise-like" id="task-450"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1588">\(3x\equiv 2\mod 4\)</p></article><article class="task exercise-like" id="task-451"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1589">\(3x\equiv 6\mod 7\)</p></article><article class="task exercise-like" id="task-452"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1590">\(4x\equiv 5\mod 6\)</p></article><article class="task exercise-like" id="task-453"><h6 class="heading"><span class="codenumber">(e)</span></h6>
+<p id="p-1591">\(5x\equiv 3\mod 7\)</p></article><a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-15" id="hint-15"><span class="type">Indice.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-15"><div class="hint solution-like"><p id="p-1592">Les résultats de l'exercice précédent peuvent être utile.</p></div></div></article><article class="exercise exercise-like" id="exercise-194"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-1593">Sachant que \(x=68\) est une solution à l'équation \(5x\equiv 1\mod 113\text{,}\) trouver une solution à</p>
 <div class="displaymath">
 \begin{equation*}
 5x\equiv 34\mod 113\text{.}
 \end{equation*}
 </div></article><article class="exercise exercise-like" id="exercise-195"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
-<p id="p-1595">On consdière la paire de congruences suivantes:</p>
+<p id="p-1594">On consdière la paire de congruences suivantes:</p>
 <div class="displaymath">
 \begin{align*}
 x&amp;\equiv 2\mod 3\\
 x&amp;\equiv 3\mod 5\text{.}
 \end{align*}
 </div>
-<p id="p-1596">Trouver une valeur de \(x\) qui satisfait simultanément ces deux équations.</p>
+<p id="p-1595">Trouver une valeur de \(x\) qui satisfait simultanément ces deux équations.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Indice.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like"><p id="p-1597">Écrire la soution à la première congruence comme \(x=2+3k\) et remplacer dans la deuxième.</p></div></div>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-16" id="hint-16"><span class="type">Indice.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-16"><div class="hint solution-like"><p id="p-1596">Écrire la soution à la première congruence comme \(x=2+3k\) et remplacer dans la deuxième.</p></div></div>
 </div></article></article><article class="subexercises" id="subexercises-12"><h6 class="heading"><span class="title">Exercices supplémentaires</span></h6>
 <article class="exercise exercise-like" id="exercise-196"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
-<p id="p-1598">Une relation \(R\) entre deux objets est une relation d'équivalence si pour \(a,b,c\) on a</p>
+<p id="p-1597">Une relation \(R\) entre deux objets est une relation d'équivalence si pour \(a,b,c\) on a</p>
 <ul class="disc">
-<li id="li-359"><p id="p-1599">que la relation est symétrique, c'est-à-dire que si \((a,b)\in R\text{,}\) alors \((b,a)\in R\text{;}\)</p></li>
-<li id="li-360"><p id="p-1600">que la relation est réflexive, c'est-à-dire que \((a,a)\in R\text{;}\)</p></li>
-<li id="li-361"><p id="p-1601">que la relation est transitive, c'est-à-dire que si \((a,b)\in R\) et \((b,c)\in R\text{,}\) alors \((a,c)\in R\text{.}\)</p></li>
+<li id="li-359"><p id="p-1598">que la relation est symétrique, c'est-à-dire que si \((a,b)\in R\text{,}\) alors \((b,a)\in R\text{;}\)</p></li>
+<li id="li-360"><p id="p-1599">que la relation est réflexive, c'est-à-dire que \((a,a)\in R\text{;}\)</p></li>
+<li id="li-361"><p id="p-1600">que la relation est transitive, c'est-à-dire que si \((a,b)\in R\) et \((b,c)\in R\text{,}\) alors \((a,c)\in R\text{.}\)</p></li>
 </ul>
-<p id="p-1602">Pour la congruence modulo \(n\text{,}\) on peut plus simplement écrire \((a,b) \leftrightarrow a\equiv b\mod n\text{.}\) Montrer que la congruence modulo est une relation d'équivalence.</p></article><article class="exercise exercise-like" id="exercise-197"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-154"><p id="p-1603">Encoder les messages suivants avec le décalage de César précisé avec le message.</p></div>
-<article class="task exercise-like" id="task-455"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1604"><code class="code-inline tex2jax_ignore">Mon enseignant est le meilleur</code> avec décalage \(22\)</p></article><article class="task exercise-like" id="task-456"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1605"><code class="code-inline tex2jax_ignore">Je vais faire tous les devoirs</code> avec décalage \(9\)</p></article><article class="task exercise-like" id="task-457"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1606"><code class="code-inline tex2jax_ignore">Un jour je serai le meilleur dresseur</code> avec décalage \(1\)</p></article></article><article class="exercise exercise-like" id="exercise-198"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-155"><p id="p-1607">Décoder les messages suivants, qui ont été chiffrés par un décalage de César précisé avec le message.</p></div>
-<article class="task exercise-like" id="task-458"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1608"><code class="code-inline tex2jax_ignore">EHBWEPXAWQZADKNO</code> avec décalage \(22\)</p></article><article class="task exercise-like" id="task-459"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1609"><code class="code-inline tex2jax_ignore">MNBYXVVNBMNBYXRANBMNBJWJWJB</code> avec décalage \(9\)</p></article><article class="task exercise-like" id="task-460"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1610"><code class="code-inline tex2jax_ignore">MFTNBUIFNBUJRVFTEJTDSFUFTDFTUWSBJNFOUHFOJBM</code> avec décalage \(1\)</p></article></article><article class="exercise exercise-like" id="exercise-199"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-156"><p id="p-1611">Encoder les messages suivants avec le système RSA dont les paramètres sont précisés avec le message.</p></div>
-<article class="task exercise-like" id="task-461"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1612"><code class="code-inline tex2jax_ignore">Mon enseignant est le meilleur</code> avec paramètres \(pq=2077, e=15841\)</p></article><article class="task exercise-like" id="task-462"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1613"><code class="code-inline tex2jax_ignore">Je vais faire tous les devoirs</code> avec paramètres \(pq=18871, e=3261\)</p></article><article class="task exercise-like" id="task-463"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1614"><code class="code-inline tex2jax_ignore">Un jour je serai le meilleur dresseur</code> avec paramètres \(pq=45113,e=5555\)</p></article><article class="task exercise-like" id="task-464"><h6 class="heading"><span class="codenumber">(d)</span></h6>
-<p id="p-1615">Qui a-t-il de particulier avec ces messages codés? Est-ce qu'il y a une lettre qui est facile à décoder? En utilisant des blocs de lettres comme dans le vrai RSA, ceci ne se produit pas.</p></article></article><article class="exercise exercise-like" id="exercise-200"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
-<div class="introduction" id="introduction-157"><p id="p-1616">Décoder les messages suivants, qui ont été chiffrés par RSA avec paramètres précisés avec le message.</p></div>
-<article class="task exercise-like" id="task-465"><h6 class="heading"><span class="codenumber">(a)</span></h6>
-<p id="p-1617"><code class="code-inline tex2jax_ignore">[8, 349, 1231, 64, 1000, 1, 684, 125, 807, 8, 349, 1231, 64]</code> avec \(p=89,q=17,e=531\)</p></article><article class="task exercise-like" id="task-466"><h6 class="heading"><span class="codenumber">(b)</span></h6>
-<p id="p-1618"><code class="code-inline tex2jax_ignore">[6041, 80552, 64471, 1, 40280, 76462, 6041, 75310, 6041, 40280, 2122, 78295, 80552, 16446, 1, 32487, 2122, 80552, 6041, 73799, 1, 20790, 3336, 6041, 40280, 20790, 16446, 1, 79033, 2122, 46951, 6415, 70263, 2122, 46951, 40280]</code> avec \(p=389,q=233,e=111\)</p></article><article class="task exercise-like" id="task-467"><h6 class="heading"><span class="codenumber">(c)</span></h6>
-<p id="p-1619"><code class="code-inline tex2jax_ignore">[10, 1, 7357, 15878, 6017, 16044, 6017, 1172, 6017, 341, 6017, 10370, 341, 6017, 13378, 1, 16044, 11527, 341, 1518, 11527, 7357, 3855]</code> avec \(p=101,q=167,e=333\)</p></article></article><article class="exercise exercise-like" id="exercise-201"><h6 class="heading">
+<p id="p-1601">Pour la congruence modulo \(n\text{,}\) on peut plus simplement écrire \((a,b) \leftrightarrow a\equiv b\mod n\text{.}\) Montrer que la congruence modulo est une relation d'équivalence.</p></article><article class="exercise exercise-like" id="exercise-197"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-154"><p id="p-1602">Encoder les messages suivants avec le décalage de César précisé avec le message.</p></div>
+<article class="task exercise-like" id="task-454"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1603"><code class="code-inline tex2jax_ignore">Mon enseignant est le meilleur</code> avec décalage \(22\)</p></article><article class="task exercise-like" id="task-455"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1604"><code class="code-inline tex2jax_ignore">Je vais faire tous les devoirs</code> avec décalage \(9\)</p></article><article class="task exercise-like" id="task-456"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1605"><code class="code-inline tex2jax_ignore">Un jour je serai le meilleur dresseur</code> avec décalage \(1\)</p></article></article><article class="exercise exercise-like" id="exercise-198"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-155"><p id="p-1606">Décoder les messages suivants, qui ont été chiffrés par un décalage de César précisé avec le message.</p></div>
+<article class="task exercise-like" id="task-457"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1607"><code class="code-inline tex2jax_ignore">EHBWEPXAWQZADKNO</code> avec décalage \(22\)</p></article><article class="task exercise-like" id="task-458"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1608"><code class="code-inline tex2jax_ignore">MNBYXVVNBMNBYXRANBMNBJWJWJB</code> avec décalage \(9\)</p></article><article class="task exercise-like" id="task-459"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1609"><code class="code-inline tex2jax_ignore">MFTNBUIFNBUJRVFTEJTDSFUFTDFTUWSBJNFOUHFOJBM</code> avec décalage \(1\)</p></article></article><article class="exercise exercise-like" id="exercise-199"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-156"><p id="p-1610">Encoder les messages suivants avec le système RSA dont les paramètres sont précisés avec le message.</p></div>
+<article class="task exercise-like" id="task-460"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1611"><code class="code-inline tex2jax_ignore">Mon enseignant est le meilleur</code> avec paramètres \(pq=2077, e=15841\)</p></article><article class="task exercise-like" id="task-461"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1612"><code class="code-inline tex2jax_ignore">Je vais faire tous les devoirs</code> avec paramètres \(pq=18871, e=3261\)</p></article><article class="task exercise-like" id="task-462"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1613"><code class="code-inline tex2jax_ignore">Un jour je serai le meilleur dresseur</code> avec paramètres \(pq=45113,e=5555\)</p></article><article class="task exercise-like" id="task-463"><h6 class="heading"><span class="codenumber">(d)</span></h6>
+<p id="p-1614">Qui a-t-il de particulier avec ces messages codés? Est-ce qu'il y a une lettre qui est facile à décoder? En utilisant des blocs de lettres comme dans le vrai RSA, ceci ne se produit pas.</p></article></article><article class="exercise exercise-like" id="exercise-200"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<div class="introduction" id="introduction-157"><p id="p-1615">Décoder les messages suivants, qui ont été chiffrés par RSA avec paramètres précisés avec le message.</p></div>
+<article class="task exercise-like" id="task-464"><h6 class="heading"><span class="codenumber">(a)</span></h6>
+<p id="p-1616"><code class="code-inline tex2jax_ignore">[8, 349, 1231, 64, 1000, 1, 684, 125, 807, 8, 349, 1231, 64]</code> avec \(p=89,q=17,e=531\)</p></article><article class="task exercise-like" id="task-465"><h6 class="heading"><span class="codenumber">(b)</span></h6>
+<p id="p-1617"><code class="code-inline tex2jax_ignore">[6041, 80552, 64471, 1, 40280, 76462, 6041, 75310, 6041, 40280, 2122, 78295, 80552, 16446, 1, 32487, 2122, 80552, 6041, 73799, 1, 20790, 3336, 6041, 40280, 20790, 16446, 1, 79033, 2122, 46951, 6415, 70263, 2122, 46951, 40280]</code> avec \(p=389,q=233,e=111\)</p></article><article class="task exercise-like" id="task-466"><h6 class="heading"><span class="codenumber">(c)</span></h6>
+<p id="p-1618"><code class="code-inline tex2jax_ignore">[10, 1, 7357, 15878, 6017, 16044, 6017, 1172, 6017, 341, 6017, 10370, 341, 6017, 13378, 1, 16044, 11527, 341, 1518, 11527, 7357, 3855]</code> avec \(p=101,q=167,e=333\)</p></article></article><article class="exercise exercise-like" id="exercise-201"><h6 class="heading">
 <span class="codenumber">16<span class="period">.</span></span><span class="space"> </span><span class="title">QFINXUFWNYNTS.</span>
 </h6>
-<p id="p-1620">Le message</p>
+<p id="p-1619">Le message</p>
 <pre class="code-display tex2jax_ignore">
     AYHOPYXBPKPZWHYBAKHUZSHKPZWHYPAPVUYHCPYHPAHBSPZHUAZBIAPSAVBAWSHPZPYTVABZKVUJZBYSPUJVUUBUVFHBTHUXBHUA
     </pre>
 <p class="continuation">a été encodé à l'aide d'un décalage César, mais le décalage est inconnu. Déterminer le message original, sans essayer toutes les possibilités.</p>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Indice.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like"><p id="p-1621">Si même après avoir déterminé quelles lettres sont les plus fréquentes le message ne se déchiffre toujours pas, un indice avec décalage 5 a été crypté dans le titre de l'exercice.</p></div></div>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-17" id="hint-17"><span class="type">Indice.</span> <span class="space"> </span><span class="codenumber">1</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-17"><div class="hint solution-like"><p id="p-1620">Si même après avoir déterminé quelles lettres sont les plus fréquentes le message ne se déchiffre toujours pas, un indice avec décalage 5 a été crypté dans le titre de l'exercice.</p></div></div>
 <a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-18" id="hint-18"><span class="type">Indice.</span> <span class="space"> </span><span class="codenumber">2</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-18"><div class="hint solution-like">
-<p id="p-1622">Ne pas lire avant d'avoir réfléchi et cherché à propos de l'indice 1. L'indice ci-dessous est un décalage de César avec décalage \(21\text{.}\) Décoder chaque phrase individuellement pour une meilleure lisibilité.</p>
-<p id="p-1623">QFINXUFWNYNTSJXYZSWTRFSIJLJTWLJUJWJHVZNJXYJHWNYXFSXZYNQNXJWQFQJYYWJJ</p>
-<p id="p-1624">FUWJXJVZJQQJXTSYQJXQJYYWJXQJXUQZXZYNQNXJJXIJQFQFSLZJKWFSHFNXJ</p>
+<p id="p-1621">Ne pas lire avant d'avoir réfléchi et cherché à propos de l'indice 1. L'indice ci-dessous est un décalage de César avec décalage \(21\text{.}\) Décoder chaque phrase individuellement pour une meilleure lisibilité.</p>
+<p id="p-1622">QFINXUFWNYNTSJXYZSWTRFSIJLJTWLJUJWJHVZNJXYJHWNYXFSXZYNQNXJWQFQJYYWJJ</p>
+<p id="p-1623">FUWJXJVZJQQJXTSYQJXQJYYWJXQJXUQZXZYNQNXJJXIJQFQFSLZJKWFSHFNXJ</p>
 </div></div>
+<a data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Réponse.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><p id="p-1624">Le message est un résumé du livre la disparition de George Perec, que l'on peut lire sur le site de <a class="external" href="https://www.renaud-bray.com/Livres_Produit.aspx?id=15116&amp;def=Disparition(La)%2cPEREC%2c+GEORGES%2c9782070715237" target="_blank">Renaud-Bray</a>. Ce livre a la particularité qu'il ne contient pas la lettre “e”, sauf pour le nom de l'auteur.</p></div></div>
 </div></article></article></section></section></div></main>
 </div>
 <script src="https://unpkg.com/prismjs@v1.22.0/components/prism-core.min.js"></script><script src="https://unpkg.com/prismjs@v1.22.0/plugins/autoloader/prism-autoloader.min.js"></script>
