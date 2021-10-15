@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jean-Sébastien Turcotte</title>
+    <link>http://www.example.com/</link>
+    <description>Recent content on Jean-Sébastien Turcotte</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>fr-ca</language>
+    <lastBuildDate>Fri, 15 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>http://www.example.com/about/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/about/</guid>
+      <description>I am a mathematics teacher at Cegep Gérald-Godin in Montreal. I have a bachelor&amp;rsquo;s degree in mathematics from Université Laval as well as a master&amp;rsquo;s degree in mathematics from Université de Montréal. I&amp;rsquo;ve been teaching at the college level since 2012 and full time since 2015.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://www.example.com/en/about/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/en/about/</guid>
+      <description>I am a mathematics teacher at Cegep Gérald-Godin in Montreal. I have a bachelor&amp;rsquo;s degree in mathematics from Université Laval as well as a master&amp;rsquo;s degree in mathematics from Université de Montréal. I&amp;rsquo;ve been teaching at the college level since 2012 and full time since 2015.</description>
+    </item>
+    
+    <item>
+      <title>Conférences et présentations</title>
+      <link>http://www.example.com/conferences/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/conferences/</guid>
+      <description>Voici une liste des conférences, présentations et ateliers que j&amp;rsquo;ai donnés:
+ Présentation du projet ALIR et de PreTeXt lors des PeDday21 (en anglais). La présentation est disponible ici et un enregistrement vidéo est aussi disponible sur youtube. Présentation du projet ALIR et de PreTeXt lors du colloque de l&amp;rsquo;AQPC 2021. La présentation est disponible ici.  </description>
+    </item>
+    
+    <item>
+      <title>À propos</title>
+      <link>http://www.example.com/apropos/</link>
+      <pubDate>Fri, 15 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/apropos/</guid>
+      <description>Je suis un enseignant de mathématiques au Cégep Gérald-Godin à Montréal. Détenteur d&amp;rsquo;un baccalauréat en mathématiques de l&amp;rsquo;Université Laval et d&amp;rsquo;une maitrise en mathématiques de l&amp;rsquo;Université de Montréal, j&amp;rsquo;enseigne au niveau collégial depuis 2012 et à temps plein depuis 2015.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://www.example.com/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/contact/</guid>
+      <description>Pour me contacter:
+ Par courriel au js.turcotte@cgodin.qc.ca Sur twitter: @JeanSebTurcotte  </description>
+    </item>
+    
+    <item>
+      <title>Projets</title>
+      <link>http://www.example.com/projets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/projets/</guid>
+      <description> Les notes de cours ALIR pour le cours algèbre linéaire et géométrie vectorielle sont disponibles ici. Les notes de cours MADIR pour le cours mathématiques discrètes sont disponibles ici.  </description>
+    </item>
+    
+  </channel>
+</rss>
